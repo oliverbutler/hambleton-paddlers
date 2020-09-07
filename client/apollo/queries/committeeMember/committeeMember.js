@@ -15,4 +15,4 @@ const COMMITTEE_MEMBER_QUERY = gql`
   }
 `;
 
-export default COMMITTEE_MEMBER_QUERY;
+export { COMMITTEE_MEMBER_QUERY };

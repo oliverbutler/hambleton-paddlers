@@ -9,7 +9,6 @@ const About = () => {
         beautiful North Yorkshire.{" "}
       </p>
       <br />
-      <h1 className="title">Some backstory</h1>
       <p>
         Established in 2002, Hambleton Paddlers is a family-friendly club
         offering a wide range of activities and events catering for everyone
@@ -40,13 +39,18 @@ const About = () => {
         to use.
       </p>
       <br />
-      <div className="notification is-warning is-light">
-        <h1 className="title is-5">COVID-19 Notice</h1>
-        We’ve had a very challenging year due to the pandemic, but have kept in
-        touch regularly with British Canoeing to ensure we were following their
-        guidance and we are now pleased to announce that we are now back up and
-        running.
-      </div>
+
+      <article className="message is-warning">
+        <div className="message-header">
+          <p>COVID-19</p>
+        </div>
+        <div className="message-body">
+          We’ve had a very challenging year due to the pandemic, but have kept
+          in touch regularly with British Canoeing to ensure we were following
+          their guidance and we are now pleased to announce that we are now back
+          up and running.
+        </div>
+      </article>
     </div>
   );
 };

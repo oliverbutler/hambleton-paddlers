@@ -54,6 +54,9 @@
     },
     "summary": {
       "type": "text"
+    },
+    "type": {
+      "collection": "event-type"
     }
   }
 }

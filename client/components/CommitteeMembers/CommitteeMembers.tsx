@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import moment from "moment";
 import Query from "components/query";
-import COMMITTEE_MEMBER_QUERY from "apollo/queries/committeeMember/committeeMember";
+import { COMMITTEE_MEMBER_QUERY } from "apollo/queries/committeeMember/committeeMember";
 import ReactMarkdown from "react-markdown";
 import _ from "lodash";
 import CommitteeMember from "./CommitteeMember/CommitteeMember";

@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "event_types",
+  "info": {
+    "name": "Event Type"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "colour": {
+      "type": "enumeration",
+      "enum": [
+        "black",
+        "dark",
+        "light",
+        "white",
+        "primary",
+        "link",
+        "info",
+        "success",
+        "warning",
+        "danger"
+      ],
+      "default": "primary"
+    }
+  }
+}

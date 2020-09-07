@@ -54,10 +54,21 @@
       "configurable": false
     },
     "given_name": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "family_name": {
-      "type": "string"
+      "type": "string",
+      "required": true
+    },
+    "picture": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false
     }
   }
 }
