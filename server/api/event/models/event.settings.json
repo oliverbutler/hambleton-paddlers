@@ -1,0 +1,59 @@
+{
+  "kind": "collectionType",
+  "collectionName": "events",
+  "info": {
+    "name": "Event"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "date_start": {
+      "type": "datetime"
+    },
+    "date_end": {
+      "type": "datetime"
+    },
+    "files": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "thumbnail": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "location": {
+      "type": "component",
+      "repeatable": false,
+      "component": "types.location"
+    },
+    "members_going": {
+      "plugin": "users-permissions",
+      "collection": "user"
+    },
+    "summary": {
+      "type": "text"
+    }
+  }
+}
