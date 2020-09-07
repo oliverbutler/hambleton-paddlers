@@ -3,7 +3,7 @@ import CommitteeMembers from "../components/CommitteeMembers";
 
 const commitee_members = () => {
   return (
-    <main className="container">
+    <main className="container my-5">
       <h1 className="title">Our Committee</h1>
       <CommitteeMembers />
     </main>

@@ -1,12 +1,13 @@
 import Head from "next/head";
 import Events from "components/Events";
+import About from "components/About/About";
 
 export default function Home() {
   return (
     <main>
       <div>
-        <section className="hero is-medium is-primary is-bold">
-          <div className="hero-body">
+        <section className="hero is-medium is-primary">
+          <div className="hero-body" id="header">
             <div className="container">
               <h1 className="title is-1">Hambleton Paddlers</h1>
               <h2 className="subtitle">
@@ -18,8 +19,8 @@ export default function Home() {
           </div>
         </section>
       </div>
-      <div className="container">
-        <p>Some content</p>s
+      <div className="container mt-6">
+        <About />
       </div>
     </main>
   );
