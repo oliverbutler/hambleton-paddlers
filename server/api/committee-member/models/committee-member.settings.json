@@ -31,6 +31,9 @@
     },
     "description": {
       "type": "richtext"
+    },
+    "summary": {
+      "type": "text"
     }
   }
 }
