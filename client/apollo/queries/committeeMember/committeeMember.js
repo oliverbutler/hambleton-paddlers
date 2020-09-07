@@ -4,6 +4,7 @@ const COMMITTEE_MEMBER_QUERY = gql`
   query CommitteeMember {
     committeeMembers {
       role
+      summary
       given_name
       family_name
       picture {

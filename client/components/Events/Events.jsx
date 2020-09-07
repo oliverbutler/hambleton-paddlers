@@ -6,11 +6,11 @@ import ReactMarkdown from "react-markdown";
 
 const Events = () => {
   return (
-    <div className="columns">
+    <div className="columns is-multiline">
       <Query query={EVENTS_QUERY} id={null}>
         {({ data: { events } }) =>
           events.map((event, index) => (
-            <div className="column">
+            <div className="column is-one-third">
               <article className="media mx-3 my-3" key={index}>
                 <figure className="media-left">
                   <p className="image is-128x128">
