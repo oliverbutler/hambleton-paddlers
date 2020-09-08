@@ -1,0 +1,39 @@
+{
+  "collectionName": "components_membership_payments",
+  "info": {
+    "name": "payment",
+    "icon": "dollar-sign"
+  },
+  "options": {},
+  "attributes": {
+    "amount_paid": {
+      "type": "decimal",
+      "private": true,
+      "required": true
+    },
+    "payment_method": {
+      "type": "enumeration",
+      "enum": [
+        "CASH",
+        "BACS",
+        "ONLINE",
+        "CHEQUE"
+      ],
+      "required": true,
+      "private": true
+    },
+    "authorized_by": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "date_start": {
+      "type": "date",
+      "private": false,
+      "required": true
+    },
+    "date_end": {
+      "type": "date",
+      "required": true
+    }
+  }
+}

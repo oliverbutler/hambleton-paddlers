@@ -79,6 +79,11 @@
         "coach"
       ],
       "required": true
+    },
+    "payments": {
+      "type": "component",
+      "repeatable": true,
+      "component": "membership.payment"
     }
   }
 }

@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/bcu-coaching-awards",
+      "handler": "bcu-coaching-award.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/bcu-coaching-awards/count",
+      "handler": "bcu-coaching-award.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/bcu-coaching-awards/:id",
+      "handler": "bcu-coaching-award.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/bcu-coaching-awards",
+      "handler": "bcu-coaching-award.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/bcu-coaching-awards/:id",
+      "handler": "bcu-coaching-award.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/bcu-coaching-awards/:id",
+      "handler": "bcu-coaching-award.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

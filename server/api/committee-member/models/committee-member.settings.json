@@ -2,7 +2,8 @@
   "kind": "collectionType",
   "collectionName": "committee_members",
   "info": {
-    "name": "Committee Member"
+    "name": "Committee Member",
+    "description": "The Committee Members online, please note the order matters"
   },
   "options": {
     "increments": true,
@@ -15,11 +16,7 @@
     "picture": {
       "model": "file",
       "via": "related",
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos"
-      ],
+      "allowedTypes": ["images", "files", "videos"],
       "plugin": "upload",
       "required": false
     },

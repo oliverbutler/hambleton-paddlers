@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "members",
+  "info": {
+    "name": "Member"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "given_name": {
+      "type": "string"
+    },
+    "family_name": {
+      "type": "string"
+    },
+    "date_of_birth": {
+      "type": "date"
+    },
+    "bcu_awards": {
+      "collection": "bcu-award"
+    }
+  }
+}

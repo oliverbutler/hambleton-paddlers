@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "bcu_awards",
+  "info": {
+    "name": "BCU Award"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "summary": {
+      "type": "text",
+      "required": true
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "order": {
+      "type": "integer",
+      "required": true,
+      "unique": true
+    }
+  }
+}
