@@ -17,9 +17,9 @@ const Events = () => {
         <Query query={EVENTS_QUERY} id={null}>
           {({ data: { events } }) =>
             events.map((event, index) => (
-              <Link href={`/events/${event.id}`}>
+              <Link href={`/events/${event.id}`} key={`event-${index}`}>
                 <div className={"column is-half " + styles.event}>
-                  <article className="media mx-3 my-3" key={index}>
+                  <article className="media mx-3 my-3">
                     <figure className="media-left">
                       <p className="image is-128x128">
                         <img

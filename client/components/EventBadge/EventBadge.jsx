@@ -3,7 +3,7 @@ import { useState } from "react";
 
 const EventBadge = ({ type }) => {
   return (
-    <span class={`tag is-${type.colour} mr-1`}>
+    <span className={`tag is-${type.colour} mr-1`}>
       {type.name.replace("_", " ")}
     </span>
   );

@@ -13,10 +13,11 @@ const CommitteeMember = ({ index, member, openIndex, setOpenIndex }) => {
 
   return (
     <div
+      key={`committee-member-${index}`}
       className={styles.committeeMember + " py-3 px-3"}
       onClick={handleToggleOpen}
     >
-      <article className="media mx-3 my-3" key={index}>
+      <article className="media mx-3 my-3">
         <figure className="media-left">
           <p className="image is-128x128">
             <img
