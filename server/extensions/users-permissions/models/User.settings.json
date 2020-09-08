@@ -69,6 +69,16 @@
       ],
       "plugin": "upload",
       "required": false
+    },
+    "level": {
+      "type": "enumeration",
+      "enum": [
+        "beginner",
+        "one_star",
+        "two_star",
+        "coach"
+      ],
+      "required": true
     }
   }
 }

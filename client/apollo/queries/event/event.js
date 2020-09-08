@@ -9,6 +9,9 @@ export const EVENTS_QUERY = gql`
       date_start
       date_end
       description
+      level
+      cancelled
+      cancel_reason
       type {
         colour
         name
@@ -30,6 +33,21 @@ export const EVENTS_FIND_ONE = gql`
       date_start
       date_end
       description
+      level
+      cancelled
+      cancel_reason
+      attendees {
+        given_name
+        picture {
+          url
+        }
+        level
+      }
+      files {
+        name
+        mime
+        url
+      }
       type {
         colour
         name
@@ -38,6 +56,7 @@ export const EVENTS_FIND_ONE = gql`
       thumbnail {
         url
       }
+      location
     }
   }
 `;

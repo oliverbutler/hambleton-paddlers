@@ -10,8 +10,8 @@ var _ = require("lodash");
 
 const sanitizePublic = (ctx, event) => {
   if (ctx.state.user === undefined) {
-    delete event.members_going;
-    delete event.files;
+    event.attendees = [];
+    event.files = [];
   }
   return event;
 };
@@ -53,8 +53,6 @@ module.exports = {
         return "Not authed to access recent events"; // todo: graphQL returns weird error when this happens
       }
     }
-
-    console.log(entity);
 
     return sanitizePublic(
       ctx,

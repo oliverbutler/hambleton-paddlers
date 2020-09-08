@@ -56,6 +56,7 @@ const Navbar = () => {
                       className="button is-primary is-outlined"
                       onClick={() => {
                         dispatch(actions.user.logOut());
+                        localStorage.removeItem("accessToken");
                         getToast().fire({
                           icon: "success",
                           title: "Successfully Logged Out",

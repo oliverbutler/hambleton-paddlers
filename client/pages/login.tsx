@@ -18,6 +18,7 @@ const login = () => {
       .then((res) => {
         dispatch(actions.user.setUser(res.data.user));
         getToast().fire({ icon: "success", title: "Successfully Logged In" });
+        localStorage.setItem("accessToken", res.data.jwt);
       })
       .catch((err) => console.log(err));
   };

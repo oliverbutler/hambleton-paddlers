@@ -36,19 +36,12 @@
       "model": "file",
       "via": "related",
       "allowedTypes": [
-        "images",
-        "files",
-        "videos"
+        "images"
       ],
       "plugin": "upload",
-      "required": false
+      "required": true
     },
-    "location": {
-      "type": "component",
-      "repeatable": false,
-      "component": "types.location"
-    },
-    "members_going": {
+    "attendees": {
       "plugin": "users-permissions",
       "collection": "user"
     },
@@ -57,6 +50,21 @@
     },
     "type": {
       "collection": "event-type"
+    },
+    "location": {
+      "type": "text"
+    },
+    "level": {
+      "type": "decimal",
+      "max": 3,
+      "min": 0
+    },
+    "cancelled": {
+      "type": "boolean",
+      "default": false
+    },
+    "cancel_reason": {
+      "type": "text"
     }
   }
 }
