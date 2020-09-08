@@ -10,9 +10,11 @@ const event = () => {
 
   return (
     <div className="container my-5">
-      <Query query={EVENTS_FIND_ONE} id={eid}>
-        {({ data: { event } }) => <Event event={event} />}
-      </Query>
+      <div className="content">
+        <Query query={EVENTS_FIND_ONE} id={eid}>
+          {({ data: { event } }) => <Event event={event} />}
+        </Query>
+      </div>
     </div>
   );
 };

@@ -20,7 +20,9 @@ export default function Home() {
         </section>
       </div>
       <div className="container mt-6">
-        <About />
+        <div className="content">
+          <About />
+        </div>
       </div>
     </main>
   );

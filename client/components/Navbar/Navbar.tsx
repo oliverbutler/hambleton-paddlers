@@ -28,9 +28,7 @@ const Navbar = () => {
           <Link href="/">
             <a className="navbar-item">Home</a>
           </Link>
-          <Link href="/membership">
-            <a className="navbar-item">Membership</a>
-          </Link>
+
           <Link href="/events">
             <a className="navbar-item">Events</a>
           </Link>
@@ -42,9 +40,11 @@ const Navbar = () => {
         <div className="navbar-end">
           <div className="navbar-item">
             <div className="buttons">
-              <a className="button is-primary">
-                <strong>Sign up</strong>
-              </a>
+              <Link href="/join">
+                <a className="button is-primary">
+                  <strong>Join</strong>
+                </a>
+              </Link>
               <Link href="/login">
                 <a className="button is-light">Log in</a>
               </Link>

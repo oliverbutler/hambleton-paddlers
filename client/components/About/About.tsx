@@ -2,7 +2,7 @@ import React from "react";
 
 const About = () => {
   return (
-    <div>
+    <div className="mb-4">
       <h1 className="title">Who are we?</h1>
       <p>
         A very warm welcome to Hambleton Paddlers Canoe and Kayak Club based in
