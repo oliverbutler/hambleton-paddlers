@@ -9,9 +9,11 @@ export const EVENTS_QUERY = gql`
       date_start
       date_end
       description
-      level
-      cancelled
-      cancel_reason
+      difficulty
+      status {
+        status
+        message
+      }
       type {
         colour
         name
@@ -33,9 +35,11 @@ export const EVENTS_FIND_ONE = gql`
       date_start
       date_end
       description
-      level
-      cancelled
-      cancel_reason
+      difficulty
+      status {
+        status
+        message
+      }
       attendees {
         given_name
         picture {

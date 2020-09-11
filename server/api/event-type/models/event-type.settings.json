@@ -10,10 +10,12 @@
   },
   "attributes": {
     "name": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "description": {
-      "type": "text"
+      "type": "text",
+      "required": true
     },
     "colour": {
       "type": "enumeration",
@@ -29,7 +31,11 @@
         "warning",
         "danger"
       ],
-      "default": "primary"
+      "default": "primary",
+      "required": true
+    },
+    "minimum_bcu_award": {
+      "model": "bcu-award"
     }
   }
 }

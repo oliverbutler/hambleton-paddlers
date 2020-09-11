@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_event_members",
+  "info": {
+    "name": "members",
+    "icon": "users"
+  },
+  "options": {},
+  "attributes": {
+    "member": {
+      "model": "member"
+    },
+    "role": {
+      "type": "enumeration",
+      "enum": [
+        "COACH",
+        "VOLUNTEER",
+        "PARTICIPANT"
+      ]
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "INTERESTED",
+        "SENT_FORMS",
+        "GOING"
+      ]
+    },
+    "emailed_forms": {
+      "type": "boolean"
+    }
+  }
+}

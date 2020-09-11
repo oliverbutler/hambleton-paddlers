@@ -2,15 +2,17 @@ import gql from "graphql-tag";
 
 const COMMITTEE_MEMBER_QUERY = gql`
   query CommitteeMember {
-    committeeMembers {
-      role
-      summary
+    committee {
       given_name
       family_name
+      committee {
+        role
+        summary
+        description
+      }
       picture {
         url
       }
-      description
     }
   }
 `;

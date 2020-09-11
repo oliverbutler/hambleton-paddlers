@@ -53,37 +53,19 @@
       "plugin": "users-permissions",
       "configurable": false
     },
-    "given_name": {
-      "type": "string",
-      "required": true
-    },
-    "family_name": {
-      "type": "string",
-      "required": true
-    },
-    "picture": {
-      "model": "file",
-      "via": "related",
-      "allowedTypes": [
-        "images"
-      ],
-      "plugin": "upload",
-      "required": false
-    },
-    "level": {
-      "type": "enumeration",
-      "enum": [
-        "beginner",
-        "one_star",
-        "two_star",
-        "coach"
-      ],
-      "required": true
-    },
     "payments": {
       "type": "component",
       "repeatable": true,
       "component": "membership.payment"
+    },
+    "members": {
+      "via": "user",
+      "collection": "member"
+    },
+    "member": {
+      "type": "boolean",
+      "default": false,
+      "required": true
     }
   }
 }

@@ -23,8 +23,7 @@
       "private": true
     },
     "authorized_by": {
-      "plugin": "users-permissions",
-      "model": "user"
+      "model": "member"
     },
     "date_start": {
       "type": "date",

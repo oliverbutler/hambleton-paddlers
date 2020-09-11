@@ -10,16 +10,43 @@
   },
   "attributes": {
     "given_name": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "family_name": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "date_of_birth": {
-      "type": "date"
+      "type": "date",
+      "required": true
     },
     "bcu_awards": {
       "collection": "bcu-award"
+    },
+    "bcu_coaching_awards": {
+      "collection": "bcu-coaching-award"
+    },
+    "picture": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "members"
+    },
+    "committee": {
+      "type": "component",
+      "repeatable": false,
+      "component": "membership.committee-member"
     }
   }
 }
