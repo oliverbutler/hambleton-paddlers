@@ -34,10 +34,10 @@ const CommitteeMember = ({ index, member, openIndex, setOpenIndex }) => {
             <h2>
               {member.given_name} {member.family_name}{" "}
               <span className="tag is-info is-medium is-light">
-                {member.role}
+                {member.committee.role}
               </span>
             </h2>
-            <p>{member.summary}</p>
+            <p>{member.committee.summary}</p>
           </div>
         </div>
         <motion.div animate={{ rotate: open ? 180 : 0 }}>
@@ -59,7 +59,7 @@ const CommitteeMember = ({ index, member, openIndex, setOpenIndex }) => {
               }}
               transition={{ duration: 0.8, ease: [0.04, 0.62, 0.23, 0.98] }}
             >
-              <ReactMarkdown source={member.description} />
+              <ReactMarkdown source={member.committee.description} />
             </motion.section>
           </div>
         )}

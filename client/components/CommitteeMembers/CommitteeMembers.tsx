@@ -12,17 +12,19 @@ const CommitteeMembers = () => {
   return (
     <div>
       <Query query={COMMITTEE_MEMBER_QUERY} id={null}>
-        {({ data: { committeeMembers } }) =>
-          committeeMembers.map((member, index) => {
-            return (
-              <CommitteeMember
-                member={member}
-                index={index}
-                openIndex={openIndex}
-                setOpenIndex={setOpenIndex}
-              />
-            );
-          })
+        {({ data: { committee } }) =>
+          committee
+            .sort((a, b) => (a.committee.order > b.committee.order ? 1 : -1))
+            .map((member, index) => {
+              return (
+                <CommitteeMember
+                  member={member}
+                  index={index}
+                  openIndex={openIndex}
+                  setOpenIndex={setOpenIndex}
+                />
+              );
+            })
         }
       </Query>
     </div>

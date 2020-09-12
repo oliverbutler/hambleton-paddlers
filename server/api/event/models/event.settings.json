@@ -80,7 +80,7 @@
       "repeatable": false,
       "component": "event.status"
     },
-    "members": {
+    "attendees": {
       "type": "component",
       "repeatable": true,
       "component": "event.members"

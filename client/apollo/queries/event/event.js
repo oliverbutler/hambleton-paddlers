@@ -40,12 +40,26 @@ export const EVENTS_FIND_ONE = gql`
         status
         message
       }
-      attendees {
+      lead_member {
         given_name
+        family_name
         picture {
           url
         }
-        level
+        contact {
+          mobile_phone
+          email
+        }
+      }
+      attendees {
+        member {
+          given_name
+          family_name
+          picture {
+            url
+          }
+        }
+        role
       }
       files {
         name

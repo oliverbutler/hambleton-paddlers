@@ -1314,6 +1314,9 @@
                     "committee": {
                       "type": "component"
                     },
+                    "contact": {
+                      "type": "component"
+                    },
                     "created_by": {
                       "type": "string"
                     },
@@ -1366,6 +1369,9 @@
                   "type": "string"
                 },
                 "committee": {
+                  "type": "component"
+                },
+                "contact": {
                   "type": "component"
                 },
                 "created_by": {
@@ -1567,6 +1573,9 @@
                       "type": "string"
                     },
                     "committee": {
+                      "type": "component"
+                    },
+                    "contact": {
                       "type": "component"
                     },
                     "created_by": {

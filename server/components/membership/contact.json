@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_membership_contacts",
+  "info": {
+    "name": "Contact",
+    "icon": "address-card"
+  },
+  "options": {},
+  "attributes": {
+    "email": {
+      "type": "string"
+    },
+    "mobile_phone": {
+      "type": "string"
+    }
+  }
+}

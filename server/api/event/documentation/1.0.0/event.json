@@ -746,6 +746,9 @@
               "committee": {
                 "type": "component"
               },
+              "contact": {
+                "type": "component"
+              },
               "created_by": {
                 "type": "string"
               },
@@ -854,7 +857,7 @@
               }
             }
           },
-          "members": {
+          "attendees": {
             "type": "array",
             "items": {
               "type": "object",
@@ -900,6 +903,9 @@
                     "committee": {
                       "type": "component"
                     },
+                    "contact": {
+                      "type": "component"
+                    },
                     "created_by": {
                       "type": "string"
                     },
@@ -915,17 +921,6 @@
                     "VOLUNTEER",
                     "PARTICIPANT"
                   ]
-                },
-                "status": {
-                  "type": "string",
-                  "enum": [
-                    "INTERESTED",
-                    "SENT_FORMS",
-                    "GOING"
-                  ]
-                },
-                "emailed_forms": {
-                  "type": "boolean"
                 }
               }
             }
@@ -1080,7 +1075,7 @@
               }
             }
           },
-          "members": {
+          "attendees": {
             "type": "array",
             "items": {
               "type": "object",
@@ -1126,6 +1121,9 @@
                     "committee": {
                       "type": "component"
                     },
+                    "contact": {
+                      "type": "component"
+                    },
                     "created_by": {
                       "type": "string"
                     },
@@ -1141,17 +1139,6 @@
                     "VOLUNTEER",
                     "PARTICIPANT"
                   ]
-                },
-                "status": {
-                  "type": "string",
-                  "enum": [
-                    "INTERESTED",
-                    "SENT_FORMS",
-                    "GOING"
-                  ]
-                },
-                "emailed_forms": {
-                  "type": "boolean"
                 }
               }
             }

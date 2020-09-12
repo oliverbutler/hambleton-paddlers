@@ -532,6 +532,7 @@
           "id",
           "title",
           "summary",
+          "description",
           "order"
         ],
         "properties": {
@@ -644,6 +645,7 @@
         "required": [
           "title",
           "summary",
+          "description",
           "order"
         ],
         "properties": {

@@ -9,6 +9,7 @@ const COMMITTEE_MEMBER_QUERY = gql`
         role
         summary
         description
+        order
       }
       picture {
         url

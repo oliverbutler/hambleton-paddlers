@@ -531,14 +531,12 @@
           "family_name": {
             "type": "string"
           },
-          "date_of_birth": {
-            "type": "string"
-          },
           "bcu_awards": {
             "required": [
               "id",
               "title",
               "summary",
+              "description",
               "order"
             ],
             "properties": {
@@ -744,6 +742,23 @@
               }
             }
           },
+          "contact": {
+            "type": "object",
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              },
+              "mobile_phone": {
+                "type": "string"
+              }
+            }
+          },
           "created_by": {
             "required": [
               "id",
@@ -883,6 +898,23 @@
               },
               "order": {
                 "type": "integer"
+              }
+            }
+          },
+          "contact": {
+            "type": "object",
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              },
+              "mobile_phone": {
+                "type": "string"
               }
             }
           },

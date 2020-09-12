@@ -14,17 +14,26 @@ const Event = ({ event }) => {
 
   const [location, setLocation] = useState({});
 
-  var coaches = _.filter(event.attendees, { level: "coach" });
-
-  var normalAttendees = _.reject(event.attendees, { level: "coach" });
+  var attendees = _.groupBy(event.attendees, (a) => a.role);
 
   var key = "AIzaSyBXbtSCjzHJPp6oNliAVRLU2ecNVCtnVtw";
+
+  const roleName = (role) => {
+    switch (role) {
+      case "COACH":
+        return "Coaches";
+      case "PARTICIPANT":
+        return "Attendees";
+      case "VOLUNTEER":
+        return "Volunteers";
+    }
+  };
 
   return (
     <div>
       <div className="columns">
         <div className="column">
-          <EventTab event={event} hideCancel />
+          <EventTab event={event} isSingleEvent />
           {event.cancelled && (
             <article className="message is-danger mt-4">
               <div className="message-header">
@@ -35,8 +44,29 @@ const Event = ({ event }) => {
           )}
           {currentUser.loggedIn ? (
             <>
-              <h1 className="title is-4">Description</h1>
-              <ReactMarkdown source={event.description} />
+              <p>
+                For this event {event.lead_member.given_name} will be your main
+                point of contact for any questions.
+              </p>
+              <div className="columns">
+                <div className="column is-narrow">
+                  <figure class="image is-64x64 mx-2 my-2">
+                    <img
+                      className="is-rounded"
+                      src={`http://localhost:1337${event.lead_member.picture.url}`}
+                    />
+                  </figure>
+                </div>
+                <div className="column">
+                  <p>
+                    <b>
+                      {event.lead_member.given_name}{" "}
+                      {event.lead_member.family_name}
+                    </b>
+                  </p>
+                  <p>Mobile: {event.lead_member.contact.mobile_phone}</p>
+                </div>
+              </div>
             </>
           ) : (
             <div className="notification is-info is-light mt-4">
@@ -45,12 +75,12 @@ const Event = ({ event }) => {
             </div>
           )}
         </div>
-        <div className="column">
+        <div className="column is-narrow">
           <iframe
             width="600"
-            height="400"
+            height="100%"
             frameBorder="0"
-            style={{ border: 0 }}
+            style={{ border: 0, backgroundColor: "lightgrey" }}
             src={`https://www.google.com/maps/embed/v1/place?key=${key}
     &q=${event.location}`}
             allowFullScreen
@@ -59,36 +89,30 @@ const Event = ({ event }) => {
       </div>
       {currentUser.loggedIn && (
         <>
-          <h1 className="title is-4">Coaches</h1>
-          <div className="attendees" style={{ display: "flex" }}>
-            <br />
-            {coaches.map((member, index) => (
-              <figure
-                class="image is-64x64 mx-2 my-2"
-                key={`attendee-${index}`}
-              >
-                <img
-                  className="is-rounded"
-                  src={`http://localhost:1337${member.picture.url}`}
-                />
-              </figure>
-            ))}
-          </div>
-          <h1 className="title is-4">Attendees</h1>
-          <div className="attendees" style={{ display: "flex" }}>
-            <br />
-            {normalAttendees.map((member, index) => (
-              <figure
-                class="image is-64x64 mx-2 my-2"
-                key={`attendee-${index}`}
-              >
-                <img
-                  className="is-rounded"
-                  src={`http://localhost:1337${member.picture.url}`}
-                />
-              </figure>
-            ))}
-          </div>
+          <ReactMarkdown source={event.description} />
+          {Object.keys(attendees).map((role, roleIndex) => (
+            <div key={`role-${roleIndex}`}>
+              <h1 className="title is-4">{roleName(role)}</h1>
+              <div className="attendees" style={{ display: "flex" }}>
+                {attendees[role].map((member, index) => (
+                  <figure
+                    class="image is-64x64 mx-2 my-2 mb-6"
+                    key={`attendee-${index}`}
+                  >
+                    <img
+                      className="is-rounded"
+                      src={`http://localhost:1337${_.get(
+                        member.member,
+                        "picture.url",
+                        ""
+                      )}`}
+                    />
+                    <p>{member.member.given_name}</p>
+                  </figure>
+                ))}
+              </div>
+            </div>
+          ))}
 
           {event.files.length > 0 && <h1 className="title is-4">Files</h1>}
           {event.files.map((file, index) => (

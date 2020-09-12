@@ -15,10 +15,13 @@
     },
     "summary": {
       "type": "text",
-      "required": true
+      "required": true,
+      "private": false
     },
     "description": {
-      "type": "richtext"
+      "type": "richtext",
+      "private": false,
+      "required": true
     },
     "order": {
       "type": "integer",

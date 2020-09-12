@@ -8,11 +8,10 @@
 const { sanitizeEntity } = require("strapi-utils");
 var _ = require("lodash");
 
-const sanitizePublic = (ctx, event) => {
-  if (ctx.state.user === undefined) {
-    event.attendees = [];
-    event.files = [];
-  }
+const sanitizePublic = (event) => {
+  // delete event.lead_member;
+  // event.lead_member.given_name = null;
+  // console.log(event);
   return event;
 };
 
@@ -35,10 +34,7 @@ module.exports = {
     }
 
     return entities.map((entity) =>
-      sanitizePublic(
-        ctx,
-        sanitizeEntity(entity, { model: strapi.models.event })
-      )
+      sanitizePublic(sanitizeEntity(entity, { model: strapi.models.event }))
     );
   },
 
@@ -55,7 +51,6 @@ module.exports = {
     }
 
     return sanitizePublic(
-      ctx,
       sanitizeEntity(entity, { model: strapi.models.event })
     );
   },

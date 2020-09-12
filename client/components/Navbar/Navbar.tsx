@@ -69,7 +69,7 @@ const Navbar = () => {
                 ) : (
                   <Link href="/profile">
                     <a className="button is-primary">
-                      <b>My Profile</b>
+                      <b>Hello {currentUser.user.username}!</b>
                     </a>
                   </Link>
                 )

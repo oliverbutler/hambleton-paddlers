@@ -1,11 +1,13 @@
 "use strict";
 
 const { sanitizeEntity } = require("strapi-utils");
+const _ = require("lodash");
 
 const sanitizePublic = (member) => {
   delete member.user;
-  delete member.created_by;
-  delete member.updated_by;
+  // delete member.created_by;
+  // delete member.updated_by;
+  delete member.date_of_birth;
   return member;
 };
 
@@ -18,8 +20,10 @@ module.exports = {
       committee: { $ne: null },
     });
 
-    return entities.map((entity) =>
+    entities = entities.map((entity) =>
       sanitizePublic(sanitizeEntity(entity, { model: strapi.models.member }))
     );
+
+    return entities.filter((e) => _.get(e, "committee.role", false));
   },
 };

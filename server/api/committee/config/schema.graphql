@@ -2,7 +2,9 @@ module.exports = {
  definition: `
     type CommitteeInfo {
       role: String
+      summary: String
       description: String
+      order: Int
     }
     type Picture {
       url: String

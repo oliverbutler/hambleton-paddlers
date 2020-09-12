@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "09/11/2020 8:55:48 PM"
+    "x-generation-date": "09/12/2020 6:12:19 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -5308,6 +5308,7 @@
           "id",
           "title",
           "summary",
+          "description",
           "order"
         ],
         "properties": {
@@ -5420,6 +5421,7 @@
         "required": [
           "title",
           "summary",
+          "description",
           "order"
         ],
         "properties": {
@@ -5619,6 +5621,7 @@
               "id",
               "title",
               "summary",
+              "description",
               "order"
             ],
             "properties": {
@@ -6007,6 +6010,9 @@
               "committee": {
                 "type": "component"
               },
+              "contact": {
+                "type": "component"
+              },
               "created_by": {
                 "type": "string"
               },
@@ -6115,7 +6121,7 @@
               }
             }
           },
-          "members": {
+          "attendees": {
             "type": "array",
             "items": {
               "type": "object",
@@ -6161,6 +6167,9 @@
                     "committee": {
                       "type": "component"
                     },
+                    "contact": {
+                      "type": "component"
+                    },
                     "created_by": {
                       "type": "string"
                     },
@@ -6176,17 +6185,6 @@
                     "VOLUNTEER",
                     "PARTICIPANT"
                   ]
-                },
-                "status": {
-                  "type": "string",
-                  "enum": [
-                    "INTERESTED",
-                    "SENT_FORMS",
-                    "GOING"
-                  ]
-                },
-                "emailed_forms": {
-                  "type": "boolean"
                 }
               }
             }
@@ -6341,7 +6339,7 @@
               }
             }
           },
-          "members": {
+          "attendees": {
             "type": "array",
             "items": {
               "type": "object",
@@ -6387,6 +6385,9 @@
                     "committee": {
                       "type": "component"
                     },
+                    "contact": {
+                      "type": "component"
+                    },
                     "created_by": {
                       "type": "string"
                     },
@@ -6402,17 +6403,6 @@
                     "VOLUNTEER",
                     "PARTICIPANT"
                   ]
-                },
-                "status": {
-                  "type": "string",
-                  "enum": [
-                    "INTERESTED",
-                    "SENT_FORMS",
-                    "GOING"
-                  ]
-                },
-                "emailed_forms": {
-                  "type": "boolean"
                 }
               }
             }
@@ -6562,14 +6552,12 @@
           "family_name": {
             "type": "string"
           },
-          "date_of_birth": {
-            "type": "string"
-          },
           "bcu_awards": {
             "required": [
               "id",
               "title",
               "summary",
+              "description",
               "order"
             ],
             "properties": {
@@ -6775,6 +6763,23 @@
               }
             }
           },
+          "contact": {
+            "type": "object",
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              },
+              "mobile_phone": {
+                "type": "string"
+              }
+            }
+          },
           "created_by": {
             "required": [
               "id",
@@ -6914,6 +6919,23 @@
               },
               "order": {
                 "type": "integer"
+              }
+            }
+          },
+          "contact": {
+            "type": "object",
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              },
+              "mobile_phone": {
+                "type": "string"
               }
             }
           },
@@ -7298,6 +7320,9 @@
                     "committee": {
                       "type": "component"
                     },
+                    "contact": {
+                      "type": "component"
+                    },
                     "created_by": {
                       "type": "string"
                     },
@@ -7350,6 +7375,9 @@
                   "type": "string"
                 },
                 "committee": {
+                  "type": "component"
+                },
+                "contact": {
                   "type": "component"
                 },
                 "created_by": {
@@ -7551,6 +7579,9 @@
                       "type": "string"
                     },
                     "committee": {
+                      "type": "component"
+                    },
+                    "contact": {
                       "type": "component"
                     },
                     "created_by": {

@@ -565,6 +565,7 @@
               "id",
               "title",
               "summary",
+              "description",
               "order"
             ],
             "properties": {

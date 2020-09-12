@@ -16,17 +16,6 @@
         "VOLUNTEER",
         "PARTICIPANT"
       ]
-    },
-    "status": {
-      "type": "enumeration",
-      "enum": [
-        "INTERESTED",
-        "SENT_FORMS",
-        "GOING"
-      ]
-    },
-    "emailed_forms": {
-      "type": "boolean"
     }
   }
 }

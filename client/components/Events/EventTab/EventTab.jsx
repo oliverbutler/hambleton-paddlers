@@ -3,14 +3,14 @@ import { colour } from "utils/functions";
 import moment from "moment";
 import EventBadge from "components/EventBadge";
 
-const EventTab = ({ event, hideCancel }) => {
+const EventTab = ({ event, isSingleEvent }) => {
   return (
     <article
       className="media"
       style={{ borderLeft: `5px solid ${colour(event.level)}` }}
     >
       <figure
-        className="media-left my-0"
+        className={"media-left my-0 " + isSingleEvent && "ml-0"}
         style={{ alignSelf: "center", alignContent: "center" }}
       >
         <p className="image is-128x128">
@@ -27,7 +27,7 @@ const EventTab = ({ event, hideCancel }) => {
             >
               {event.title}
             </span>{" "}
-            {event.cancelled && !hideCancel && (
+            {event.cancelled && !isSingleEvent && (
               <span className="tag is-danger is-large">Cancelled</span>
             )}
           </h2>
