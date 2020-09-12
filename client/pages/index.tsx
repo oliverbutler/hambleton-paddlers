@@ -24,7 +24,6 @@ export default function Home({ content }) {
   );
 }
 
-// This function gets called at build time
 export async function getStaticProps() {
   const res = await fetch("http://localhost:1337/home-page");
   const content = await res.json();
