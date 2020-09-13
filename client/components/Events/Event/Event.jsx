@@ -16,8 +16,6 @@ const Event = ({ event }) => {
 
   var attendees = _.groupBy(event.attendees, (a) => a.role);
 
-  var key = "AIzaSyBXbtSCjzHJPp6oNliAVRLU2ecNVCtnVtw";
-
   const roleName = (role) => {
     switch (role) {
       case "COACH":
@@ -64,7 +62,11 @@ const Event = ({ event }) => {
                       {event.lead_member.family_name}
                     </b>
                   </p>
-                  <p>Mobile: {event.lead_member.contact.mobile_phone}</p>
+                  <p>
+                    Mobile: {event.lead_member.contact.mobile_phone}
+                    <br />
+                    Email: {event.lead_member.contact.email}
+                  </p>
                 </div>
               </div>
             </>
@@ -81,7 +83,7 @@ const Event = ({ event }) => {
             height="100%"
             frameBorder="0"
             style={{ border: 0, backgroundColor: "lightgrey" }}
-            src={`https://www.google.com/maps/embed/v1/place?key=${key}
+            src={`https://www.google.com/maps/embed/v1/place?key=${process.env.NEXT_PUBLIC_GOOGLE_KEY}
     &q=${event.location}`}
             allowFullScreen
           ></iframe>

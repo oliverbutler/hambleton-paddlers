@@ -7,8 +7,18 @@ const _ = require("lodash");
  * to customize this controller
  */
 
-const sanitizeTest = (member) => {
-  return member;
+const sanitize = (obj) => {
+  obj = _.omit(obj, ["created_by", "updated_by", "id"]);
+
+  ["bcu_awards", "bcu_coaching_awards"].map((field) => {
+    obj[field] = obj[field].map((o) => o._id);
+  });
+
+  obj["picture"] = _.pick(obj.picture, ["url"]);
+
+  obj["user"] = _.pick(obj.user, ["_id"]);
+
+  return obj;
 };
 
 module.exports = {
@@ -21,15 +31,13 @@ module.exports = {
     }
 
     return entities.map((entity) =>
-      sanitizeTest(sanitizeEntity(entity, { model: strapi.models.member }))
+      sanitize(sanitizeEntity(entity, { model: strapi.models.member }))
     );
   },
   async findOne(ctx) {
     const { id } = ctx.params;
     const entity = await strapi.services.member.findOne({ id });
 
-    return sanitizeTest(
-      sanitizeEntity(entity, { model: strapi.models.member })
-    );
+    return sanitize(sanitizeEntity(entity, { model: strapi.models.member }));
   },
 };

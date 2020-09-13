@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "09/12/2020 6:12:19 PM"
+    "x-generation-date": "09/13/2020 1:24:13 AM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -6013,6 +6013,12 @@
               "contact": {
                 "type": "component"
               },
+              "allergies": {
+                "type": "string"
+              },
+              "other_medical": {
+                "type": "string"
+              },
               "created_by": {
                 "type": "string"
               },
@@ -6170,6 +6176,12 @@
                     "contact": {
                       "type": "component"
                     },
+                    "allergies": {
+                      "type": "string"
+                    },
+                    "other_medical": {
+                      "type": "string"
+                    },
                     "created_by": {
                       "type": "string"
                     },
@@ -6188,6 +6200,10 @@
                 }
               }
             }
+          },
+          "ask_kit": {
+            "type": "boolean",
+            "default": true
           },
           "created_by": {
             "required": [
@@ -6388,6 +6404,12 @@
                     "contact": {
                       "type": "component"
                     },
+                    "allergies": {
+                      "type": "string"
+                    },
+                    "other_medical": {
+                      "type": "string"
+                    },
                     "created_by": {
                       "type": "string"
                     },
@@ -6406,6 +6428,10 @@
                 }
               }
             }
+          },
+          "ask_kit": {
+            "type": "boolean",
+            "default": true
           },
           "created_by": {
             "type": "string"
@@ -6780,6 +6806,12 @@
               }
             }
           },
+          "allergies": {
+            "type": "string"
+          },
+          "other_medical": {
+            "type": "string"
+          },
           "created_by": {
             "required": [
               "id",
@@ -6938,6 +6970,12 @@
                 "type": "string"
               }
             }
+          },
+          "allergies": {
+            "type": "string"
+          },
+          "other_medical": {
+            "type": "string"
           },
           "created_by": {
             "type": "string"
@@ -7323,6 +7361,12 @@
                     "contact": {
                       "type": "component"
                     },
+                    "allergies": {
+                      "type": "string"
+                    },
+                    "other_medical": {
+                      "type": "string"
+                    },
                     "created_by": {
                       "type": "string"
                     },
@@ -7379,6 +7423,12 @@
                 },
                 "contact": {
                   "type": "component"
+                },
+                "allergies": {
+                  "type": "string"
+                },
+                "other_medical": {
+                  "type": "string"
                 },
                 "created_by": {
                   "type": "string"
@@ -7583,6 +7633,12 @@
                     },
                     "contact": {
                       "type": "component"
+                    },
+                    "allergies": {
+                      "type": "string"
+                    },
+                    "other_medical": {
+                      "type": "string"
                     },
                     "created_by": {
                       "type": "string"

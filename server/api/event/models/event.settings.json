@@ -84,6 +84,10 @@
       "type": "component",
       "repeatable": true,
       "component": "event.members"
+    },
+    "ask_kit": {
+      "type": "boolean",
+      "default": true
     }
   }
 }

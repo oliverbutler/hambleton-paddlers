@@ -749,6 +749,12 @@
               "contact": {
                 "type": "component"
               },
+              "allergies": {
+                "type": "string"
+              },
+              "other_medical": {
+                "type": "string"
+              },
               "created_by": {
                 "type": "string"
               },
@@ -906,6 +912,12 @@
                     "contact": {
                       "type": "component"
                     },
+                    "allergies": {
+                      "type": "string"
+                    },
+                    "other_medical": {
+                      "type": "string"
+                    },
                     "created_by": {
                       "type": "string"
                     },
@@ -924,6 +936,10 @@
                 }
               }
             }
+          },
+          "ask_kit": {
+            "type": "boolean",
+            "default": true
           },
           "created_by": {
             "required": [
@@ -1124,6 +1140,12 @@
                     "contact": {
                       "type": "component"
                     },
+                    "allergies": {
+                      "type": "string"
+                    },
+                    "other_medical": {
+                      "type": "string"
+                    },
                     "created_by": {
                       "type": "string"
                     },
@@ -1142,6 +1164,10 @@
                 }
               }
             }
+          },
+          "ask_kit": {
+            "type": "boolean",
+            "default": true
           },
           "created_by": {
             "type": "string"

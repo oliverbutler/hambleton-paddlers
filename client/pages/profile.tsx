@@ -1,28 +1,11 @@
-import React, { useEffect } from "react";
-import Router from "next/router";
-import { useSelector, useDispatch } from "react-redux";
-import _ from "lodash";
+import React from "react";
+import Profile from "components/Profile";
 
 const profile = () => {
-  const currentUser = useSelector((state) => state.currentUser);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    if (!currentUser.loggedIn) Router.push("/login");
-  }, [currentUser]);
-
-  if (!currentUser.loggedIn) return <p>Loading...</p>;
-
   return (
-    <div className="container">
+    <div className="container my-5">
       <div className="content">
-        <h1 className="title">Profile</h1>
-        <p>
-          Hello {currentUser.user.given_name}{" "}
-          <span className="tag is-primary">
-            {_.get(currentUser, "user.role.name")}
-          </span>
-        </p>
+        <Profile />
       </div>
     </div>
   );

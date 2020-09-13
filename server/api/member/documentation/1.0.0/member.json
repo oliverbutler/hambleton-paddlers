@@ -759,6 +759,12 @@
               }
             }
           },
+          "allergies": {
+            "type": "string"
+          },
+          "other_medical": {
+            "type": "string"
+          },
           "created_by": {
             "required": [
               "id",
@@ -917,6 +923,12 @@
                 "type": "string"
               }
             }
+          },
+          "allergies": {
+            "type": "string"
+          },
+          "other_medical": {
+            "type": "string"
           },
           "created_by": {
             "type": "string"

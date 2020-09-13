@@ -8,11 +8,36 @@
 const { sanitizeEntity } = require("strapi-utils");
 var _ = require("lodash");
 
-const sanitizePublic = (event) => {
-  // delete event.lead_member;
-  // event.lead_member.given_name = null;
-  // console.log(event);
-  return event;
+const sanitizeMember = (member, contact = false) => {
+  var arr = ["_id", "given_name", "family_name", "picture"];
+  if (contact) {
+    arr.push("contact");
+    member["contact"] = _.pick(member["contact"], ["mobile_phone", "email"]);
+  }
+  member = _.pick(member, arr);
+  member["picture"] = _.pick(member["picture"], "url");
+  return member;
+};
+
+const sanitize = (obj) => {
+  obj = _.omit(obj, ["created_by", "updated_by", "id"]);
+
+  obj["type"] = obj["type"].map((t) => t.name);
+
+  // Lead member
+  obj["lead_member"] = sanitizeMember(obj["lead_member"], true);
+
+  // Thumbnail
+  obj["thumbnail"] = _.pick(obj["thumbnail"], "url");
+
+  // Attendees
+  obj["attendees"] = obj["attendees"].map((a) => {
+    a.member = sanitizeMember(a.member);
+    a = _.pick(a, ["role", "member"]);
+    return a;
+  });
+
+  return obj;
 };
 
 module.exports = {
@@ -34,7 +59,7 @@ module.exports = {
     }
 
     return entities.map((entity) =>
-      sanitizePublic(sanitizeEntity(entity, { model: strapi.models.event }))
+      sanitize(sanitizeEntity(entity, { model: strapi.models.event }))
     );
   },
 
@@ -50,8 +75,6 @@ module.exports = {
       }
     }
 
-    return sanitizePublic(
-      sanitizeEntity(entity, { model: strapi.models.event })
-    );
+    return sanitize(sanitizeEntity(entity, { model: strapi.models.event }));
   },
 };

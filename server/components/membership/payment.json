@@ -8,7 +8,7 @@
   "attributes": {
     "amount_paid": {
       "type": "decimal",
-      "private": true,
+      "private": false,
       "required": true
     },
     "payment_method": {

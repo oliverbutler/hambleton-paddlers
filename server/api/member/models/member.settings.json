@@ -51,6 +51,12 @@
       "type": "component",
       "repeatable": false,
       "component": "membership.contact"
+    },
+    "allergies": {
+      "type": "text"
+    },
+    "other_medical": {
+      "type": "text"
     }
   }
 }

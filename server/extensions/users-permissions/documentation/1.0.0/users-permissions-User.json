@@ -1317,6 +1317,12 @@
                     "contact": {
                       "type": "component"
                     },
+                    "allergies": {
+                      "type": "string"
+                    },
+                    "other_medical": {
+                      "type": "string"
+                    },
                     "created_by": {
                       "type": "string"
                     },
@@ -1373,6 +1379,12 @@
                 },
                 "contact": {
                   "type": "component"
+                },
+                "allergies": {
+                  "type": "string"
+                },
+                "other_medical": {
+                  "type": "string"
                 },
                 "created_by": {
                   "type": "string"
@@ -1577,6 +1589,12 @@
                     },
                     "contact": {
                       "type": "component"
+                    },
+                    "allergies": {
+                      "type": "string"
+                    },
+                    "other_medical": {
+                      "type": "string"
                     },
                     "created_by": {
                       "type": "string"
