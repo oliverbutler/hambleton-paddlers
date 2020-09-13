@@ -38,9 +38,9 @@
       "required": false
     },
     "user": {
+      "via": "members",
       "plugin": "users-permissions",
-      "model": "user",
-      "via": "members"
+      "model": "user"
     },
     "committee": {
       "type": "component",

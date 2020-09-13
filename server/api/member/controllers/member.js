@@ -8,15 +8,8 @@ const _ = require("lodash");
  */
 
 const sanitize = (obj) => {
-  obj = _.omit(obj, ["created_by", "updated_by", "id"]);
-
-  ["bcu_awards", "bcu_coaching_awards"].map((field) => {
-    obj[field] = obj[field].map((o) => o._id);
-  });
-
   obj["picture"] = _.pick(obj.picture, ["url"]);
-
-  obj["user"] = _.pick(obj.user, ["_id"]);
+  _.unset(obj, ["contact"]);
 
   return obj;
 };
@@ -25,9 +18,9 @@ module.exports = {
   async find(ctx) {
     let entities;
     if (ctx.query._q) {
-      entities = await strapi.services.member.search(ctx.query);
+      entities = await strapi.services.member.search(ctx.query, []);
     } else {
-      entities = await strapi.services.member.find(ctx.query);
+      entities = await strapi.services.member.find(ctx.query, []);
     }
 
     return entities.map((entity) =>
@@ -36,7 +29,7 @@ module.exports = {
   },
   async findOne(ctx) {
     const { id } = ctx.params;
-    const entity = await strapi.services.member.findOne({ id });
+    let entity = await strapi.services.member.findOne({ id }, []);
 
     return sanitize(sanitizeEntity(entity, { model: strapi.models.member }));
   },

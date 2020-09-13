@@ -40,6 +40,8 @@ const sanitize = (obj) => {
   return obj;
 };
 
+let populate = ["type", "lead_member"];
+
 module.exports = {
   /**
    * Custom event find, if they're not logged in, don't show any event information
@@ -47,9 +49,9 @@ module.exports = {
   async find(ctx) {
     let entities;
     if (ctx.query._q) {
-      entities = await strapi.services.event.search(ctx.query);
+      entities = await strapi.services.event.search(ctx.query, populate);
     } else {
-      entities = await strapi.services.event.find(ctx.query);
+      entities = await strapi.services.event.find(ctx.query, populate);
     }
 
     if (ctx.state.user === undefined) {
@@ -66,7 +68,7 @@ module.exports = {
   async findOne(ctx) {
     const { id } = ctx.params;
 
-    const entity = await strapi.services.event.findOne({ id });
+    const entity = await strapi.services.event.findOne({ id }, populate);
 
     if (ctx.state.user === undefined) {
       if (new Date(entity.date_start) > new Date(new Date().toDateString())) {

@@ -59,8 +59,8 @@
       "component": "membership.payment"
     },
     "members": {
-      "via": "user",
-      "collection": "member"
+      "collection": "member",
+      "via": "user"
     },
     "member": {
       "type": "boolean",
