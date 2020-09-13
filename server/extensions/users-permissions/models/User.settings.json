@@ -58,14 +58,15 @@
       "repeatable": true,
       "component": "membership.payment"
     },
-    "members": {
-      "collection": "member",
-      "via": "user"
-    },
     "member": {
       "type": "boolean",
       "default": false,
       "required": true
+    },
+    "members": {
+      "collection": "member",
+      "via": "user",
+      "dominant": true
     }
   }
 }

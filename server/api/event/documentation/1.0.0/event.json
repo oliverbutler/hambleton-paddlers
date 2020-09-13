@@ -740,9 +740,6 @@
               "picture": {
                 "type": "string"
               },
-              "user": {
-                "type": "string"
-              },
               "committee": {
                 "type": "component"
               },
@@ -753,6 +750,9 @@
                 "type": "string"
               },
               "other_medical": {
+                "type": "string"
+              },
+              "user": {
                 "type": "string"
               },
               "created_by": {
@@ -903,9 +903,6 @@
                     "picture": {
                       "type": "string"
                     },
-                    "user": {
-                      "type": "string"
-                    },
                     "committee": {
                       "type": "component"
                     },
@@ -916,6 +913,9 @@
                       "type": "string"
                     },
                     "other_medical": {
+                      "type": "string"
+                    },
+                    "user": {
                       "type": "string"
                     },
                     "created_by": {
@@ -1131,9 +1131,6 @@
                     "picture": {
                       "type": "string"
                     },
-                    "user": {
-                      "type": "string"
-                    },
                     "committee": {
                       "type": "component"
                     },
@@ -1144,6 +1141,9 @@
                       "type": "string"
                     },
                     "other_medical": {
+                      "type": "string"
+                    },
+                    "user": {
                       "type": "string"
                     },
                     "created_by": {

@@ -31,16 +31,9 @@
     "picture": {
       "model": "file",
       "via": "related",
-      "allowedTypes": [
-        "images"
-      ],
+      "allowedTypes": ["images"],
       "plugin": "upload",
       "required": false
-    },
-    "user": {
-      "via": "members",
-      "plugin": "users-permissions",
-      "model": "user"
     },
     "committee": {
       "type": "component",
@@ -57,6 +50,11 @@
     },
     "other_medical": {
       "type": "text"
+    },
+    "user": {
+      "via": "members",
+      "plugin": "users-permissions",
+      "model": "user"
     }
   }
 }

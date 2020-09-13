@@ -562,14 +562,14 @@
                 "payments": {
                   "type": "component"
                 },
+                "member": {
+                  "type": "boolean"
+                },
                 "members": {
                   "type": "array",
                   "items": {
                     "type": "string"
                   }
-                },
-                "member": {
-                  "type": "boolean"
                 },
                 "created_by": {
                   "type": "string"

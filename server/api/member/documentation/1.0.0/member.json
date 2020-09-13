@@ -660,61 +660,6 @@
               }
             }
           },
-          "user": {
-            "required": [
-              "id",
-              "username",
-              "email",
-              "member"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "username": {
-                "type": "string"
-              },
-              "email": {
-                "type": "string"
-              },
-              "provider": {
-                "type": "string"
-              },
-              "password": {
-                "type": "string"
-              },
-              "resetPasswordToken": {
-                "type": "string"
-              },
-              "confirmed": {
-                "type": "boolean"
-              },
-              "blocked": {
-                "type": "boolean"
-              },
-              "role": {
-                "type": "string"
-              },
-              "payments": {
-                "type": "component"
-              },
-              "members": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "member": {
-                "type": "boolean"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
-          },
           "committee": {
             "type": "object",
             "required": [
@@ -764,6 +709,61 @@
           },
           "other_medical": {
             "type": "string"
+          },
+          "user": {
+            "required": [
+              "id",
+              "username",
+              "email",
+              "member"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "username": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              },
+              "provider": {
+                "type": "string"
+              },
+              "password": {
+                "type": "string"
+              },
+              "resetPasswordToken": {
+                "type": "string"
+              },
+              "confirmed": {
+                "type": "boolean"
+              },
+              "blocked": {
+                "type": "boolean"
+              },
+              "role": {
+                "type": "string"
+              },
+              "payments": {
+                "type": "component"
+              },
+              "member": {
+                "type": "boolean"
+              },
+              "members": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
           },
           "created_by": {
             "required": [
@@ -877,9 +877,6 @@
           "bcu_coaching_awards": {
             "type": "string"
           },
-          "user": {
-            "type": "string"
-          },
           "committee": {
             "type": "object",
             "required": [
@@ -928,6 +925,9 @@
             "type": "string"
           },
           "other_medical": {
+            "type": "string"
+          },
+          "user": {
             "type": "string"
           },
           "created_by": {

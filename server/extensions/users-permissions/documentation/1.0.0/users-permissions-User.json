@@ -1308,9 +1308,6 @@
                     "picture": {
                       "type": "string"
                     },
-                    "user": {
-                      "type": "string"
-                    },
                     "committee": {
                       "type": "component"
                     },
@@ -1321,6 +1318,9 @@
                       "type": "string"
                     },
                     "other_medical": {
+                      "type": "string"
+                    },
+                    "user": {
                       "type": "string"
                     },
                     "created_by": {
@@ -1339,6 +1339,10 @@
                 }
               }
             }
+          },
+          "member": {
+            "type": "boolean",
+            "default": false
           },
           "members": {
             "type": "array",
@@ -1371,9 +1375,6 @@
                 "picture": {
                   "type": "string"
                 },
-                "user": {
-                  "type": "string"
-                },
                 "committee": {
                   "type": "component"
                 },
@@ -1386,6 +1387,9 @@
                 "other_medical": {
                   "type": "string"
                 },
+                "user": {
+                  "type": "string"
+                },
                 "created_by": {
                   "type": "string"
                 },
@@ -1394,10 +1398,6 @@
                 }
               }
             }
-          },
-          "member": {
-            "type": "boolean",
-            "default": false
           },
           "created_by": {
             "required": [
@@ -1581,9 +1581,6 @@
                     "picture": {
                       "type": "string"
                     },
-                    "user": {
-                      "type": "string"
-                    },
                     "committee": {
                       "type": "component"
                     },
@@ -1594,6 +1591,9 @@
                       "type": "string"
                     },
                     "other_medical": {
+                      "type": "string"
+                    },
+                    "user": {
                       "type": "string"
                     },
                     "created_by": {
@@ -1613,15 +1613,15 @@
               }
             }
           },
+          "member": {
+            "type": "boolean",
+            "default": false
+          },
           "members": {
             "type": "array",
             "items": {
               "type": "string"
             }
-          },
-          "member": {
-            "type": "boolean",
-            "default": false
           },
           "created_by": {
             "type": "string"
