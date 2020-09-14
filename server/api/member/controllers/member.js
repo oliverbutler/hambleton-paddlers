@@ -9,7 +9,7 @@ const _ = require("lodash");
 
 const sanitize = (obj) => {
   obj["picture"] = _.pick(obj.picture, ["url"]);
-  _.unset(obj, ["contact"]);
+  obj = _.omit(obj, ["contact", "date_of_birth", "allergies", "other_medical"]);
 
   return obj;
 };

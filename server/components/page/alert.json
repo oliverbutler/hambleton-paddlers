@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_page_alerts",
+  "info": {
+    "name": "Alert",
+    "icon": "bullhorn"
+  },
+  "options": {},
+  "attributes": {
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "warning",
+        "success",
+        "danger",
+        "info"
+      ]
+    },
+    "header": {
+      "type": "text"
+    },
+    "body": {
+      "type": "richtext"
+    }
+  }
+}

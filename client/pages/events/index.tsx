@@ -1,14 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Events from "components/Events";
 import { useSelector, useDispatch } from "react-redux";
 import Link from "next/link";
-import Query from "components/query";
-import { EVENTS_QUERY } from "apollo/queries/event/event";
 import _ from "lodash";
 
 const events = () => {
-  const currentUser = useSelector((state) => state.currentUser);
-  const dispatch = useDispatch();
+  const currentUser = useSelector((s) => s.currentUser);
+  const events = useSelector((s) => s.events.events);
 
   return (
     <main className="container my-5">
@@ -28,33 +26,25 @@ const events = () => {
             </div>
           </>
         )}
-        <Query query={EVENTS_QUERY} id={null}>
-          {({ data: { events } }) => (
-            <>
-              {currentUser.loggedIn && (
-                <>
-                  <h1 className="title">Upcomming Events</h1>
-                  <Events
-                    events={_.filter(
-                      events,
-                      (e) =>
-                        new Date(e.date_start) >
-                        new Date(new Date().toDateString())
-                    )}
-                  />
-                  <h1 className="title">Past Events</h1>
-                </>
+        {currentUser.loggedIn && (
+          <>
+            <h1 className="title">Upcomming Events</h1>
+            <Events
+              events={_.filter(
+                events,
+                (e) =>
+                  new Date(e.date_start) > new Date(new Date().toDateString())
               )}
-              <Events
-                events={_.reject(
-                  events,
-                  (e) =>
-                    new Date(e.date_start) > new Date(new Date().toDateString())
-                )}
-              />
-            </>
+            />
+            <h1 className="title">Past Events</h1>
+          </>
+        )}
+        <Events
+          events={_.reject(
+            events,
+            (e) => new Date(e.date_start) > new Date(new Date().toDateString())
           )}
-        </Query>
+        />
       </div>
     </main>
   );

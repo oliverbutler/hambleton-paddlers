@@ -31,9 +31,14 @@ const EventTab = ({ event, isSingleEvent }) => {
               <span className="tag is-danger is-large">Cancelled</span>
             )}
           </h2>
-          {event.type.map((type) => (
-            <EventBadge type={type} />
-          ))}
+          <div style={{ display: "flex", flexWrap: "wrap" }}>
+            {event.type.map((type) => (
+              <div key={`type-${type.name}`}>
+                <EventBadge type={type} />
+              </div>
+            ))}
+          </div>
+
           <p>{moment(event.date_start).format("LL")}</p>
           <p>{event.summary}</p>
         </div>

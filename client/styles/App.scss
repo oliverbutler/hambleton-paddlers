@@ -9,3 +9,13 @@
   background-size: cover;
   background-position: center;
 }
+
+@media print {
+  .content {
+    display: inline;
+  }
+  .navbar,
+  .footer {
+    display: none;
+  }
+}

@@ -20,7 +20,7 @@
     "date_of_birth": {
       "type": "date",
       "required": true,
-      "private": true
+      "private": false
     },
     "bcu_awards": {
       "collection": "bcu-award"
@@ -31,7 +31,9 @@
     "picture": {
       "model": "file",
       "via": "related",
-      "allowedTypes": ["images"],
+      "allowedTypes": [
+        "images"
+      ],
       "plugin": "upload",
       "required": false
     },
@@ -51,10 +53,11 @@
     "other_medical": {
       "type": "text"
     },
-    "user": {
-      "via": "members",
+    "users": {
       "plugin": "users-permissions",
-      "model": "user"
+      "collection": "user",
+      "via": "members",
+      "dominant": true
     }
   }
 }

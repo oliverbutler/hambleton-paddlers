@@ -20,7 +20,7 @@
         "CHEQUE"
       ],
       "required": true,
-      "private": true
+      "private": false
     },
     "authorized_by": {
       "model": "member"

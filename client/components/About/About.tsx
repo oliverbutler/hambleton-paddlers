@@ -8,17 +8,16 @@ const About = ({ content }) => {
 
       <br />
 
-      <article className="message is-warning">
-        <div className="message-header">
-          <p>COVID-19</p>
-        </div>
-        <div className="message-body">
-          We’ve had a very challenging year due to the pandemic, but have kept
-          in touch regularly with British Canoeing to ensure we were following
-          their guidance and we are now pleased to announce that we are now back
-          up and running.
-        </div>
-      </article>
+      {content.alerts.map((alert, alertIndex) => (
+        <article className={`message is-${alert.type}`}>
+          <div className="message-header">
+            <p>{alert.header}</p>
+          </div>
+          <div className="message-body">
+            <ReactMarkdown source={alert.body} />
+          </div>
+        </article>
+      ))}
     </div>
   );
 };

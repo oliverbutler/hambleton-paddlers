@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "09/13/2020 2:35:19 PM"
+    "x-generation-date": "09/13/2020 11:33:34 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -5959,8 +5959,11 @@
               "other_medical": {
                 "type": "string"
               },
-              "user": {
-                "type": "string"
+              "users": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               },
               "created_by": {
                 "type": "string"
@@ -6122,8 +6125,11 @@
                     "other_medical": {
                       "type": "string"
                     },
-                    "user": {
-                      "type": "string"
+                    "users": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
                     },
                     "created_by": {
                       "type": "string"
@@ -6350,8 +6356,11 @@
                     "other_medical": {
                       "type": "string"
                     },
-                    "user": {
-                      "type": "string"
+                    "users": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
                     },
                     "created_by": {
                       "type": "string"
@@ -6397,6 +6406,35 @@
           },
           "header": {
             "type": "string"
+          },
+          "alerts": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "warning",
+                    "success",
+                    "danger",
+                    "info"
+                  ]
+                },
+                "header": {
+                  "type": "string"
+                },
+                "body": {
+                  "type": "string"
+                }
+              }
+            }
           },
           "created_by": {
             "required": [
@@ -6496,6 +6534,35 @@
           "header": {
             "type": "string"
           },
+          "alerts": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "warning",
+                    "success",
+                    "danger",
+                    "info"
+                  ]
+                },
+                "header": {
+                  "type": "string"
+                },
+                "body": {
+                  "type": "string"
+                }
+              }
+            }
+          },
           "created_by": {
             "type": "string"
           },
@@ -6519,6 +6586,9 @@
             "type": "string"
           },
           "family_name": {
+            "type": "string"
+          },
+          "date_of_birth": {
             "type": "string"
           },
           "bcu_awards": {
@@ -6700,58 +6770,61 @@
           "other_medical": {
             "type": "string"
           },
-          "user": {
-            "required": [
-              "id",
-              "username",
-              "email",
-              "member"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "username": {
-                "type": "string"
-              },
-              "email": {
-                "type": "string"
-              },
-              "provider": {
-                "type": "string"
-              },
-              "password": {
-                "type": "string"
-              },
-              "resetPasswordToken": {
-                "type": "string"
-              },
-              "confirmed": {
-                "type": "boolean"
-              },
-              "blocked": {
-                "type": "boolean"
-              },
-              "role": {
-                "type": "string"
-              },
-              "payments": {
-                "type": "component"
-              },
-              "member": {
-                "type": "boolean"
-              },
-              "members": {
-                "type": "array",
-                "items": {
+          "users": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "username",
+                "email",
+                "member"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "username": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string"
+                },
+                "provider": {
+                  "type": "string"
+                },
+                "password": {
+                  "type": "string"
+                },
+                "resetPasswordToken": {
+                  "type": "string"
+                },
+                "confirmed": {
+                  "type": "boolean"
+                },
+                "blocked": {
+                  "type": "boolean"
+                },
+                "role": {
+                  "type": "string"
+                },
+                "payments": {
+                  "type": "component"
+                },
+                "member": {
+                  "type": "boolean"
+                },
+                "members": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
                   "type": "string"
                 }
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
               }
             }
           },
@@ -6917,8 +6990,11 @@
           "other_medical": {
             "type": "string"
           },
-          "user": {
-            "type": "string"
+          "users": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "created_by": {
             "type": "string"
@@ -7307,8 +7383,11 @@
                     "other_medical": {
                       "type": "string"
                     },
-                    "user": {
-                      "type": "string"
+                    "users": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
                     },
                     "created_by": {
                       "type": "string"
@@ -7374,8 +7453,11 @@
                 "other_medical": {
                   "type": "string"
                 },
-                "user": {
-                  "type": "string"
+                "users": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
                 },
                 "created_by": {
                   "type": "string"
@@ -7580,8 +7662,11 @@
                     "other_medical": {
                       "type": "string"
                     },
-                    "user": {
-                      "type": "string"
+                    "users": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
                     },
                     "created_by": {
                       "type": "string"

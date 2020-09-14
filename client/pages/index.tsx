@@ -24,7 +24,7 @@ export default function Home({ content }) {
   );
 }
 
-export async function getStaticProps() {
+export const getStaticProps = async () => {
   const res = await fetch("http://localhost:1337/home-page");
   const content = await res.json();
 
@@ -32,5 +32,6 @@ export async function getStaticProps() {
     props: {
       content,
     },
+    revalidate: 1,
   };
-}
+};

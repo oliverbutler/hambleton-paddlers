@@ -8,9 +8,16 @@
 const { sanitizeEntity } = require("strapi-utils");
 var _ = require("lodash");
 
-const sanitizeMember = (member, contact = false) => {
+const sanitizeMember = (role, member, contact = false) => {
   var arr = ["_id", "given_name", "family_name", "picture"];
-  if (contact) {
+  if (role === "Committee") {
+    arr.push("allergies");
+    arr.push("other_medical");
+    arr.push("date_of_birth");
+    arr.push("bcu_awards");
+    arr.push("bcu_coaching_awards");
+  }
+  if (contact && role) {
     arr.push("contact");
     member["contact"] = _.pick(member["contact"], ["mobile_phone", "email"]);
   }
@@ -19,23 +26,41 @@ const sanitizeMember = (member, contact = false) => {
   return member;
 };
 
-const sanitize = (obj) => {
+const sanitize = (role, uid, obj) => {
+  if (String(uid) == String(obj.lead_member.user)) role = "Committee";
+
   obj = _.omit(obj, ["created_by", "updated_by", "id"]);
 
-  obj["type"] = obj["type"].map((t) => t.name);
+  // Types
+  obj["type"] = obj["type"].map((t) => _.pick(t, ["name", "colour"]));
+
+  // Files & Forms
+  if (!role) {
+    _.unset(obj, "forms");
+    _.unset(obj, "files");
+  }
 
   // Lead member
-  obj["lead_member"] = sanitizeMember(obj["lead_member"], true);
-
+  if (role) {
+    obj["lead_member"] = sanitizeMember(role, obj["lead_member"], true);
+  } else {
+    _.unset(obj, "lead_member");
+  }
   // Thumbnail
   obj["thumbnail"] = _.pick(obj["thumbnail"], "url");
 
   // Attendees
-  obj["attendees"] = obj["attendees"].map((a) => {
-    a.member = sanitizeMember(a.member);
-    a = _.pick(a, ["role", "member"]);
-    return a;
-  });
+  if (role) {
+    obj["attendees"] = obj["attendees"].map((a) => {
+      a.member = sanitizeMember(role, a.member);
+      a = _.pick(a, ["role", "member"]);
+      return a;
+    });
+  } else {
+    _.unset(obj, "attendees");
+  }
+
+  if (role === "Committee") obj["userPrivileged"] = true;
 
   return obj;
 };
@@ -47,6 +72,9 @@ module.exports = {
    * Custom event find, if they're not logged in, don't show any event information
    */
   async find(ctx) {
+    const role = _.get(ctx.state.user, "role.name", false);
+    const uid = _.get(ctx.state.user, "_id", false);
+
     let entities;
     if (ctx.query._q) {
       entities = await strapi.services.event.search(ctx.query, populate);
@@ -61,7 +89,11 @@ module.exports = {
     }
 
     return entities.map((entity) =>
-      sanitize(sanitizeEntity(entity, { model: strapi.models.event }))
+      sanitize(
+        role,
+        uid,
+        sanitizeEntity(entity, { model: strapi.models.event })
+      )
     );
   },
 
@@ -70,6 +102,9 @@ module.exports = {
 
     const entity = await strapi.services.event.findOne({ id }, populate);
 
+    const role = _.get(ctx.state.user, "role.name", false);
+    const uid = _.get(ctx.state.user, "_id", null);
+
     if (ctx.state.user === undefined) {
       if (new Date(entity.date_start) > new Date(new Date().toDateString())) {
         ctx.response.status = 403;
@@ -77,6 +112,10 @@ module.exports = {
       }
     }
 
-    return sanitize(sanitizeEntity(entity, { model: strapi.models.event }));
+    return sanitize(
+      role,
+      uid,
+      sanitizeEntity(entity, { model: strapi.models.event })
+    );
   },
 };

@@ -329,6 +329,35 @@
           "header": {
             "type": "string"
           },
+          "alerts": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "warning",
+                    "success",
+                    "danger",
+                    "info"
+                  ]
+                },
+                "header": {
+                  "type": "string"
+                },
+                "body": {
+                  "type": "string"
+                }
+              }
+            }
+          },
           "created_by": {
             "required": [
               "id",
@@ -426,6 +455,35 @@
           },
           "header": {
             "type": "string"
+          },
+          "alerts": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "warning",
+                    "success",
+                    "danger",
+                    "info"
+                  ]
+                },
+                "header": {
+                  "type": "string"
+                },
+                "body": {
+                  "type": "string"
+                }
+              }
+            }
           },
           "created_by": {
             "type": "string"

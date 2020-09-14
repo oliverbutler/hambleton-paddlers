@@ -64,9 +64,8 @@
       "required": true
     },
     "members": {
-      "collection": "member",
-      "via": "user",
-      "dominant": true
+      "via": "users",
+      "collection": "member"
     }
   }
 }

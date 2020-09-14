@@ -12,19 +12,22 @@ const sanitize = (obj) => {
 
   // obj = _.omit(obj, [""]);
 
-  return obj;
+  obj["payments"] = obj["payments"].map((p) => {
+    p["authorized_by"] = p["authorized_by"]["_id"];
+    return p;
+  });
+
+  return sanitizeEntity(obj, {
+    model: strapi.query("user", "users-permissions").model,
+  });
 };
 
 module.exports = {
   async me(ctx) {
     var user = await strapi
       .query("user", "users-permissions")
-      .findOne({ id: ctx.state.user.id }, []);
+      .findOne({ id: ctx.state.user.id }, ["members"]);
 
-    return user;
-
-    // return sanitize(
-    //   sanitizeEntity(strapi.query("user", "users-permissions").model, user)
-    // );
+    return sanitize(user);
   },
 };

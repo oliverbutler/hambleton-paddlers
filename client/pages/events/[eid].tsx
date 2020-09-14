@@ -1,20 +1,24 @@
 import React from "react";
 import { useRouter } from "next/router";
+import { useSelector } from "react-redux";
 import Event from "components/Events/Event";
-import Query from "components/query";
-import { EVENTS_FIND_ONE } from "apollo/queries/event/event";
+import PrintableEvent from "components/Events/PrintableEvent";
 
 const event = () => {
   const router = useRouter();
-  const { eid } = router.query;
+  const { eid, print } = router.query;
+
+  const events = useSelector((s) => s.events.events);
+
+  const event = events.find((e) => e._id === eid);
+
+  if (print) {
+    return <div>{event && <PrintableEvent event={event} />}</div>;
+  }
 
   return (
     <div className="container my-5">
-      <div className="content">
-        <Query query={EVENTS_FIND_ONE} id={eid}>
-          {({ data: { event } }) => <Event event={event} />}
-        </Query>
-      </div>
+      <div className="content">{event && <Event event={event} />}</div>
     </div>
   );
 };

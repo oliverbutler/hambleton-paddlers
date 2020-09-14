@@ -1,11 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useRef, useState } from "react";
 import ReactMarkdown from "react-markdown";
-import EventBadge from "components/EventBadge";
-import moment from "moment";
 import Link from "next/link";
 import _ from "lodash";
 import { useSelector, useDispatch } from "react-redux";
-import { colour } from "utils/functions";
 import EventTab from "../EventTab";
 
 const Event = ({ event }) => {
@@ -91,30 +88,38 @@ const Event = ({ event }) => {
       </div>
       {currentUser.loggedIn && (
         <>
+          {event.userPrivileged && (
+            <Link href={`/events/${event._id}?print=1`}>
+              <button className="button is-primary">View CTP1</button>
+            </Link>
+          )}
+
           <ReactMarkdown source={event.description} />
-          {Object.keys(attendees).map((role, roleIndex) => (
-            <div key={`role-${roleIndex}`}>
-              <h1 className="title is-4">{roleName(role)}</h1>
-              <div className="attendees" style={{ display: "flex" }}>
-                {attendees[role].map((member, index) => (
-                  <figure
-                    class="image is-64x64 mx-2 my-2 mb-6"
-                    key={`attendee-${index}`}
-                  >
-                    <img
-                      className="is-rounded"
-                      src={`http://localhost:1337${_.get(
-                        member.member,
-                        "picture.url",
-                        ""
-                      )}`}
-                    />
-                    <p>{member.member.given_name}</p>
-                  </figure>
-                ))}
+          <div>
+            {Object.keys(attendees).map((role, roleIndex) => (
+              <div key={`role-${roleIndex}`}>
+                <h1 className="title is-4">{roleName(role)}</h1>
+                <div className="attendees" style={{ display: "flex" }}>
+                  {attendees[role].map((member, index) => (
+                    <figure
+                      class="image is-64x64 mx-2 my-2 mb-6"
+                      key={`attendee-${index}`}
+                    >
+                      <img
+                        className="is-rounded"
+                        src={`http://localhost:1337${_.get(
+                          member.member,
+                          "picture.url",
+                          ""
+                        )}`}
+                      />
+                      <p>{member.member.given_name}</p>
+                    </figure>
+                  ))}
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
 
           {event.files.length > 0 && <h1 className="title is-4">Files</h1>}
           {event.files.map((file, index) => (

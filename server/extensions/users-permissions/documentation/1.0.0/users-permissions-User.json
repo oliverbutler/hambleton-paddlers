@@ -1320,8 +1320,11 @@
                     "other_medical": {
                       "type": "string"
                     },
-                    "user": {
-                      "type": "string"
+                    "users": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
                     },
                     "created_by": {
                       "type": "string"
@@ -1387,8 +1390,11 @@
                 "other_medical": {
                   "type": "string"
                 },
-                "user": {
-                  "type": "string"
+                "users": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
                 },
                 "created_by": {
                   "type": "string"
@@ -1593,8 +1599,11 @@
                     "other_medical": {
                       "type": "string"
                     },
-                    "user": {
-                      "type": "string"
+                    "users": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
                     },
                     "created_by": {
                       "type": "string"
