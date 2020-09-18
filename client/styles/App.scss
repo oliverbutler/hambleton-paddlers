@@ -3,12 +3,10 @@
   object-fit: cover;
 }
 
-#header {
-  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)),
-    url("/header.jpg");
-  background-size: cover;
-  background-position: center;
-}
+// #header {
+//   background-size: cover;
+//   background-position: center;
+// }
 
 @media print {
   .content {

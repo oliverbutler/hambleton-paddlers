@@ -7,7 +7,15 @@ export default function Home({ content }) {
     <main>
       <div>
         <section className="hero is-medium is-primary">
-          <div className="hero-body" id="header">
+          <div
+            className="hero-body"
+            id="header"
+            style={{
+              background: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url("${content.header_photo.url}")`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          >
             <div className="container">
               <h1 className="title is-1">Hambleton Paddlers</h1>
               <h2 className="subtitle"> {content.header}</h2>
