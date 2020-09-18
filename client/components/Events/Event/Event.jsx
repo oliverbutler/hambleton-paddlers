@@ -48,7 +48,7 @@ const Event = ({ event }) => {
                   <figure class="image is-64x64 mx-2 my-2">
                     <img
                       className="is-rounded"
-                      src={`http://localhost:1337${event.lead_member.picture.url}`}
+                      src={event.lead_member.picture.url}
                     />
                   </figure>
                 </div>
@@ -110,11 +110,7 @@ const Event = ({ event }) => {
                     >
                       <img
                         className="is-rounded"
-                        src={`http://localhost:1337${_.get(
-                          member.member,
-                          "picture.url",
-                          ""
-                        )}`}
+                        src={_.get(member.member, "picture.url", "")}
                       />
                       <p>{member.member.given_name}</p>
                     </figure>
@@ -127,7 +123,7 @@ const Event = ({ event }) => {
           {event.files.length > 0 && <h1 className="title is-4">Files</h1>}
           {event.files.map((file, index) => (
             <div key={`file-${index}`}>
-              <a href={`http://localhost:1337${file.url}`}>{file.name}</a>
+              <a href={file.url}>{file.name}</a>
             </div>
           ))}
         </>

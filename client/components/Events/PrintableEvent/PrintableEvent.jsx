@@ -172,11 +172,7 @@ const PrintableEvent = ({ event }) => {
                     <figure className="image is-64x64">
                       <img
                         className="is-rounded"
-                        src={`http://localhost:1337${_.get(
-                          a.member,
-                          "picture.url",
-                          ""
-                        )}`}
+                        src={_.get(a.member, "picture.url", "")}
                       />
                     </figure>
                   </td>

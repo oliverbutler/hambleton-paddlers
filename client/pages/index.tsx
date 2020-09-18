@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Events from "components/Events";
 import About from "components/About/About";
+import { getInstance } from "utils/axios";
 
 export default function Home({ content }) {
   return (
@@ -33,8 +34,14 @@ export default function Home({ content }) {
 }
 
 export const getStaticProps = async () => {
-  const res = await fetch("http://localhost:1337/home-page");
-  const content = await res.json();
+  const res = await fetch(process.env.NEXT_PUBLIC_HOST + "/home-page");
+
+  var content = [];
+  try {
+    content = await res.json();
+  } catch (err) {
+    console.log("Server error");
+  }
 
   return {
     props: {

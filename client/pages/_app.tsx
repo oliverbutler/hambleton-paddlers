@@ -40,7 +40,8 @@ const Wrapper = (props) => {
     if (accessToken)
       getInstance()
         .get("users/me")
-        .then((res) => dispatch(actions.user.setUser(res.data)));
+        .then((res) => dispatch(actions.user.setUser(res.data)))
+        .catch((e) => localStorage.removeItem("accessToken"));
   }, []);
 
   // Load Events

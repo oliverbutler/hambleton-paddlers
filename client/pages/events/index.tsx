@@ -54,8 +54,14 @@ const events = ({ pastEvents }) => {
 export default events;
 
 export const getStaticProps = async () => {
-  const res = await fetch("http://localhost:1337/events/past");
-  const pastEvents = await res.json();
+  const res = await fetch(process.env.NEXT_PUBLIC_HOST + "/events/past");
+
+  var pastEvents = [];
+  try {
+    pastEvents = await res.json();
+  } catch (err) {
+    console.log("Server error");
+  }
 
   return {
     props: {
