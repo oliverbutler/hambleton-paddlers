@@ -6,8 +6,6 @@ export const getInstance = (): AxiosInstance => {
   var headers = {};
   if (accessToken) headers["Authorization"] = `Bearer ${accessToken}`;
 
-  console.log(process.env.NEXT_PUBLIC_HOST);
-
   return axios.create({
     baseURL: process.env.NEXT_PUBLIC_HOST,
     timeout: 1000,

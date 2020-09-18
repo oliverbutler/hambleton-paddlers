@@ -13,7 +13,7 @@ const commitee_members = ({ content }) => {
 export default commitee_members;
 
 export const getStaticProps = async () => {
-  const res = await fetch("http://localhost:1337/committee");
+  const res = await fetch(process.env.NEXT_PUBLIC_HOST + "/committee");
   const content = await res.json();
 
   return {

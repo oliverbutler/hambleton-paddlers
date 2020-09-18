@@ -4,10 +4,16 @@ module.exports = ({ env }) => ({
     default: {
       connector: "mongoose",
       settings: {
-        uri: env("DATABASE_URI"),
+        host: "127.0.0.1",
+        srv: false,
+        port: 27017,
+        database: "server",
+        username: "",
+        password: "",
       },
       options: {
-        ssl: true,
+        authenticationDatabase: env("AUTHENTICATION_DATABASE", null),
+        ssl: env.bool("DATABASE_SSL", false),
       },
     },
   },
