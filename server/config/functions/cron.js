@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 /**
  * Cron config that gives you an opportunity
@@ -12,10 +12,25 @@
 
 module.exports = {
   /**
-   * Simple example.
-   * Every monday at 1am.
+   * Every day at 00:01 check if every user is a member, and edit them accordingly
    */
-  // '0 1 * * 1': () => {
-  //
-  // }
+  "1 0 * * *": async () => {
+    const members = await strapi
+      .query("user", "users-permissions")
+      .model.find({ member: true });
+
+    var today = new Date();
+
+    members.forEach((member) => {
+      var member = false;
+      member.payments.forEach((payment) => {
+        if (new Date(payment.ref.date_end) > today) {
+          member = true;
+        }
+      });
+      strapi
+        .query("user", "users-permissions")
+        .update({ id: member.id }, { member: member });
+    });
+  },
 };

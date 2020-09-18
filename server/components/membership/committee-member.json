@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_membership_committee_members",
+  "info": {
+    "name": "CommitteeMember",
+    "icon": "address-book"
+  },
+  "options": {},
+  "attributes": {
+    "role": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "richtext",
+      "required": true
+    },
+    "summary": {
+      "type": "text",
+      "required": true
+    },
+    "order": {
+      "type": "integer",
+      "unique": true,
+      "required": true
+    }
+  }
+}

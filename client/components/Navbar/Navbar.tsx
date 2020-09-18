@@ -1,7 +1,16 @@
 import React from "react";
 import Link from "next/link";
+import { useSelector, useDispatch } from "react-redux";
+import { useRouter } from "next/router";
+import actions from "redux/actions";
+import { getToast } from "utils/functions";
 
 const Navbar = () => {
+  const currentUser = useSelector((state) => state.currentUser);
+  const dispatch = useDispatch();
+
+  const router = useRouter();
+
   return (
     <nav className="navbar" role="navigation" aria-label="main navigation">
       <div className="navbar-brand">
@@ -34,18 +43,47 @@ const Navbar = () => {
           <Link href="/committee-members">
             <a className="navbar-item">Committee</a>
           </Link>
-          <Link href="/contact">
-            <a className="navbar-item">Contact</a>
-          </Link>
         </div>
 
         <div className="navbar-end">
           <div className="navbar-item">
             <div className="buttons">
-              <a className="button is-primary">
-                <strong>Sign up</strong>
-              </a>
-              <a className="button is-light">Log in</a>
+              {currentUser.loggedIn ? (
+                router.pathname == "/profile" ? (
+                  <Link href="/">
+                    <a
+                      className="button is-primary is-outlined"
+                      onClick={() => {
+                        dispatch(actions.user.logOut());
+                        localStorage.removeItem("accessToken");
+                        getToast().fire({
+                          icon: "success",
+                          title: "Successfully Logged Out",
+                        });
+                      }}
+                    >
+                      <b>Logout</b>
+                    </a>
+                  </Link>
+                ) : (
+                  <Link href="/profile">
+                    <a className="button is-primary">
+                      <b>Hello {currentUser.user.username}!</b>
+                    </a>
+                  </Link>
+                )
+              ) : (
+                <>
+                  <Link href="/join">
+                    <a className="button is-primary">
+                      <strong>Join</strong>
+                    </a>
+                  </Link>
+                  <Link href="/login">
+                    <a className="button is-light">Log in</a>
+                  </Link>
+                </>
+              )}
             </div>
           </div>
         </div>

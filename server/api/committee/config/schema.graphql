@@ -1,0 +1,38 @@
+module.exports = {
+ definition: `
+    type CommitteeInfo {
+      role: String
+      summary: String
+      description: String
+      order: Int
+    }
+    type Picture {
+      url: String
+    }
+    type Committee {
+      given_name: String!
+      family_name: String!
+      picture: Picture
+      committee: CommitteeInfo
+    }
+    type Committees {
+      committees: [Committee!]! 
+    }
+  `,
+  query: `
+    committee: [Committee!]! 
+  `,
+  type: {
+    Committee: {
+      commiteee: 'The firstname of the person',
+    }
+  },
+  resolver: {
+    Query: {
+      committee: {
+        description: 'Return all the committee members',
+        resolver: 'application::committee.committee.find' 
+      }
+    },
+  },
+};

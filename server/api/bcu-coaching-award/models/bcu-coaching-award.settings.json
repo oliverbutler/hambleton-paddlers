@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "bcu_coaching_awards",
+  "info": {
+    "name": "BCU Coaching Award"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "summary": {
+      "type": "text",
+      "required": true
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "order": {
+      "type": "integer",
+      "unique": true
+    }
+  }
+}

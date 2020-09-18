@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/bcu-awards",
+      "handler": "bcu-award.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/bcu-awards/count",
+      "handler": "bcu-award.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/bcu-awards/:id",
+      "handler": "bcu-award.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/bcu-awards",
+      "handler": "bcu-award.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/bcu-awards/:id",
+      "handler": "bcu-award.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/bcu-awards/:id",
+      "handler": "bcu-award.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

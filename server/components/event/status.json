@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_event_statuses",
+  "info": {
+    "name": "Status",
+    "icon": "calendar"
+  },
+  "options": {},
+  "attributes": {
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "NOT_ENOUGH_COACH",
+        "NOT_ENOUGH_DEMAND",
+        "PLANNED",
+        "CANCELLED"
+      ]
+    },
+    "message": {
+      "type": "richtext"
+    }
+  }
+}

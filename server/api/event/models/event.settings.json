@@ -16,44 +16,68 @@
       "type": "richtext"
     },
     "date_start": {
-      "type": "datetime"
+      "type": "datetime",
+      "required": true
     },
     "date_end": {
-      "type": "datetime"
+      "type": "datetime",
+      "required": true
     },
     "files": {
       "collection": "file",
       "via": "related",
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos"
-      ],
+      "allowedTypes": ["images", "files", "videos"],
       "plugin": "upload",
       "required": false
     },
     "thumbnail": {
       "model": "file",
       "via": "related",
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos"
-      ],
+      "allowedTypes": ["images"],
+      "plugin": "upload",
+      "required": true
+    },
+    "summary": {
+      "type": "text",
+      "required": true
+    },
+    "type": {
+      "collection": "event-type"
+    },
+    "lead_member": {
+      "model": "member"
+    },
+    "forms": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": ["files", "images", "videos"],
       "plugin": "upload",
       "required": false
     },
     "location": {
+      "type": "text",
+      "required": true,
+      "default": "Carlton Lodge, Thirsk"
+    },
+    "difficulty": {
+      "type": "decimal",
+      "max": 3,
+      "min": 0,
+      "required": true
+    },
+    "status": {
       "type": "component",
       "repeatable": false,
-      "component": "types.location"
+      "component": "event.status"
     },
-    "members_going": {
-      "plugin": "users-permissions",
-      "collection": "user"
+    "attendees": {
+      "type": "component",
+      "repeatable": true,
+      "component": "event.members"
     },
-    "summary": {
-      "type": "text"
+    "ask_kit": {
+      "type": "boolean",
+      "default": true
     }
   }
 }

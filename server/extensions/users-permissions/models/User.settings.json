@@ -53,11 +53,19 @@
       "plugin": "users-permissions",
       "configurable": false
     },
-    "given_name": {
-      "type": "string"
+    "payments": {
+      "type": "component",
+      "repeatable": true,
+      "component": "membership.payment"
     },
-    "family_name": {
-      "type": "string"
+    "member": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "members": {
+      "via": "users",
+      "collection": "member"
     }
   }
 }

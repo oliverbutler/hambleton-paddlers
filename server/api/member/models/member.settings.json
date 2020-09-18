@@ -1,0 +1,63 @@
+{
+  "kind": "collectionType",
+  "collectionName": "members",
+  "info": {
+    "name": "Member"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "given_name": {
+      "type": "string",
+      "required": true
+    },
+    "family_name": {
+      "type": "string",
+      "required": true
+    },
+    "date_of_birth": {
+      "type": "date",
+      "required": true,
+      "private": false
+    },
+    "bcu_awards": {
+      "collection": "bcu-award"
+    },
+    "bcu_coaching_awards": {
+      "collection": "bcu-coaching-award"
+    },
+    "picture": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "committee": {
+      "type": "component",
+      "repeatable": false,
+      "component": "membership.committee-member"
+    },
+    "contact": {
+      "type": "component",
+      "repeatable": false,
+      "component": "membership.contact"
+    },
+    "allergies": {
+      "type": "text"
+    },
+    "other_medical": {
+      "type": "text"
+    },
+    "users": {
+      "plugin": "users-permissions",
+      "collection": "user",
+      "via": "members",
+      "dominant": true
+    }
+  }
+}
