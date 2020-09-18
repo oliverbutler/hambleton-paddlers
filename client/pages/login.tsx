@@ -14,7 +14,7 @@ const login = () => {
 
   const onSubmit = (data) => {
     axios
-      .post("http://localhost:1337/auth/local", data)
+      .post(process.env.NEXT_PUBLIC_HOST + "/auth/local", data)
       .then((res) => {
         dispatch(actions.user.setUser(res.data.user));
         getToast().fire({ icon: "success", title: "Successfully Logged In" });
