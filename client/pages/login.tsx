@@ -42,6 +42,11 @@ const login = () => {
       }}
     >
       <div className="content">
+        <p className="title">Login to your account</p>
+        <p>
+          This section is currently still a work in progress, <br />
+          if you don't have an account just yet please hold on
+        </p>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="field">
             <label className="label">Email</label>

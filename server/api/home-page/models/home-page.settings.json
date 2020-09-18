@@ -19,6 +19,17 @@
       "type": "component",
       "repeatable": true,
       "component": "page.alert"
+    },
+    "header_photo": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
     }
   }
 }

@@ -24,14 +24,16 @@ const join = () => {
           </div>
           <div className="column is-half">
             <p className="title">
-              Join Online <span className="tag is-success">NEW</span>
+              Join Online <span className="tag is-success">COMING SOON</span>
             </p>
             <p>
               Please just fill out the form below to join us online! <br /> Once
               we have your application we will process it as quickly as we can!
             </p>
             <Link href="/register">
-              <a className="button is-primary my-4">Join Us Online</a>
+              <button className="button is-primary my-4" disabled>
+                Join Us Online
+              </button>
             </Link>
           </div>
         </div>
