@@ -20,13 +20,7 @@ const CommitteeMember = ({ index, member, openIndex, setOpenIndex }) => {
       <article className="media mx-3 my-3">
         <figure className="media-left">
           <p className="image is-128x128">
-            <img
-              src={
-                member.picture
-                  ? "http://localhost:1337" + member.picture.url
-                  : "https://t3.ftcdn.net/jpg/00/64/67/80/240_F_64678017_zUpiZFjj04cnLri7oADnyMH0XBYyQghG.jpg"
-              }
-            />
+            <img src={member.picture.url} />
           </p>
         </figure>
         <div className="media-content">
