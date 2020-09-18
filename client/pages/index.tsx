@@ -27,7 +27,13 @@ export default function Home({ content }) {
 
 export const getStaticProps = async () => {
   const res = await fetch(process.env.NEXT_PUBLIC_HOST + "/home-page");
-  const content = await res.json();
+
+  var content = [];
+  try {
+    content = await res.json();
+  } catch (err) {
+    console.log("Server error");
+  }
 
   return {
     props: {

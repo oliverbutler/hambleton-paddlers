@@ -55,7 +55,13 @@ export default events;
 
 export const getStaticProps = async () => {
   const res = await fetch(process.env.NEXT_PUBLIC_HOST + "/events/past");
-  const pastEvents = await res.json();
+
+  var pastEvents = [];
+  try {
+    pastEvents = await res.json();
+  } catch (err) {
+    console.log("Server error");
+  }
 
   return {
     props: {
