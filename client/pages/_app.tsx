@@ -47,7 +47,7 @@ const Wrapper = (props) => {
   useEffect(() => {
     getInstance()
       .get("events")
-      .then((res) => dispatch(actions.events.getEvents(res.data)));
+      .then((res) => dispatch(actions.events.setEvents(res.data)));
   }, []);
 
   // Get Committee Members

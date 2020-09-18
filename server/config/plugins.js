@@ -1,5 +1,4 @@
-module.exports = {
-  //
+module.exports = ({ env }) => ({
   graphql: {
     endpoint: "/graphql",
     tracing: true,
@@ -8,4 +7,14 @@ module.exports = {
     depthLimit: 7,
     amountLimit: 100,
   },
-};
+  email: {
+    provider: "sendgrid",
+    providerOptions: {
+      apiKey: env("SENDGRID_KEY"),
+    },
+    settings: {
+      defaultFrom: "oliver@oliverbutler.uk",
+      defaultReplyTo: "oliver@oliverbutler.uk",
+    },
+  },
+});

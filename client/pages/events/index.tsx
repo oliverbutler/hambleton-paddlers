@@ -4,8 +4,9 @@ import { useSelector, useDispatch } from "react-redux";
 import Link from "next/link";
 import _ from "lodash";
 
-const events = () => {
+const events = ({ pastEvents }) => {
   const currentUser = useSelector((s) => s.currentUser);
+
   const events = useSelector((s) => s.events.events);
 
   return (
@@ -41,7 +42,7 @@ const events = () => {
         )}
         <Events
           events={_.reject(
-            events,
+            pastEvents,
             (e) => new Date(e.date_start) > new Date(new Date().toDateString())
           )}
         />
@@ -51,3 +52,15 @@ const events = () => {
 };
 
 export default events;
+
+export const getStaticProps = async () => {
+  const res = await fetch("http://localhost:1337/events/past");
+  const pastEvents = await res.json();
+
+  return {
+    props: {
+      pastEvents,
+    },
+    revalidate: 1,
+  };
+};

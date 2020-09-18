@@ -1,6 +1,6 @@
 import { getInstance } from "utils/axios";
 
-const getEvents = (events) => {
+const setEvents = (events) => {
   return {
     type: "SET_EVENTS",
     payload: events,
@@ -8,5 +8,5 @@ const getEvents = (events) => {
 };
 
 export default {
-  getEvents,
+  setEvents,
 };

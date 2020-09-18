@@ -89,9 +89,12 @@ const Event = ({ event }) => {
       {currentUser.loggedIn && (
         <>
           {event.userPrivileged && (
-            <Link href={`/events/${event._id}?print=1`}>
-              <button className="button is-primary">View CTP1</button>
-            </Link>
+            <div>
+              <Link href={`/events/${event._id}?print=1`}>
+                <button className="button is-primary mr-2">View CTP1</button>
+              </Link>
+              <button className="button is-light">View Attendence Form</button>
+            </div>
           )}
 
           <ReactMarkdown source={event.description} />

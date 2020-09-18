@@ -49,6 +49,10 @@ const sanitize = (role, uid, obj) => {
   // Thumbnail
   obj["thumbnail"] = _.pick(obj["thumbnail"], "url");
 
+  if (!role) {
+    _.unset(obj, "description");
+  }
+
   // Attendees
   if (role) {
     obj["attendees"] = obj["attendees"].map((a) => {
@@ -93,6 +97,21 @@ module.exports = {
         role,
         uid,
         sanitizeEntity(entity, { model: strapi.models.event })
+      )
+    );
+  },
+
+  async findPast() {
+    var entities = await strapi.services.event.find({}, populate);
+    entities = _.filter(entities, function (ent) {
+      return new Date(ent.date_start) < new Date(new Date().toDateString());
+    });
+
+    return entities.map((e) =>
+      sanitize(
+        undefined,
+        false,
+        sanitizeEntity(e, { model: strapi.models.event })
       )
     );
   },
