@@ -14,7 +14,7 @@ const EventTab = ({ event, isSingleEvent }) => {
         style={{ alignSelf: "center", alignContent: "center" }}
       >
         <p className="image is-128x128">
-          <img src={"http://localhost:1337" + event.thumbnail.url} />
+          <img src={process.env.NEXT_PUBLIC_HOST + event.thumbnail.url} />
         </p>
       </figure>
       <div className="media-content">
