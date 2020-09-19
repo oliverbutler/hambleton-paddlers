@@ -26,7 +26,7 @@ const CommitteeMember = ({ index, member, openIndex, setOpenIndex }) => {
                   src={
                     member.picture
                       ? member.picture.url
-                      : "https://t3.ftcdn.net/jpg/00/64/67/80/240_F_64678017_zUpiZFjj04cnLri7oADnyMH0XBYyQghG.jpgs"
+                      : "https://hambleton-paddlers.s3.eu-west-2.amazonaws.com/default_user_4f14e60794.png"
                   }
                 />
               </p>
