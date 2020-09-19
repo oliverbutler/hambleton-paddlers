@@ -22,7 +22,7 @@ const sanitizeMember = (role, member, contact = false) => {
     member["contact"] = _.pick(member["contact"], ["mobile_phone", "email"]);
   }
   member = _.pick(member, arr);
-  member["picture"] = _.pick(member["picture"], "url");
+  member["picture"] = strapi.config.sanitize.picture(member["picture"]);
   return member;
 };
 
@@ -47,7 +47,7 @@ const sanitize = (role, uid, obj) => {
     _.unset(obj, "lead_member");
   }
   // Thumbnail
-  obj["thumbnail"] = _.pick(obj["thumbnail"], "url");
+  obj["thumbnail"] = strapi.config.sanitize.picture(obj["thumbnail"]);
 
   if (!role) {
     _.unset(obj, "description");
