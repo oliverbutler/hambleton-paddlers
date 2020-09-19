@@ -22,7 +22,13 @@ const CommitteeMember = ({ index, member, openIndex, setOpenIndex }) => {
           <div className="column is-narrow px-0">
             <figure className="media-left">
               <p className="image is-128x128">
-                <img src={member.picture.url} />
+                <img
+                  src={
+                    member.picture
+                      ? member.picture.url
+                      : "https://t3.ftcdn.net/jpg/00/64/67/80/240_F_64678017_zUpiZFjj04cnLri7oADnyMH0XBYyQghG.jpgs"
+                  }
+                />
               </p>
             </figure>
           </div>
@@ -38,12 +44,6 @@ const CommitteeMember = ({ index, member, openIndex, setOpenIndex }) => {
                 <p>{member.committee.summary}</p>
               </div>
             </div>
-            {/* <motion.div animate={{ rotate: open ? 180 : 0 }}>
-              <ion-icon
-                name="arrow-down-circle-outline"
-                size="large"
-              ></ion-icon>
-            </motion.div> */}
           </div>
         </div>
       </article>
