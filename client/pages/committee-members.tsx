@@ -1,11 +1,16 @@
 import React from "react";
 import CommitteeMembers from "../components/CommitteeMembers";
+import { motion } from "framer-motion";
 
 const commitee_members = ({ content }) => {
   return (
     <main className="container my-5">
-      <h1 className="title">Our Committee</h1>
-      <CommitteeMembers content={content} />
+      <div className="content">
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+          <h1 className="title">Our Committee</h1>
+          <CommitteeMembers content={content} />
+        </motion.div>
+      </div>
     </main>
   );
 };

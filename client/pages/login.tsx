@@ -5,6 +5,7 @@ import axios from "axios";
 import actions from "redux/actions";
 import { getToast } from "utils/functions";
 import Router from "next/router";
+import { motion } from "framer-motion";
 
 const login = () => {
   const { register, handleSubmit, watch, errors } = useForm();
@@ -42,40 +43,42 @@ const login = () => {
       }}
     >
       <div className="content">
-        <p className="title">Login to your account</p>
-        <p>
-          This section is currently still a work in progress, <br />
-          if you don't have an account just yet please hold on
-        </p>
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <div className="field">
-            <label className="label">Email</label>
-            <div className="control">
-              <input
-                name="identifier"
-                ref={register({ required: true })}
-                className="input"
-                type="text"
-                placeholder="johnsmith@gmail.com"
-              />
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+          <p className="title">Login to your account</p>
+          <p>
+            This section is currently still a work in progress, <br />
+            if you don't have an account just yet please hold on
+          </p>
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <div className="field">
+              <label className="label">Email</label>
+              <div className="control">
+                <input
+                  name="identifier"
+                  ref={register({ required: true })}
+                  className="input"
+                  type="text"
+                  placeholder="johnsmith@gmail.com"
+                />
+              </div>
             </div>
-          </div>
-          <div className="field">
-            <label className="label">Password</label>
-            <div className="control">
-              <input
-                name="password"
-                ref={register({ required: true })}
-                className="input"
-                type="password"
-                placeholder="**********"
-              />
+            <div className="field">
+              <label className="label">Password</label>
+              <div className="control">
+                <input
+                  name="password"
+                  ref={register({ required: true })}
+                  className="input"
+                  type="password"
+                  placeholder="**********"
+                />
+              </div>
             </div>
-          </div>
-          <button className="button is-primary" type="submit">
-            Login
-          </button>
-        </form>
+            <button className="button is-primary" type="submit">
+              Login
+            </button>
+          </form>
+        </motion.div>
       </div>
     </div>
   );

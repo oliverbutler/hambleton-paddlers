@@ -2,6 +2,7 @@ import Head from "next/head";
 import Events from "components/Events";
 import About from "components/About/About";
 import { getInstance } from "utils/axios";
+import { motion } from "framer-motion";
 
 export default function Home({ content }) {
   return (
@@ -25,8 +26,10 @@ export default function Home({ content }) {
         </section>
       </div>
       <div className="container mt-6">
-        <div className="content">
-          <About content={content} />
+        <div className="content" id="about">
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+            <About content={content} />
+          </motion.div>
         </div>
       </div>
     </main>

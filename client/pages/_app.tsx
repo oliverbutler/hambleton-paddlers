@@ -1,7 +1,7 @@
+import "styles/global.scss";
+
 import React, { useEffect } from "react";
 import Head from "next/head";
-import "bulma";
-import "styles/App.scss";
 import Navbar from "components/Navbar";
 import Footer from "components/Footer";
 
