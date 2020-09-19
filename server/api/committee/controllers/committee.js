@@ -4,7 +4,8 @@ const { sanitizeEntity } = require("strapi-utils");
 const _ = require("lodash");
 
 const sanitize = (obj) => {
-  obj["picture"] = _.pick(obj.picture, ["url"]);
+  obj["picture"] = strapi.config.functions.sanitize.picture(obj["picture"]);
+
   obj = _.omit(obj, ["contact", "allergies", "other_medical"]);
 
   return obj;
