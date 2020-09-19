@@ -14,6 +14,9 @@ This is the repository for [Hambleton Paddlers](https://hambletonpaddlers.co.uk)
 
 This project is currently in **beta**, the public side of the site is almost done, and alot of member-side fun stuff is coming soon 🎉
 
+- [Strapi Backend](https://strapi-hambleton-paddlers.herokuapp.com)
+- [Documentation](https://strapi-hambleton-paddlers.herokuapp.com/documentation)
+
 ## Our Stack
 
 ### Frontend
