@@ -2,7 +2,7 @@
   "name": "hambleton-paddlers",
   "private": true,
   "version": "0.1.0",
-  "description": "A Strapi application",
+  "description": "The Strapi server for the Hambleton Paddlers web application",
   "scripts": {
     "dev": "strapi develop",
     "start": "strapi start",
@@ -28,7 +28,7 @@
     "strapi-utils": "3.1.5"
   },
   "author": {
-    "name": "A Strapi developer"
+    "name": "Oliver Butler"
   },
   "strapi": {
     "uuid": "8df0856c-23b2-4e32-8ffe-225bf9c88991"
