@@ -1,0 +1,43 @@
+// Set your brand colors
+// $black: #070707;
+// $blue: #3454d1;
+// $turquoise: #05a9c7;
+// $green: #06d6a0;
+// $white: #fefdff;
+
+// Update Bulma's global variables
+$family-sans-serif: "Nunito", sans-serif;
+// $primary: $blue;
+// $link: $green;
+
+// Update some of Bulma's component variables
+// $body-background-color: $white;
+
+@import "../node_modules/bulma/bulma.sass";
+@import "./navigation.scss";
+
+.image img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.content {
+  margin: 0 20px;
+}
+
+#about {
+  img {
+    max-height: 300px;
+    margin-top: 1em;
+  }
+}
+
+@media print {
+  .content {
+    display: inline;
+  }
+  .navbar,
+  .footer {
+    display: none;
+  }
+}

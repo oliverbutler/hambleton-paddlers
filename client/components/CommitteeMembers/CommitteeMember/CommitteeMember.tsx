@@ -14,29 +14,38 @@ const CommitteeMember = ({ index, member, openIndex, setOpenIndex }) => {
   return (
     <div
       key={`committee-member-${index}`}
-      className={styles.committeeMember + " py-3 px-3"}
+      className={styles.committeeMember + " py-3 my-3 mx-3"}
       onClick={handleToggleOpen}
     >
-      <article className="media mx-3 my-3">
-        <figure className="media-left">
-          <p className="image is-128x128">
-            <img src={member.picture.url} />
-          </p>
-        </figure>
-        <div className="media-content">
-          <div className="content">
-            <h2>
-              {member.given_name} {member.family_name}{" "}
-              <span className="tag is-info is-medium is-light">
-                {member.committee.role}
-              </span>
-            </h2>
-            <p>{member.committee.summary}</p>
+      <article className="media">
+        <div className="columns">
+          <div className="column is-narrow px-0">
+            <figure className="media-left">
+              <p className="image is-128x128">
+                <img src={member.picture.url} />
+              </p>
+            </figure>
+          </div>
+          <div className="column px-0">
+            <div className="media-content">
+              <div className="content">
+                <h2>
+                  {member.given_name} {member.family_name}{" "}
+                  <span className="tag is-info is-medium is-light">
+                    {member.committee.role}
+                  </span>
+                </h2>
+                <p>{member.committee.summary}</p>
+              </div>
+            </div>
+            {/* <motion.div animate={{ rotate: open ? 180 : 0 }}>
+              <ion-icon
+                name="arrow-down-circle-outline"
+                size="large"
+              ></ion-icon>
+            </motion.div> */}
           </div>
         </div>
-        <motion.div animate={{ rotate: open ? 180 : 0 }}>
-          <ion-icon name="arrow-down-circle-outline" size="large"></ion-icon>
-        </motion.div>
       </article>
 
       <AnimatePresence initial={false}>

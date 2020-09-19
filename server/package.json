@@ -2,7 +2,7 @@
   "name": "hambleton-paddlers",
   "private": true,
   "version": "0.1.0",
-  "description": "A Strapi application",
+  "description": "The Strapi server for the Hambleton Paddlers web application",
   "scripts": {
     "dev": "strapi develop",
     "start": "strapi start",
@@ -11,26 +11,24 @@
   },
   "devDependencies": {},
   "dependencies": {
-    "knex": "<0.20.0",
+    "knex": "0.21.5",
     "lodash": "^4.17.20",
-    "pm2": "^4.4.1",
-    "sqlite3": "latest",
-    "strapi": "3.1.4",
-    "strapi-admin": "3.1.4",
-    "strapi-connector-bookshelf": "3.1.4",
-    "strapi-connector-mongoose": "^3.1.4",
-    "strapi-plugin-content-manager": "3.1.4",
-    "strapi-plugin-content-type-builder": "3.1.4",
-    "strapi-plugin-documentation": "3.1.4",
-    "strapi-plugin-email": "3.1.4",
-    "strapi-plugin-upload": "3.1.4",
-    "strapi-plugin-users-permissions": "3.1.4",
-    "strapi-provider-email-sendgrid": "^3.1.4",
+    "strapi": "3.1.5",
+    "strapi-admin": "3.1.5",
+    "strapi-connector-bookshelf": "3.1.5",
+    "strapi-connector-mongoose": "^3.1.5",
+    "strapi-plugin-content-manager": "3.1.5",
+    "strapi-plugin-content-type-builder": "3.1.5",
+    "strapi-plugin-documentation": "3.1.5",
+    "strapi-plugin-email": "3.1.5",
+    "strapi-plugin-upload": "3.1.5",
+    "strapi-plugin-users-permissions": "3.1.5",
+    "strapi-provider-email-sendgrid": "^3.1.5",
     "strapi-provider-upload-aws-s3": "^3.1.5",
-    "strapi-utils": "3.1.4"
+    "strapi-utils": "3.1.5"
   },
   "author": {
-    "name": "A Strapi developer"
+    "name": "Oliver Butler"
   },
   "strapi": {
     "uuid": "8df0856c-23b2-4e32-8ffe-225bf9c88991"
