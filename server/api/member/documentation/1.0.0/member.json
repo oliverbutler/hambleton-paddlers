@@ -569,8 +569,7 @@
           "bcu_coaching_awards": {
             "required": [
               "id",
-              "title",
-              "summary"
+              "title"
             ],
             "properties": {
               "id": {

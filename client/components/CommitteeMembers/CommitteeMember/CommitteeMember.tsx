@@ -50,7 +50,7 @@ const CommitteeMember = ({ index, member, openIndex, setOpenIndex }) => {
 
       <AnimatePresence initial={false}>
         {open && (
-          <div className="px-3">
+          <div className="px-3 pt-3">
             <motion.section
               key="content"
               initial="collapsed"

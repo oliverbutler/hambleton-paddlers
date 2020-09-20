@@ -1,0 +1,14 @@
+.document {
+  display: flex;
+  border-radius: 4px;
+
+  &:hover {
+    background-color: hsl(0, 0%, 96%);
+  }
+
+  .img {
+    font-size: 3em;
+    display: flex;
+    align-items: center;
+  }
+}

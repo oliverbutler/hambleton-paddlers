@@ -81,6 +81,12 @@ const Navbar = () => {
               Events
             </a>
           </Link>
+
+          <Link href="/awards">
+            <a className="navbar-item" onClick={handleClose}>
+              BCU Awards
+            </a>
+          </Link>
         </div>
 
         <div className="right">

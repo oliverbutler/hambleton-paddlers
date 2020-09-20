@@ -25,7 +25,7 @@ export default function Home({ content }) {
           </div>
         </section>
       </div>
-      <div className="container mt-6">
+      <div className="container mt-5">
         <div className="content" id="about">
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
             <About content={content} />

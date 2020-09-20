@@ -11,7 +11,7 @@ const events = ({ pastEvents }) => {
   const events = useSelector((s) => s.events.events);
 
   return (
-    <main className="container my-5">
+    <main className="container my-5" style={{ minHeight: "75vh" }}>
       <div className="content">
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
           {!currentUser.loggedIn && (

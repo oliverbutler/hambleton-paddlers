@@ -15,7 +15,7 @@
     },
     "summary": {
       "type": "text",
-      "required": true
+      "required": false
     },
     "description": {
       "type": "richtext"

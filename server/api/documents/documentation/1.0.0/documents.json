@@ -1,19 +1,18 @@
 {
   "paths": {
-    "/bcu-coaching-awards": {
+    "/documents": {
       "get": {
         "deprecated": false,
-        "description": "",
+        "description": "Find all the documents's records",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve documents document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Documents"
                   }
                 }
               }
@@ -52,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Bcu-coaching-award"
+          "Documents"
         ],
         "parameters": [
           {
@@ -195,18 +194,14 @@
       },
       "post": {
         "deprecated": false,
-        "description": "Create a new record",
+        "description": "Create a new documents record",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve documents document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
+                  "$ref": "#/components/schemas/Documents"
                 }
               }
             }
@@ -244,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Bcu-coaching-award"
+          "Documents"
         ],
         "requestBody": {
           "description": "",
@@ -252,26 +247,26 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewBcu-coaching-award"
+                "$ref": "#/components/schemas/NewDocuments"
               }
             }
           }
         }
       }
     },
-    "/bcu-coaching-awards/count": {
+    "/documents/count": {
       "get": {
         "deprecated": false,
-        "description": "",
+        "description": "Retrieve the numver of documents documents",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve documents document(s)",
             "content": {
               "application/json": {
                 "schema": {
                   "properties": {
-                    "foo": {
-                      "type": "string"
+                    "count": {
+                      "type": "integer"
                     }
                   }
                 }
@@ -311,26 +306,22 @@
         },
         "summary": "",
         "tags": [
-          "Bcu-coaching-award"
+          "Documents"
         ],
         "parameters": []
       }
     },
-    "/bcu-coaching-awards/{id}": {
+    "/documents/{id}": {
       "get": {
         "deprecated": false,
-        "description": "",
+        "description": "Find one documents record",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve documents document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
+                  "$ref": "#/components/schemas/Documents"
                 }
               }
             }
@@ -368,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Bcu-coaching-award"
+          "Documents"
         ],
         "parameters": [
           {
@@ -385,18 +376,14 @@
       },
       "put": {
         "deprecated": false,
-        "description": "Update a record",
+        "description": "Update a single documents record",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve documents document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
+                  "$ref": "#/components/schemas/Documents"
                 }
               }
             }
@@ -434,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Bcu-coaching-award"
+          "Documents"
         ],
         "requestBody": {
           "description": "",
@@ -442,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewBcu-coaching-award"
+                "$ref": "#/components/schemas/NewDocuments"
               }
             }
           }
@@ -462,10 +449,10 @@
       },
       "delete": {
         "deprecated": false,
-        "description": "Delete a record",
+        "description": "Delete a single documents record",
         "responses": {
           "200": {
-            "description": "deletes a single record based on the ID supplied",
+            "description": "deletes a single documents based on the ID supplied",
             "content": {
               "application/json": {
                 "schema": {
@@ -508,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Bcu-coaching-award"
+          "Documents"
         ],
         "parameters": [
           {
@@ -527,26 +514,86 @@
   },
   "components": {
     "schemas": {
-      "Bcu-coaching-award": {
+      "Documents": {
         "required": [
-          "id",
-          "title"
+          "id"
         ],
         "properties": {
           "id": {
             "type": "string"
           },
-          "title": {
-            "type": "string"
-          },
-          "summary": {
+          "name": {
             "type": "string"
           },
           "description": {
             "type": "string"
           },
-          "order": {
-            "type": "integer"
+          "file": {
+            "required": [
+              "id",
+              "name",
+              "hash",
+              "mime",
+              "size",
+              "url",
+              "provider"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "alternativeText": {
+                "type": "string"
+              },
+              "caption": {
+                "type": "string"
+              },
+              "width": {
+                "type": "integer"
+              },
+              "height": {
+                "type": "integer"
+              },
+              "formats": {
+                "type": "object"
+              },
+              "hash": {
+                "type": "string"
+              },
+              "ext": {
+                "type": "string"
+              },
+              "mime": {
+                "type": "string"
+              },
+              "size": {
+                "type": "number"
+              },
+              "url": {
+                "type": "string"
+              },
+              "previewUrl": {
+                "type": "string"
+              },
+              "provider": {
+                "type": "string"
+              },
+              "provider_metadata": {
+                "type": "object"
+              },
+              "related": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
           },
           "created_by": {
             "required": [
@@ -638,22 +685,13 @@
           }
         }
       },
-      "NewBcu-coaching-award": {
-        "required": [
-          "title"
-        ],
+      "NewDocuments": {
         "properties": {
-          "title": {
-            "type": "string"
-          },
-          "summary": {
+          "name": {
             "type": "string"
           },
           "description": {
             "type": "string"
-          },
-          "order": {
-            "type": "integer"
           },
           "created_by": {
             "type": "string"
@@ -665,5 +703,9 @@
       }
     }
   },
-  "tags": []
+  "tags": [
+    {
+      "name": "Documents"
+    }
+  ]
 }
