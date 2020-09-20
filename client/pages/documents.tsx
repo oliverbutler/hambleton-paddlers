@@ -24,15 +24,15 @@ const documents = ({ documents }) => {
 export default documents;
 
 export const getStaticProps = async () => {
-  return await axios
+  const documents = await axios
     .get(process.env.NEXT_PUBLIC_HOST + "/documents")
-    .then((res) => {
-      return {
-        props: {
-          documents: res.data,
-        },
-        revalidate: 1,
-      };
-    })
-    .catch((err) => console.log("Server Cant Connect"));
+    .then((res) => res.data)
+    .catch(() => []);
+
+  return {
+    props: {
+      documents,
+    },
+    revalidate: 1,
+  };
 };
