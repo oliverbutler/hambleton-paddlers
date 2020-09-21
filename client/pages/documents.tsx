@@ -10,8 +10,8 @@ const documents = ({ documents }) => {
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
           <h1 className="title">Documents</h1>
           <p>
-            These documents are mainly as a backup incase of a technical fault
-            with the web application, under normal circumstances none of them
+            These documents are mainly as a backup in case of a technical fault
+            with the web application - under normal circumstances none of them
             should be required
           </p>
           <Documents documents={documents} />

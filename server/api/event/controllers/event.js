@@ -94,13 +94,19 @@ module.exports = {
       });
     }
 
-    return entities.map((entity) =>
-      sanitize(
-        role,
-        uid,
-        sanitizeEntity(entity, { model: strapi.models.event })
+    return entities
+      .map((entity) =>
+        sanitize(
+          role,
+          uid,
+          sanitizeEntity(entity, { model: strapi.models.event })
+        )
       )
-    );
+      .sort((a, b) => {
+        if (new Date(a.date_start) < new Date(b.date_start)) return 1;
+        if (new Date(a.date_start) > new Date(b.date_start)) return -1;
+        return 0;
+      });
   },
 
   async findPast() {
@@ -109,13 +115,19 @@ module.exports = {
       return new Date(ent.date_start) < new Date(new Date().toDateString());
     });
 
-    return entities.map((e) =>
-      sanitize(
-        undefined,
-        false,
-        sanitizeEntity(e, { model: strapi.models.event })
+    return entities
+      .map((e) =>
+        sanitize(
+          undefined,
+          false,
+          sanitizeEntity(e, { model: strapi.models.event })
+        )
       )
-    );
+      .sort((a, b) => {
+        if (new Date(a.date_start) < new Date(b.date_start)) return 1;
+        if (new Date(a.date_start) > new Date(b.date_start)) return -1;
+        return 0;
+      });
   },
 
   async findOne(ctx) {

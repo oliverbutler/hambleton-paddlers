@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "09/21/2020 12:16:00 AM"
+    "x-generation-date": "09/21/2020 10:31:20 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -6481,8 +6481,7 @@
           "date_end",
           "thumbnail",
           "summary",
-          "location",
-          "difficulty"
+          "location"
         ],
         "properties": {
           "id": {
@@ -6800,9 +6799,6 @@
             "type": "string",
             "default": "Carlton Lodge, Thirsk"
           },
-          "difficulty": {
-            "type": "number"
-          },
           "status": {
             "type": "object",
             "required": [
@@ -6906,6 +6902,9 @@
           "ask_kit": {
             "type": "boolean",
             "default": true
+          },
+          "subtitle": {
+            "type": "string"
           },
           "created_by": {
             "required": [
@@ -7002,8 +7001,7 @@
           "date_start",
           "date_end",
           "summary",
-          "location",
-          "difficulty"
+          "location"
         ],
         "properties": {
           "title": {
@@ -7030,9 +7028,6 @@
           "location": {
             "type": "string",
             "default": "Carlton Lodge, Thirsk"
-          },
-          "difficulty": {
-            "type": "number"
           },
           "status": {
             "type": "object",
@@ -7137,6 +7132,9 @@
           "ask_kit": {
             "type": "boolean",
             "default": true
+          },
+          "subtitle": {
+            "type": "string"
           },
           "created_by": {
             "type": "string"

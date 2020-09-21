@@ -44,10 +44,12 @@ const login = () => {
     >
       <div className="content">
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-          <p className="title">Login to your account</p>
+          <p className="title">
+            Login <span className="tag is-success">COMING SOON</span>
+          </p>
           <p>
-            This section is currently still a work in progress, <br />
-            if you don't have an account just yet please hold on
+            The login capabilities are coming soon to all members, <br /> once
+            they are available all members will have to register
           </p>
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="field">

@@ -13,13 +13,13 @@ const awards = ({ awards, coachingAwards }) => {
             alt="British Canoeing Logo"
             style={{ width: 300 }}
           />
-          <h1 className="title">BCU Awards</h1>
-          <p className="subtitle">
-            We offer you the oppertunity to obtain the following BCU awards...
+          <p className="title is-3">BCU Awards</p>
+          <p className="subtitle is-5">
+            We offer you the opportunity to obtain the following BCU awards...
           </p>
           <Awards awards={awards} />
-          <h1 className="title">BCU Coaching Awards</h1>
-          <p className="subtitle">
+          <p className="title is-3">BCU Coaching Awards</p>
+          <p className="subtitle is-5">
             We also offer the following BCU coaching awards
           </p>
           <Awards awards={coachingAwards} />

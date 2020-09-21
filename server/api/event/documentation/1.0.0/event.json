@@ -578,8 +578,7 @@
           "date_end",
           "thumbnail",
           "summary",
-          "location",
-          "difficulty"
+          "location"
         ],
         "properties": {
           "id": {
@@ -897,9 +896,6 @@
             "type": "string",
             "default": "Carlton Lodge, Thirsk"
           },
-          "difficulty": {
-            "type": "number"
-          },
           "status": {
             "type": "object",
             "required": [
@@ -1003,6 +999,9 @@
           "ask_kit": {
             "type": "boolean",
             "default": true
+          },
+          "subtitle": {
+            "type": "string"
           },
           "created_by": {
             "required": [
@@ -1099,8 +1098,7 @@
           "date_start",
           "date_end",
           "summary",
-          "location",
-          "difficulty"
+          "location"
         ],
         "properties": {
           "title": {
@@ -1127,9 +1125,6 @@
           "location": {
             "type": "string",
             "default": "Carlton Lodge, Thirsk"
-          },
-          "difficulty": {
-            "type": "number"
           },
           "status": {
             "type": "object",
@@ -1234,6 +1229,9 @@
           "ask_kit": {
             "type": "boolean",
             "default": true
+          },
+          "subtitle": {
+            "type": "string"
           },
           "created_by": {
             "type": "string"

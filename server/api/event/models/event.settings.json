@@ -26,14 +26,20 @@
     "files": {
       "collection": "file",
       "via": "related",
-      "allowedTypes": ["images", "files", "videos"],
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
       "plugin": "upload",
       "required": false
     },
     "thumbnail": {
       "model": "file",
       "via": "related",
-      "allowedTypes": ["images"],
+      "allowedTypes": [
+        "images"
+      ],
       "plugin": "upload",
       "required": true
     },
@@ -50,7 +56,11 @@
     "forms": {
       "collection": "file",
       "via": "related",
-      "allowedTypes": ["files", "images", "videos"],
+      "allowedTypes": [
+        "files",
+        "images",
+        "videos"
+      ],
       "plugin": "upload",
       "required": false
     },
@@ -58,12 +68,6 @@
       "type": "text",
       "required": true,
       "default": "Carlton Lodge, Thirsk"
-    },
-    "difficulty": {
-      "type": "decimal",
-      "max": 3,
-      "min": 0,
-      "required": true
     },
     "status": {
       "type": "component",
@@ -78,6 +82,9 @@
     "ask_kit": {
       "type": "boolean",
       "default": true
+    },
+    "subtitle": {
+      "type": "string"
     }
   }
 }
