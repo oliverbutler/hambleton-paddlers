@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "09/21/2020 10:31:20 PM"
+    "x-generation-date": "09/21/2020 12:37:12 AM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -96,9 +96,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Bcu-award"
-        ],
+        "tags": ["Bcu-award"],
         "parameters": [
           {
             "name": "_limit",
@@ -288,9 +286,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Bcu-award"
-        ],
+        "tags": ["Bcu-award"],
         "requestBody": {
           "description": "",
           "required": true,
@@ -355,9 +351,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Bcu-award"
-        ],
+        "tags": ["Bcu-award"],
         "parameters": []
       }
     },
@@ -412,9 +406,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Bcu-award"
-        ],
+        "tags": ["Bcu-award"],
         "parameters": [
           {
             "name": "id",
@@ -478,9 +470,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Bcu-award"
-        ],
+        "tags": ["Bcu-award"],
         "requestBody": {
           "description": "",
           "required": true,
@@ -552,9 +542,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Bcu-award"
-        ],
+        "tags": ["Bcu-award"],
         "parameters": [
           {
             "name": "id",
@@ -620,9 +608,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Bcu-coaching-award"
-        ],
+        "tags": ["Bcu-coaching-award"],
         "parameters": [
           {
             "name": "_limit",
@@ -812,9 +798,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Bcu-coaching-award"
-        ],
+        "tags": ["Bcu-coaching-award"],
         "requestBody": {
           "description": "",
           "required": true,
@@ -879,9 +863,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Bcu-coaching-award"
-        ],
+        "tags": ["Bcu-coaching-award"],
         "parameters": []
       }
     },
@@ -936,9 +918,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Bcu-coaching-award"
-        ],
+        "tags": ["Bcu-coaching-award"],
         "parameters": [
           {
             "name": "id",
@@ -1002,9 +982,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Bcu-coaching-award"
-        ],
+        "tags": ["Bcu-coaching-award"],
         "requestBody": {
           "description": "",
           "required": true,
@@ -1076,9 +1054,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Bcu-coaching-award"
-        ],
+        "tags": ["Bcu-coaching-award"],
         "parameters": [
           {
             "name": "id",
@@ -1144,9 +1120,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Committee"
-        ],
+        "tags": ["Committee"],
         "parameters": [
           {
             "name": "_limit",
@@ -1337,9 +1311,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Documents"
-        ],
+        "tags": ["Documents"],
         "parameters": [
           {
             "name": "_limit",
@@ -1525,9 +1497,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Documents"
-        ],
+        "tags": ["Documents"],
         "requestBody": {
           "description": "",
           "required": true,
@@ -1592,9 +1562,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Documents"
-        ],
+        "tags": ["Documents"],
         "parameters": []
       }
     },
@@ -1645,9 +1613,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Documents"
-        ],
+        "tags": ["Documents"],
         "parameters": [
           {
             "name": "id",
@@ -1707,9 +1673,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Documents"
-        ],
+        "tags": ["Documents"],
         "requestBody": {
           "description": "",
           "required": true,
@@ -1781,9 +1745,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Documents"
-        ],
+        "tags": ["Documents"],
         "parameters": [
           {
             "name": "id",
@@ -1849,9 +1811,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Event-type"
-        ],
+        "tags": ["Event-type"],
         "parameters": [
           {
             "name": "_limit",
@@ -2041,9 +2001,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Event-type"
-        ],
+        "tags": ["Event-type"],
         "requestBody": {
           "description": "",
           "required": true,
@@ -2108,9 +2066,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Event-type"
-        ],
+        "tags": ["Event-type"],
         "parameters": []
       }
     },
@@ -2165,9 +2121,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Event-type"
-        ],
+        "tags": ["Event-type"],
         "parameters": [
           {
             "name": "id",
@@ -2231,9 +2185,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Event-type"
-        ],
+        "tags": ["Event-type"],
         "requestBody": {
           "description": "",
           "required": true,
@@ -2305,9 +2257,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Event-type"
-        ],
+        "tags": ["Event-type"],
         "parameters": [
           {
             "name": "id",
@@ -2372,9 +2322,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Event"
-        ],
+        "tags": ["Event"],
         "parameters": [
           {
             "name": "_limit",
@@ -2560,9 +2508,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Event"
-        ],
+        "tags": ["Event"],
         "requestBody": {
           "description": "",
           "required": true,
@@ -2627,9 +2573,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Event"
-        ],
+        "tags": ["Event"],
         "parameters": []
       }
     },
@@ -2684,9 +2628,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Event"
-        ],
+        "tags": ["Event"],
         "parameters": []
       }
     },
@@ -2737,9 +2679,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Event"
-        ],
+        "tags": ["Event"],
         "parameters": [
           {
             "name": "id",
@@ -2799,9 +2739,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Event"
-        ],
+        "tags": ["Event"],
         "requestBody": {
           "description": "",
           "required": true,
@@ -2873,9 +2811,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Event"
-        ],
+        "tags": ["Event"],
         "parameters": [
           {
             "name": "id",
@@ -2941,9 +2877,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Home-page"
-        ],
+        "tags": ["Home-page"],
         "parameters": [
           {
             "name": "_limit",
@@ -3133,9 +3067,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Home-page"
-        ],
+        "tags": ["Home-page"],
         "requestBody": {
           "description": "",
           "required": true,
@@ -3196,9 +3128,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Home-page"
-        ],
+        "tags": ["Home-page"],
         "parameters": []
       }
     },
@@ -3252,9 +3182,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Member"
-        ],
+        "tags": ["Member"],
         "parameters": [
           {
             "name": "_limit",
@@ -3440,9 +3368,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Member"
-        ],
+        "tags": ["Member"],
         "requestBody": {
           "description": "",
           "required": true,
@@ -3507,9 +3433,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Member"
-        ],
+        "tags": ["Member"],
         "parameters": []
       }
     },
@@ -3560,9 +3484,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Member"
-        ],
+        "tags": ["Member"],
         "parameters": [
           {
             "name": "id",
@@ -3622,9 +3544,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Member"
-        ],
+        "tags": ["Member"],
         "requestBody": {
           "description": "",
           "required": true,
@@ -3696,9 +3616,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Member"
-        ],
+        "tags": ["Member"],
         "parameters": [
           {
             "name": "id",
@@ -3764,9 +3682,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Email - Email"
-        ],
+        "tags": ["Email - Email"],
         "requestBody": {
           "description": "",
           "required": true,
@@ -3835,9 +3751,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Upload - File"
-        ],
+        "tags": ["Upload - File"],
         "requestBody": {
           "description": "",
           "required": true,
@@ -3906,9 +3820,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Upload - File"
-        ],
+        "tags": ["Upload - File"],
         "parameters": []
       }
     },
@@ -3963,9 +3875,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Upload - File"
-        ],
+        "tags": ["Upload - File"],
         "parameters": []
       }
     },
@@ -4020,9 +3930,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Upload - File"
-        ],
+        "tags": ["Upload - File"],
         "parameters": [
           {
             "name": "id",
@@ -4086,9 +3994,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Upload - File"
-        ],
+        "tags": ["Upload - File"],
         "parameters": [
           {
             "name": "id",
@@ -4154,9 +4060,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Upload - File"
-        ],
+        "tags": ["Upload - File"],
         "parameters": [
           {
             "name": "id",
@@ -4218,9 +4122,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "UsersPermissions - Role"
-        ],
+        "tags": ["UsersPermissions - Role"],
         "parameters": [
           {
             "name": "id",
@@ -4285,9 +4187,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "UsersPermissions - Role"
-        ],
+        "tags": ["UsersPermissions - Role"],
         "parameters": [
           {
             "name": "_limit",
@@ -4473,9 +4373,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "UsersPermissions - Role"
-        ],
+        "tags": ["UsersPermissions - Role"],
         "requestBody": {
           "description": "",
           "required": true,
@@ -4536,9 +4434,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "UsersPermissions - Role"
-        ],
+        "tags": ["UsersPermissions - Role"],
         "parameters": [
           {
             "name": "role",
@@ -4613,9 +4509,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "UsersPermissions - Role"
-        ],
+        "tags": ["UsersPermissions - Role"],
         "parameters": [
           {
             "name": "role",
@@ -4680,9 +4574,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "UsersPermissions - User"
-        ],
+        "tags": ["UsersPermissions - User"],
         "parameters": [
           {
             "name": "id",
@@ -4884,9 +4776,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "UsersPermissions - User"
-        ],
+        "tags": ["UsersPermissions - User"],
         "parameters": []
       }
     },
@@ -4941,9 +4831,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "UsersPermissions - User"
-        ],
+        "tags": ["UsersPermissions - User"],
         "requestBody": {
           "description": "",
           "required": true,
@@ -5008,9 +4896,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "UsersPermissions - User"
-        ],
+        "tags": ["UsersPermissions - User"],
         "requestBody": {
           "description": "",
           "required": true,
@@ -5075,9 +4961,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "UsersPermissions - User"
-        ],
+        "tags": ["UsersPermissions - User"],
         "parameters": [
           {
             "name": "provider",
@@ -5143,9 +5027,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "UsersPermissions - User"
-        ],
+        "tags": ["UsersPermissions - User"],
         "requestBody": {
           "description": "",
           "required": true,
@@ -5214,9 +5096,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "UsersPermissions - User"
-        ],
+        "tags": ["UsersPermissions - User"],
         "requestBody": {
           "description": "",
           "required": true,
@@ -5285,9 +5165,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "UsersPermissions - User"
-        ],
+        "tags": ["UsersPermissions - User"],
         "parameters": []
       }
     },
@@ -5342,9 +5220,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "UsersPermissions - User"
-        ],
+        "tags": ["UsersPermissions - User"],
         "requestBody": {
           "description": "",
           "required": true,
@@ -5412,9 +5288,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "UsersPermissions - User"
-        ],
+        "tags": ["UsersPermissions - User"],
         "parameters": [
           {
             "name": "_limit",
@@ -5602,9 +5476,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "UsersPermissions - User"
-        ],
+        "tags": ["UsersPermissions - User"],
         "parameters": []
       }
     },
@@ -5655,9 +5527,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "UsersPermissions - User"
-        ],
+        "tags": ["UsersPermissions - User"],
         "parameters": [
           {
             "name": "id",
@@ -5717,9 +5587,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "UsersPermissions - User"
-        ],
+        "tags": ["UsersPermissions - User"],
         "parameters": [
           {
             "name": "id",
@@ -5794,9 +5662,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "UsersPermissions - User"
-        ],
+        "tags": ["UsersPermissions - User"],
         "parameters": [
           {
             "name": "id",
@@ -5815,13 +5681,7 @@
   "components": {
     "schemas": {
       "Bcu-award": {
-        "required": [
-          "id",
-          "title",
-          "summary",
-          "description",
-          "order"
-        ],
+        "required": ["id", "title", "summary", "description", "order"],
         "properties": {
           "id": {
             "type": "string"
@@ -5839,10 +5699,7 @@
             "type": "integer"
           },
           "created_by": {
-            "required": [
-              "id",
-              "email"
-            ],
+            "required": ["id", "email"],
             "properties": {
               "id": {
                 "type": "string"
@@ -5883,10 +5740,7 @@
             }
           },
           "updated_by": {
-            "required": [
-              "id",
-              "email"
-            ],
+            "required": ["id", "email"],
             "properties": {
               "id": {
                 "type": "string"
@@ -5929,12 +5783,7 @@
         }
       },
       "NewBcu-award": {
-        "required": [
-          "title",
-          "summary",
-          "description",
-          "order"
-        ],
+        "required": ["title", "summary", "description", "order"],
         "properties": {
           "title": {
             "type": "string"
@@ -5957,10 +5806,7 @@
         }
       },
       "Bcu-coaching-award": {
-        "required": [
-          "id",
-          "title"
-        ],
+        "required": ["id", "title"],
         "properties": {
           "id": {
             "type": "string"
@@ -5978,10 +5824,7 @@
             "type": "integer"
           },
           "created_by": {
-            "required": [
-              "id",
-              "email"
-            ],
+            "required": ["id", "email"],
             "properties": {
               "id": {
                 "type": "string"
@@ -6022,10 +5865,7 @@
             }
           },
           "updated_by": {
-            "required": [
-              "id",
-              "email"
-            ],
+            "required": ["id", "email"],
             "properties": {
               "id": {
                 "type": "string"
@@ -6068,9 +5908,7 @@
         }
       },
       "NewBcu-coaching-award": {
-        "required": [
-          "title"
-        ],
+        "required": ["title"],
         "properties": {
           "title": {
             "type": "string"
@@ -6093,9 +5931,7 @@
         }
       },
       "Documents": {
-        "required": [
-          "id"
-        ],
+        "required": ["id"],
         "properties": {
           "id": {
             "type": "string"
@@ -6174,10 +6010,7 @@
             }
           },
           "created_by": {
-            "required": [
-              "id",
-              "email"
-            ],
+            "required": ["id", "email"],
             "properties": {
               "id": {
                 "type": "string"
@@ -6218,10 +6051,7 @@
             }
           },
           "updated_by": {
-            "required": [
-              "id",
-              "email"
-            ],
+            "required": ["id", "email"],
             "properties": {
               "id": {
                 "type": "string"
@@ -6280,12 +6110,7 @@
         }
       },
       "Event-type": {
-        "required": [
-          "id",
-          "name",
-          "description",
-          "colour"
-        ],
+        "required": ["id", "name", "description", "colour"],
         "properties": {
           "id": {
             "type": "string"
@@ -6313,13 +6138,7 @@
             ]
           },
           "minimum_bcu_award": {
-            "required": [
-              "id",
-              "title",
-              "summary",
-              "description",
-              "order"
-            ],
+            "required": ["id", "title", "summary", "description", "order"],
             "properties": {
               "id": {
                 "type": "string"
@@ -6345,10 +6164,7 @@
             }
           },
           "created_by": {
-            "required": [
-              "id",
-              "email"
-            ],
+            "required": ["id", "email"],
             "properties": {
               "id": {
                 "type": "string"
@@ -6389,10 +6205,7 @@
             }
           },
           "updated_by": {
-            "required": [
-              "id",
-              "email"
-            ],
+            "required": ["id", "email"],
             "properties": {
               "id": {
                 "type": "string"
@@ -6435,11 +6248,7 @@
         }
       },
       "NewEvent-type": {
-        "required": [
-          "name",
-          "description",
-          "colour"
-        ],
+        "required": ["name", "description", "colour"],
         "properties": {
           "name": {
             "type": "string"
@@ -6640,12 +6449,7 @@
             "type": "string"
           },
           "type": {
-            "required": [
-              "id",
-              "name",
-              "description",
-              "colour"
-            ],
+            "required": ["id", "name", "description", "colour"],
             "properties": {
               "id": {
                 "type": "string"
@@ -6671,12 +6475,7 @@
             }
           },
           "lead_member": {
-            "required": [
-              "id",
-              "given_name",
-              "family_name",
-              "date_of_birth"
-            ],
+            "required": ["id", "given_name", "family_name", "date_of_birth"],
             "properties": {
               "id": {
                 "type": "string"
@@ -6801,9 +6600,7 @@
           },
           "status": {
             "type": "object",
-            "required": [
-              "id"
-            ],
+            "required": ["id"],
             "properties": {
               "id": {
                 "type": "string"
@@ -6826,9 +6623,7 @@
             "type": "array",
             "items": {
               "type": "object",
-              "required": [
-                "id"
-              ],
+              "required": ["id"],
               "properties": {
                 "id": {
                   "type": "string"
@@ -6890,11 +6685,7 @@
                 },
                 "role": {
                   "type": "string",
-                  "enum": [
-                    "COACH",
-                    "VOLUNTEER",
-                    "PARTICIPANT"
-                  ]
+                  "enum": ["COACH", "VOLUNTEER", "PARTICIPANT"]
                 }
               }
             }
@@ -6907,10 +6698,7 @@
             "type": "string"
           },
           "created_by": {
-            "required": [
-              "id",
-              "email"
-            ],
+            "required": ["id", "email"],
             "properties": {
               "id": {
                 "type": "string"
@@ -6951,10 +6739,7 @@
             }
           },
           "updated_by": {
-            "required": [
-              "id",
-              "email"
-            ],
+            "required": ["id", "email"],
             "properties": {
               "id": {
                 "type": "string"
@@ -6997,12 +6782,7 @@
         }
       },
       "NewEvent": {
-        "required": [
-          "date_start",
-          "date_end",
-          "summary",
-          "location"
-        ],
+        "required": ["date_start", "date_end", "summary", "location"],
         "properties": {
           "title": {
             "type": "string"
@@ -7031,9 +6811,7 @@
           },
           "status": {
             "type": "object",
-            "required": [
-              "id"
-            ],
+            "required": ["id"],
             "properties": {
               "id": {
                 "type": "string"
@@ -7056,9 +6834,7 @@
             "type": "array",
             "items": {
               "type": "object",
-              "required": [
-                "id"
-              ],
+              "required": ["id"],
               "properties": {
                 "id": {
                   "type": "string"
@@ -7120,11 +6896,7 @@
                 },
                 "role": {
                   "type": "string",
-                  "enum": [
-                    "COACH",
-                    "VOLUNTEER",
-                    "PARTICIPANT"
-                  ]
+                  "enum": ["COACH", "VOLUNTEER", "PARTICIPANT"]
                 }
               }
             }
@@ -7145,9 +6917,7 @@
         }
       },
       "Home-page": {
-        "required": [
-          "id"
-        ],
+        "required": ["id"],
         "properties": {
           "id": {
             "type": "string"
@@ -7162,21 +6932,14 @@
             "type": "array",
             "items": {
               "type": "object",
-              "required": [
-                "id"
-              ],
+              "required": ["id"],
               "properties": {
                 "id": {
                   "type": "string"
                 },
                 "type": {
                   "type": "string",
-                  "enum": [
-                    "warning",
-                    "success",
-                    "danger",
-                    "info"
-                  ]
+                  "enum": ["warning", "success", "danger", "info"]
                 },
                 "header": {
                   "type": "string"
@@ -7255,10 +7018,7 @@
             }
           },
           "created_by": {
-            "required": [
-              "id",
-              "email"
-            ],
+            "required": ["id", "email"],
             "properties": {
               "id": {
                 "type": "string"
@@ -7299,10 +7059,7 @@
             }
           },
           "updated_by": {
-            "required": [
-              "id",
-              "email"
-            ],
+            "required": ["id", "email"],
             "properties": {
               "id": {
                 "type": "string"
@@ -7356,21 +7113,14 @@
             "type": "array",
             "items": {
               "type": "object",
-              "required": [
-                "id"
-              ],
+              "required": ["id"],
               "properties": {
                 "id": {
                   "type": "string"
                 },
                 "type": {
                   "type": "string",
-                  "enum": [
-                    "warning",
-                    "success",
-                    "danger",
-                    "info"
-                  ]
+                  "enum": ["warning", "success", "danger", "info"]
                 },
                 "header": {
                   "type": "string"
@@ -7390,12 +7140,7 @@
         }
       },
       "Member": {
-        "required": [
-          "id",
-          "given_name",
-          "family_name",
-          "date_of_birth"
-        ],
+        "required": ["id", "given_name", "family_name", "date_of_birth"],
         "properties": {
           "id": {
             "type": "string"
@@ -7410,13 +7155,7 @@
             "type": "string"
           },
           "bcu_awards": {
-            "required": [
-              "id",
-              "title",
-              "summary",
-              "description",
-              "order"
-            ],
+            "required": ["id", "title", "summary", "description", "order"],
             "properties": {
               "id": {
                 "type": "string"
@@ -7442,10 +7181,7 @@
             }
           },
           "bcu_coaching_awards": {
-            "required": [
-              "id",
-              "title"
-            ],
+            "required": ["id", "title"],
             "properties": {
               "id": {
                 "type": "string"
@@ -7539,13 +7275,7 @@
           },
           "committee": {
             "type": "object",
-            "required": [
-              "id",
-              "role",
-              "description",
-              "summary",
-              "order"
-            ],
+            "required": ["id", "role", "description", "summary", "order"],
             "properties": {
               "id": {
                 "type": "string"
@@ -7566,9 +7296,7 @@
           },
           "contact": {
             "type": "object",
-            "required": [
-              "id"
-            ],
+            "required": ["id"],
             "properties": {
               "id": {
                 "type": "string"
@@ -7590,12 +7318,7 @@
           "users": {
             "type": "array",
             "items": {
-              "required": [
-                "id",
-                "username",
-                "email",
-                "member"
-              ],
+              "required": ["id", "username", "email", "member"],
               "properties": {
                 "id": {
                   "type": "string"
@@ -7646,10 +7369,7 @@
             }
           },
           "created_by": {
-            "required": [
-              "id",
-              "email"
-            ],
+            "required": ["id", "email"],
             "properties": {
               "id": {
                 "type": "string"
@@ -7690,10 +7410,7 @@
             }
           },
           "updated_by": {
-            "required": [
-              "id",
-              "email"
-            ],
+            "required": ["id", "email"],
             "properties": {
               "id": {
                 "type": "string"
@@ -7736,11 +7453,7 @@
         }
       },
       "NewMember": {
-        "required": [
-          "given_name",
-          "family_name",
-          "date_of_birth"
-        ],
+        "required": ["given_name", "family_name", "date_of_birth"],
         "properties": {
           "given_name": {
             "type": "string"
@@ -7759,13 +7472,7 @@
           },
           "committee": {
             "type": "object",
-            "required": [
-              "id",
-              "role",
-              "description",
-              "summary",
-              "order"
-            ],
+            "required": ["id", "role", "description", "summary", "order"],
             "properties": {
               "id": {
                 "type": "string"
@@ -7786,9 +7493,7 @@
           },
           "contact": {
             "type": "object",
-            "required": [
-              "id"
-            ],
+            "required": ["id"],
             "properties": {
               "id": {
                 "type": "string"
@@ -7822,10 +7527,7 @@
         }
       },
       "UsersPermissionsRole": {
-        "required": [
-          "id",
-          "name"
-        ],
+        "required": ["id", "name"],
         "properties": {
           "id": {
             "type": "string"
@@ -7843,13 +7545,7 @@
           "permissions": {
             "type": "array",
             "items": {
-              "required": [
-                "id",
-                "type",
-                "controller",
-                "action",
-                "enabled"
-              ],
+              "required": ["id", "type", "controller", "action", "enabled"],
               "properties": {
                 "id": {
                   "type": "string"
@@ -7884,12 +7580,7 @@
           "users": {
             "type": "array",
             "items": {
-              "required": [
-                "id",
-                "username",
-                "email",
-                "member"
-              ],
+              "required": ["id", "username", "email", "member"],
               "properties": {
                 "id": {
                   "type": "string"
@@ -7940,10 +7631,7 @@
             }
           },
           "created_by": {
-            "required": [
-              "id",
-              "email"
-            ],
+            "required": ["id", "email"],
             "properties": {
               "id": {
                 "type": "string"
@@ -7984,10 +7672,7 @@
             }
           },
           "updated_by": {
-            "required": [
-              "id",
-              "email"
-            ],
+            "required": ["id", "email"],
             "properties": {
               "id": {
                 "type": "string"
@@ -8030,9 +7715,7 @@
         }
       },
       "NewUsersPermissionsRole": {
-        "required": [
-          "name"
-        ],
+        "required": ["name"],
         "properties": {
           "name": {
             "type": "string",
@@ -8065,12 +7748,7 @@
         }
       },
       "UsersPermissionsUser": {
-        "required": [
-          "id",
-          "username",
-          "email",
-          "member"
-        ],
+        "required": ["id", "username", "email", "member"],
         "properties": {
           "id": {
             "type": "string"
@@ -8095,10 +7773,7 @@
             "default": false
           },
           "role": {
-            "required": [
-              "id",
-              "name"
-            ],
+            "required": ["id", "name"],
             "properties": {
               "id": {
                 "type": "string"
@@ -8152,12 +7827,7 @@
                 },
                 "payment_method": {
                   "type": "string",
-                  "enum": [
-                    "CASH",
-                    "BACS",
-                    "ONLINE",
-                    "CHEQUE"
-                  ]
+                  "enum": ["CASH", "BACS", "ONLINE", "CHEQUE"]
                 },
                 "authorized_by": {
                   "required": [
@@ -8230,12 +7900,7 @@
           "members": {
             "type": "array",
             "items": {
-              "required": [
-                "id",
-                "given_name",
-                "family_name",
-                "date_of_birth"
-              ],
+              "required": ["id", "given_name", "family_name", "date_of_birth"],
               "properties": {
                 "id": {
                   "type": "string"
@@ -8286,10 +7951,7 @@
             }
           },
           "created_by": {
-            "required": [
-              "id",
-              "email"
-            ],
+            "required": ["id", "email"],
             "properties": {
               "id": {
                 "type": "string"
@@ -8330,10 +7992,7 @@
             }
           },
           "updated_by": {
-            "required": [
-              "id",
-              "email"
-            ],
+            "required": ["id", "email"],
             "properties": {
               "id": {
                 "type": "string"
@@ -8376,11 +8035,7 @@
         }
       },
       "NewUsersPermissionsUser": {
-        "required": [
-          "username",
-          "email",
-          "member"
-        ],
+        "required": ["username", "email", "member"],
         "properties": {
           "username": {
             "type": "string",
@@ -8431,12 +8086,7 @@
                 },
                 "payment_method": {
                   "type": "string",
-                  "enum": [
-                    "CASH",
-                    "BACS",
-                    "ONLINE",
-                    "CHEQUE"
-                  ]
+                  "enum": ["CASH", "BACS", "ONLINE", "CHEQUE"]
                 },
                 "authorized_by": {
                   "required": [
@@ -8521,10 +8171,7 @@
         }
       },
       "Error": {
-        "required": [
-          "code",
-          "message"
-        ],
+        "required": ["code", "message"],
         "properties": {
           "code": {
             "type": "integer",

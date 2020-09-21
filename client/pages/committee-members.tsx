@@ -1,6 +1,7 @@
 import React from "react";
 import CommitteeMembers from "../components/CommitteeMembers";
 import { motion } from "framer-motion";
+import Axios from "axios";
 
 const commitee_members = ({ content }) => {
   return (
@@ -18,13 +19,9 @@ const commitee_members = ({ content }) => {
 export default commitee_members;
 
 export const getStaticProps = async () => {
-  const res = await fetch(process.env.NEXT_PUBLIC_HOST + "/committee");
-  var content = [];
-  try {
-    content = await res.json();
-  } catch (err) {
-    console.log("Server error");
-  }
+  const content = await Axios.get(process.env.NEXT_PUBLIC_HOST + "/committee")
+    .then((res) => res.data)
+    .catch(() => []);
 
   return {
     props: {
