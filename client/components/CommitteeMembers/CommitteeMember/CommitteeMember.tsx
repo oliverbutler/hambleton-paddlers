@@ -19,7 +19,7 @@ const CommitteeMember = ({ index, member, openIndex, setOpenIndex }) => {
       onClick={handleToggleOpen}
     >
       <div className="columns mb-0">
-        <div className="column is-narrow">
+        <div className="column is-narrow pr-0">
           <p className="image is-128x128 ml-3">
             <img
               src={
@@ -30,7 +30,7 @@ const CommitteeMember = ({ index, member, openIndex, setOpenIndex }) => {
             />
           </p>
         </div>
-        <div className="column">
+        <div className="column ml-3">
           <p className="title is-4">
             {member.given_name} {member.family_name}{" "}
             <span className="tag is-info is-medium is-light">

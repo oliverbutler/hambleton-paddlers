@@ -29,7 +29,8 @@ const sanitizeMember = (role, member, contact = false) => {
 };
 
 const sanitize = (role, uid, obj) => {
-  if (String(uid) == String(obj.lead_member.user)) role = "Committee";
+  if (obj.lead_member && String(uid) == String(obj.lead_member.user))
+    role = "Committee";
 
   obj = _.omit(obj, ["created_by", "updated_by", "id"]);
 
@@ -43,7 +44,7 @@ const sanitize = (role, uid, obj) => {
   }
 
   // Lead member
-  if (role) {
+  if (role && obj["lead_member"]) {
     obj["lead_member"] = sanitizeMember(role, obj["lead_member"], true);
   } else {
     _.unset(obj, "lead_member");

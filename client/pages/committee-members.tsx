@@ -9,6 +9,12 @@ const commitee_members = ({ content }) => {
       <div className="content">
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
           <h1 className="title">Our Committee</h1>
+          <p>
+            <i>
+              {" "}
+              <b>Click</b> on each member to read about their role
+            </i>
+          </p>
           <CommitteeMembers content={content} />
         </motion.div>
       </div>

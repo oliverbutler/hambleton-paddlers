@@ -29,10 +29,8 @@ $family-sans-serif: "Nunito", sans-serif;
   img {
     object-fit: cover;
     height: 300px;
-    margin-top: 1em;
-    margin-right: 1em;
-    width: 30%;
-
+    margin: 0.5em;
+    width: 30.5%;
     @include mobile {
       width: 100%;
     }
