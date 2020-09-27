@@ -17,8 +17,8 @@ const join = () => {
                 If you are interested in joining the Club, please contact our
                 Membership Officer, Judith McKenzie for more information by
                 emailing{" "}
-                <a href="mailto:hambletonpaddlers02@gmail.co.uk">
-                  hambletonpaddlers@gmail.co.uk
+                <a href="mailto:membership@hambletonpaddlers.co.uk">
+                  membership@hambletonpaddlers.co.uk
                 </a>{" "}
                 Membership is available on either on an <b>individual</b> or{" "}
                 <b>family</b> basis.
