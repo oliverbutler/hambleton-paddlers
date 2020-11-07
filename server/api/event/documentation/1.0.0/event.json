@@ -50,9 +50,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Event"
-        ],
+        "tags": ["Event"],
         "parameters": [
           {
             "name": "_limit",
@@ -238,9 +236,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Event"
-        ],
+        "tags": ["Event"],
         "requestBody": {
           "description": "",
           "required": true,
@@ -305,9 +301,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Event"
-        ],
+        "tags": ["Event"],
         "parameters": []
       }
     },
@@ -362,9 +356,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Event"
-        ],
+        "tags": ["Event"],
         "parameters": []
       }
     },
@@ -415,9 +407,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Event"
-        ],
+        "tags": ["Event"],
         "parameters": [
           {
             "name": "id",
@@ -477,9 +467,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Event"
-        ],
+        "tags": ["Event"],
         "requestBody": {
           "description": "",
           "required": true,
@@ -551,9 +539,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Event"
-        ],
+        "tags": ["Event"],
         "parameters": [
           {
             "name": "id",
@@ -591,10 +577,12 @@
             "type": "string"
           },
           "date_start": {
-            "type": "datetime"
+            "type": "string",
+            "format": "date-time"
           },
           "date_end": {
-            "type": "datetime"
+            "type": "string",
+            "format": "date-time"
           },
           "files": {
             "type": "array",
@@ -737,12 +725,7 @@
             "type": "string"
           },
           "type": {
-            "required": [
-              "id",
-              "name",
-              "description",
-              "colour"
-            ],
+            "required": ["id", "name", "description", "colour"],
             "properties": {
               "id": {
                 "type": "string"
@@ -768,12 +751,7 @@
             }
           },
           "lead_member": {
-            "required": [
-              "id",
-              "given_name",
-              "family_name",
-              "date_of_birth"
-            ],
+            "required": ["id", "given_name", "family_name", "date_of_birth"],
             "properties": {
               "id": {
                 "type": "string"
@@ -898,9 +876,7 @@
           },
           "status": {
             "type": "object",
-            "required": [
-              "id"
-            ],
+            "required": ["id"],
             "properties": {
               "id": {
                 "type": "string"
@@ -923,9 +899,7 @@
             "type": "array",
             "items": {
               "type": "object",
-              "required": [
-                "id"
-              ],
+              "required": ["id"],
               "properties": {
                 "id": {
                   "type": "string"
@@ -987,11 +961,7 @@
                 },
                 "role": {
                   "type": "string",
-                  "enum": [
-                    "COACH",
-                    "VOLUNTEER",
-                    "PARTICIPANT"
-                  ]
+                  "enum": ["COACH", "VOLUNTEER", "PARTICIPANT"]
                 }
               }
             }
@@ -1000,106 +970,14 @@
             "type": "boolean",
             "default": true
           },
-          "subtitle": {
-            "type": "string"
-          },
-          "created_by": {
-            "required": [
-              "id",
-              "email"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "firstname": {
-                "type": "string"
-              },
-              "lastname": {
-                "type": "string"
-              },
-              "username": {
-                "type": "string"
-              },
-              "email": {
-                "type": "string"
-              },
-              "password": {
-                "type": "string"
-              },
-              "resetPasswordToken": {
-                "type": "string"
-              },
-              "registrationToken": {
-                "type": "string"
-              },
-              "isActive": {
-                "type": "boolean"
-              },
-              "roles": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "blocked": {
-                "type": "boolean"
-              }
-            }
-          },
-          "updated_by": {
-            "required": [
-              "id",
-              "email"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "firstname": {
-                "type": "string"
-              },
-              "lastname": {
-                "type": "string"
-              },
-              "username": {
-                "type": "string"
-              },
-              "email": {
-                "type": "string"
-              },
-              "password": {
-                "type": "string"
-              },
-              "resetPasswordToken": {
-                "type": "string"
-              },
-              "registrationToken": {
-                "type": "string"
-              },
-              "isActive": {
-                "type": "boolean"
-              },
-              "roles": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "blocked": {
-                "type": "boolean"
-              }
-            }
+          "published_at": {
+            "type": "string",
+            "format": "date-time"
           }
         }
       },
       "NewEvent": {
-        "required": [
-          "date_start",
-          "date_end",
-          "summary",
-          "location"
-        ],
+        "required": ["date_start", "date_end", "summary", "location"],
         "properties": {
           "title": {
             "type": "string"
@@ -1108,10 +986,12 @@
             "type": "string"
           },
           "date_start": {
-            "type": "datetime"
+            "type": "string",
+            "format": "date-time"
           },
           "date_end": {
-            "type": "datetime"
+            "type": "string",
+            "format": "date-time"
           },
           "summary": {
             "type": "string"
@@ -1128,9 +1008,7 @@
           },
           "status": {
             "type": "object",
-            "required": [
-              "id"
-            ],
+            "required": ["id"],
             "properties": {
               "id": {
                 "type": "string"
@@ -1153,9 +1031,7 @@
             "type": "array",
             "items": {
               "type": "object",
-              "required": [
-                "id"
-              ],
+              "required": ["id"],
               "properties": {
                 "id": {
                   "type": "string"
@@ -1217,11 +1093,7 @@
                 },
                 "role": {
                   "type": "string",
-                  "enum": [
-                    "COACH",
-                    "VOLUNTEER",
-                    "PARTICIPANT"
-                  ]
+                  "enum": ["COACH", "VOLUNTEER", "PARTICIPANT"]
                 }
               }
             }
@@ -1230,8 +1102,9 @@
             "type": "boolean",
             "default": true
           },
-          "subtitle": {
-            "type": "string"
+          "published_at": {
+            "type": "string",
+            "format": "date-time"
           },
           "created_by": {
             "type": "string"

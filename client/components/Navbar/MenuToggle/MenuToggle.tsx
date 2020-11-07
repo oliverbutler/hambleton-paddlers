@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+// import MenuToggle from ".";
 
 const Path = (props) => (
   <motion.path
@@ -10,7 +11,7 @@ const Path = (props) => (
   />
 );
 
-export default ({ isActive }) => {
+const MenuToggle = ({ isActive }) => {
   return (
     <svg
       width="23"
@@ -49,3 +50,5 @@ export default ({ isActive }) => {
     </svg>
   );
 };
+
+export default MenuToggle;
