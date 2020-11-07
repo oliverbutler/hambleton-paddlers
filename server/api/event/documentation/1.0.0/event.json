@@ -592,10 +592,12 @@
             "type": "string"
           },
           "date_start": {
-            "type": "datetime"
+            "type": "string",
+            "format": "date-time"
           },
           "date_end": {
-            "type": "datetime"
+            "type": "string",
+            "format": "date-time"
           },
           "files": {
             "type": "array",
@@ -1004,93 +1006,9 @@
             "type": "boolean",
             "default": true
           },
-          "created_by": {
-            "required": [
-              "id",
-              "email"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "firstname": {
-                "type": "string"
-              },
-              "lastname": {
-                "type": "string"
-              },
-              "username": {
-                "type": "string"
-              },
-              "email": {
-                "type": "string"
-              },
-              "password": {
-                "type": "string"
-              },
-              "resetPasswordToken": {
-                "type": "string"
-              },
-              "registrationToken": {
-                "type": "string"
-              },
-              "isActive": {
-                "type": "boolean"
-              },
-              "roles": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "blocked": {
-                "type": "boolean"
-              }
-            }
-          },
-          "updated_by": {
-            "required": [
-              "id",
-              "email"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "firstname": {
-                "type": "string"
-              },
-              "lastname": {
-                "type": "string"
-              },
-              "username": {
-                "type": "string"
-              },
-              "email": {
-                "type": "string"
-              },
-              "password": {
-                "type": "string"
-              },
-              "resetPasswordToken": {
-                "type": "string"
-              },
-              "registrationToken": {
-                "type": "string"
-              },
-              "isActive": {
-                "type": "boolean"
-              },
-              "roles": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "blocked": {
-                "type": "boolean"
-              }
-            }
+          "published_at": {
+            "type": "string",
+            "format": "date-time"
           }
         }
       },
@@ -1110,10 +1028,12 @@
             "type": "string"
           },
           "date_start": {
-            "type": "datetime"
+            "type": "string",
+            "format": "date-time"
           },
           "date_end": {
-            "type": "datetime"
+            "type": "string",
+            "format": "date-time"
           },
           "summary": {
             "type": "string"
@@ -1234,6 +1154,10 @@
           "ask_kit": {
             "type": "boolean",
             "default": true
+          },
+          "published_at": {
+            "type": "string",
+            "format": "date-time"
           },
           "created_by": {
             "type": "string"
