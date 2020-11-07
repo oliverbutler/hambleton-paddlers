@@ -1,6 +1,11 @@
 .committeeMember {
   border-radius: 4px;
+  cursor: pointer;
   &:hover {
     background-color: hsl(0, 0%, 96%);
   }
+}
+
+.arrow {
+  font-size: 2em;
 }

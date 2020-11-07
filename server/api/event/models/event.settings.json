@@ -71,12 +71,6 @@
       "required": true,
       "default": "Carlton Lodge, Thirsk"
     },
-    "difficulty": {
-      "type": "decimal",
-      "max": 3,
-      "min": 0,
-      "required": true
-    },
     "status": {
       "type": "component",
       "repeatable": false,
@@ -90,6 +84,9 @@
     "ask_kit": {
       "type": "boolean",
       "default": true
+    },
+    "subtitle": {
+      "type": "string"
     }
   }
 }

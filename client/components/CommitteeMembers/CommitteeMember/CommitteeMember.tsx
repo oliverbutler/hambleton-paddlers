@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styles from "./CommitteeMember.module.scss";
 import ReactMarkdown from "react-markdown";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 
 const CommitteeMember = ({ index, member, openIndex, setOpenIndex }) => {
   var open = openIndex === index;
@@ -13,52 +14,50 @@ const CommitteeMember = ({ index, member, openIndex, setOpenIndex }) => {
 
   return (
     <div
-      key={`committee-member-${index}`}
-      className={styles.committeeMember + " py-3 my-3 mx-3"}
+      key={`committee-member-${index} `}
+      className={styles.committeeMember + " py-3 my-3 mx-3 "}
       onClick={handleToggleOpen}
     >
-      <article className="media">
-        <div className="columns">
-          <div className="column is-narrow px-0">
-            <figure className="media-left">
-              <p className="image is-128x128">
-                <img
-                  src={
-                    member.picture
-                      ? member.picture.url
-                      : "https://hambleton-paddlers.s3.eu-west-2.amazonaws.com/default_user_4f14e60794.png"
-                  }
-                />
-              </p>
-            </figure>
-          </div>
-          <div className="column px-0">
-            <div className="media-content">
-              <div className="content">
-                <h2>
-                  {member.given_name} {member.family_name}{" "}
-                  <span className="tag is-info is-medium is-light">
-                    {member.committee.role}
-                  </span>
-                </h2>
-                <p>{member.committee.summary}</p>
-              </div>
-            </div>
-          </div>
+      <div className="columns mb-0">
+        <div className="column is-narrow pr-0">
+          <p className="image is-128x128 ml-3">
+            <img
+              src={
+                member.picture
+                  ? member.picture.url
+                  : "https://hambleton-paddlers.s3.eu-west-2.amazonaws.com/default_user_4f14e60794.png"
+              }
+            />
+          </p>
         </div>
-      </article>
+        <div className="column ml-3">
+          <p className="title is-4">
+            {member.given_name} {member.family_name}{" "}
+            <span className="tag is-info is-medium is-light">
+              {member.committee.role}
+            </span>
+          </p>
+          <p>{member.committee.summary}</p>
+        </div>
+      </div>
 
       <AnimatePresence initial={false}>
         {open && (
-          <div className="px-3 pt-3">
+          <div className="mx-3">
             <motion.section
               key="content"
               initial="collapsed"
               animate="open"
               exit="collapsed"
               variants={{
-                open: { opacity: 1, height: "auto" },
-                collapsed: { opacity: 0, height: 0 },
+                open: {
+                  opacity: 1,
+                  height: "auto",
+                },
+                collapsed: {
+                  opacity: 0,
+                  height: 0,
+                },
               }}
               transition={{ duration: 0.8, ease: [0.04, 0.62, 0.23, 0.98] }}
             >

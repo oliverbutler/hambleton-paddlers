@@ -10,6 +10,7 @@ const Documents = ({ documents }) => {
           <div
             key={`document-${index}`}
             className={styles.document + " py-2 px-2 mb-3"}
+            style={{ cursor: "pointer" }}
           >
             <div className={"pr-3 " + styles.img}>
               <ion-icon name="document-outline"></ion-icon>

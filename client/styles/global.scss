@@ -27,8 +27,13 @@ $family-sans-serif: "Nunito", sans-serif;
 
 #about {
   img {
-    max-height: 300px;
-    margin-top: 1em;
+    object-fit: cover;
+    height: 300px;
+    margin: 0.5em;
+    width: 30.5%;
+    @include mobile {
+      width: 100%;
+    }
   }
 }
 @media print {

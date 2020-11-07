@@ -27,7 +27,7 @@ const Event = ({ event }) => {
   return (
     <div>
       <div className="columns">
-        <div className="column">
+        <div className="column is-half">
           <EventTab event={event} isSingleEvent />
           {event.cancelled && (
             <article className="message is-danger mt-4">
@@ -39,10 +39,6 @@ const Event = ({ event }) => {
           )}
           {currentUser.loggedIn ? (
             <>
-              <p>
-                For this event {event.lead_member.given_name} will be your main
-                point of contact for any questions.
-              </p>
               <div className="columns">
                 <div className="column is-narrow">
                   <figure class="image is-64x64 mx-2 my-2">
@@ -56,7 +52,7 @@ const Event = ({ event }) => {
                   <p>
                     <b>
                       {event.lead_member.given_name}{" "}
-                      {event.lead_member.family_name}
+                      {event.lead_member.family_name}{" "}
                     </b>
                   </p>
                   <p>
@@ -74,9 +70,9 @@ const Event = ({ event }) => {
             </div>
           )}
         </div>
-        <div className="column is-narrow">
+        <div className="column">
           <iframe
-            width="600"
+            width="100%"
             height="100%"
             frameBorder="0"
             style={{ border: 0, backgroundColor: "lightgrey" }}

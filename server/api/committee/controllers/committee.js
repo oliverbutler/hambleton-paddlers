@@ -22,6 +22,7 @@ module.exports = {
       .map((entity) =>
         sanitize(sanitizeEntity(entity, { model: strapi.models.member }))
       )
-      .filter((e) => _.get(e, "committee.role", false));
+      .filter((e) => _.get(e, "committee.role", false))
+      .sort((a, b) => (a.committee.order > b.committee.order ? 1 : -1));
   },
 };

@@ -16,7 +16,7 @@ const Footer = () => {
           </Link>
         </p>
         <p>
-          <a href="https://strapi-hambleton-paddlers.herokuapp.com/admin">
+          <a href="https://strapi-hambleton-paddlers.herokuapp.com/admin/plugins/content-manager/collectionType/application::event.event">
             Admin Interface
           </a>
         </p>
