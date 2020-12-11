@@ -32,7 +32,7 @@ const Profile = () => {
       .then((res) => {
         getToast().fire({
           icon: "success",
-          title: `Updated ${propertyName}`,
+          title: `Updated ${member.given_name}'s ${propertyName}`,
         });
       })
       .catch((err) => console.log(err));
@@ -71,16 +71,23 @@ const Profile = () => {
               value={member.family_name}
               save={(val) => updateProperty(member, "family_name", val)}
             />
-            <Setting title="Date of Birth" value={member.date_of_birth} />
+            <Setting
+              title="Date of Birth"
+              value={member.date_of_birth}
+              disabled
+            />
+
             <Setting
               title="Allergies"
               value={member.allergies}
               save={(val) => updateProperty(member, "allergies", val)}
+              textarea
             />
             <Setting
               title="Other Medical Info"
               value={member.other_medical}
               save={(val) => updateProperty(member, "other_medical", val)}
+              textarea
             />
           </div>
         ))}

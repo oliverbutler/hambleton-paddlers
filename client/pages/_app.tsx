@@ -66,7 +66,18 @@ const App = ({ Component, pageProps }) => {
             name="viewport"
             content="initial-scale=1.0, width=device-width"
           />
-          <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+          {/* <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script> */}
+          <script
+            type="module"
+            src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.esm.js"
+          ></script>
+          <script
+            noModule={false}
+            src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.js"
+          ></script>
+          <script
+            src={`https://maps.googleapis.com/maps/api/js?key=${process.env.NEXT_PUBLIC_GOOGLE_KEY}&libraries=places`}
+          ></script>
         </Head>
         <Navbar />
         <Component {...pageProps} />
