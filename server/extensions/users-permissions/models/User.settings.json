@@ -6,7 +6,8 @@
     "description": ""
   },
   "options": {
-    "timestamps": true
+    "timestamps": true,
+    "draftAndPublish": false
   },
   "attributes": {
     "username": {
@@ -64,8 +65,12 @@
       "required": true
     },
     "members": {
-      "via": "users",
-      "collection": "member"
+      "collection": "member",
+      "via": "users"
+    },
+    "renewal_cost": {
+      "type": "decimal",
+      "default": 10
     }
   }
 }

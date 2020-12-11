@@ -26,7 +26,7 @@ const join = () => {
             </div>
             <div className="column is-half">
               <p className="title">
-                Join Online <span className="tag is-success">COMING SOON</span>
+                Join Online <span className="tag is-success">NEW</span>
               </p>
               <p>
                 Please just fill out the form below to join us online! <br />{" "}
@@ -34,7 +34,7 @@ const join = () => {
                 we can!
               </p>
               <Link href="/register">
-                <button className="button is-primary my-4" disabled>
+                <button className="button is-primary my-4">
                   Join Us Online
                 </button>
               </Link>

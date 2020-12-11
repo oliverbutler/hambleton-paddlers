@@ -45,7 +45,7 @@ const login = () => {
       <div className="content">
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
           <p className="title">
-            Login <span className="tag is-success">COMING SOON</span>
+            Login <span className="tag is-success">NEW</span>
           </p>
           <p>
             The login capabilities are coming soon to all members, <br /> once

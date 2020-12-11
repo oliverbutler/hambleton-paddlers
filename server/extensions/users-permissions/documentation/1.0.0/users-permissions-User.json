@@ -1341,6 +1341,9 @@
                 "date_end": {
                   "type": "string",
                   "format": "date"
+                },
+                "note": {
+                  "type": "string"
                 }
               }
             }
@@ -1406,6 +1409,10 @@
                 }
               }
             }
+          },
+          "renewal_cost": {
+            "type": "number",
+            "default": 10
           }
         }
       },
@@ -1535,6 +1542,9 @@
                 "date_end": {
                   "type": "string",
                   "format": "date"
+                },
+                "note": {
+                  "type": "string"
                 }
               }
             }
@@ -1548,6 +1558,10 @@
             "items": {
               "type": "string"
             }
+          },
+          "renewal_cost": {
+            "type": "number",
+            "default": 10
           },
           "created_by": {
             "type": "string"

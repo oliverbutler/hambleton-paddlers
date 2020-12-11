@@ -571,6 +571,9 @@
                     "type": "string"
                   }
                 },
+                "renewal_cost": {
+                  "type": "number"
+                },
                 "created_by": {
                   "type": "string"
                 },
