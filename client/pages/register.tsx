@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import PasswordField from "components/Input/PasswordField";
+import Input from "components/Input";
+import { useForm } from "react-hook-form";
 
 const register = () => {
   const [members, setMembers] = useState(true);
@@ -22,6 +24,8 @@ const register = () => {
     setFamily(fam);
   };
 
+  const { register, handleSubmit } = useForm();
+
   return (
     <div className="container my-5">
       <div className="content">
@@ -32,15 +36,6 @@ const register = () => {
           </p>
 
           <p>
-            Registering for an account will create you a Hambleton Paddlers
-            account which will allow you to
-          </p>
-          <ul>
-            <li>Check your membership</li>
-            <li>View upcoming events</li>
-            <li>Submit forms for upcoming events</li>
-          </ul>
-          <p>
             Once your request has being submitted we will look over the request
             before contacting you directly at your given email
           </p>
@@ -49,19 +44,13 @@ const register = () => {
             <div className="column">
               <form>
                 <div className="field-body">
-                  <div className="field">
-                    <label className="label">First Name</label>
-                    <div className="control">
-                      <input
-                        className="input"
-                        type="text"
-                        placeholder="John"
-                        onChange={(e) =>
-                          onChangeMember(0, "given_name", e.target.value)
-                        }
-                      />
-                    </div>
-                  </div>
+                  <Input
+                    label="First Name"
+                    name="members[0].first_name"
+                    ref={register}
+                    placeholder="John"
+                  />
+
                   <div className="field">
                     <label className="label">Last Name</label>
                     <div className="control">
