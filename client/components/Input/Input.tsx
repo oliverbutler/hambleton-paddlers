@@ -5,14 +5,23 @@ export enum Types {
   tel = "tel",
   phone = "phone",
   email = "email",
+  date = "date",
+  checkbox = "checkbox",
+  select = "select",
+  textarea = "textarea",
 }
 
 interface InputProps {
-  label: string;
+  label: any;
   name: string;
   type?: Types;
   placeholder?: string;
-  ref: React.LegacyRef<HTMLInputElement>;
+  register: any;
+  disabled?: boolean;
+  narrow?: boolean;
+  expanded?: boolean;
+  select?: string[];
+  help?: any;
 }
 
 const Input: FC<InputProps> = ({
@@ -20,20 +29,53 @@ const Input: FC<InputProps> = ({
   name,
   type = Types.text,
   placeholder,
-  ref,
+  register,
+  disabled = false,
+  narrow = false,
+  expanded = false,
+  select,
+  help,
 }) => {
   return (
-    <div className="field is-expanded">
+    <div
+      className={`field ${narrow ? "is-narrow " : ""} ${
+        expanded ? "is-expanded " : ""
+      } `}
+    >
       <label className="label">{label}</label>
-      <p className="control is-expanded">
-        <input
-          className="input"
-          ref={ref}
-          name={name}
-          type={type}
-          placeholder={placeholder}
-        />
-      </p>
+      <div
+        className={`control ${narrow ? "is-narrow " : ""} ${
+          expanded ? "is-expanded " : ""
+        } `}
+      >
+        {type == Types.textarea ? (
+          <textarea
+            className="textarea"
+            ref={register}
+            name={name}
+            placeholder={placeholder}
+            disabled={disabled}
+          />
+        ) : select ? (
+          <div className="select">
+            <select ref={register} name={name} disabled={disabled}>
+              {select.map((val) => (
+                <option value={val.toLowerCase()}>{val}</option>
+              ))}
+            </select>
+          </div>
+        ) : (
+          <input
+            className={type == Types.checkbox ? "checkbox" : "input"}
+            ref={register}
+            name={name}
+            type={type}
+            placeholder={placeholder}
+            disabled={disabled}
+          />
+        )}
+        <p className="help">{help}</p>
+      </div>
     </div>
   );
 };

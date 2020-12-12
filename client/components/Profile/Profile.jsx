@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import _ from "lodash";
 import moment from "moment";
 import Link from "next/link";
-
+import Image from "next/image";
 import Setting from "./Setting";
 import { getInstance } from "utils/axios";
 import { getToast } from "utils/functions";
@@ -56,9 +56,11 @@ const Profile = () => {
               className="image is-128x128 mx-2 my-2 mb-4"
               key={`attendee-${index}`}
             >
-              <img
+              <Image
                 className="is-rounded"
                 src={_.get(member, "picture.url", "")}
+                width={128}
+                height={128}
               />
             </figure>
             <Setting

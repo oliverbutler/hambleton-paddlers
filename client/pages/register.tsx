@@ -3,19 +3,13 @@ import { motion, AnimatePresence } from "framer-motion";
 import PasswordField from "components/Input/PasswordField";
 import Input from "components/Input";
 import { useForm } from "react-hook-form";
+import { Types } from "components/Input/Input";
 
 const register = () => {
-  const [members, setMembers] = useState(true);
   const [family, setFamily] = useState([{}]);
 
   const addFamilyMember = () => {
     setFamily([...family, {}]);
-  };
-
-  const onChangeMember = (index, property, value) => {
-    let fam = [...family];
-    fam[index][property] = value;
-    setFamily(fam);
   };
 
   const deleteFamilyMember = (index) => {
@@ -24,7 +18,8 @@ const register = () => {
     setFamily(fam);
   };
 
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, errors } = useForm();
+  const onSubmit = (data) => console.log(data, errors);
 
   return (
     <div className="container my-5">
@@ -43,75 +38,31 @@ const register = () => {
           <div className="columns mt-4">
             <div className="column">
               <form>
+                <Input
+                  label="Email"
+                  type={Types.email}
+                  name="email"
+                  register={register({ required: true })}
+                  placeholder="johnsmith@gmail.com"
+                />
+
                 <div className="field-body">
                   <Input
-                    label="First Name"
-                    name="members[0].first_name"
-                    ref={register}
-                    placeholder="John"
+                    label="Mobile Phone"
+                    type={Types.tel}
+                    name="mobile_phone"
+                    register={register}
+                    placeholder="07911 123456"
                   />
-
-                  <div className="field">
-                    <label className="label">Last Name</label>
-                    <div className="control">
-                      <input
-                        className="input"
-                        type="text"
-                        placeholder="Smith"
-                        onChange={(e) =>
-                          onChangeMember(0, "family_name", e.target.value)
-                        }
-                      />
-                    </div>
-                  </div>
-                  <div className="field">
-                    <label className="label">Date of Birth</label>
-                    <div className="control">
-                      <input
-                        className="input"
-                        type="date"
-                        onChange={(e) =>
-                          onChangeMember(0, "date_of_birth", e.target.value)
-                        }
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div className="field">
-                  <label className="label">Email</label>
-                  <div className="control">
-                    <input
-                      className="input"
-                      type="email"
-                      placeholder="johnsmith@gmail.com"
-                    />
-                  </div>
+                  <Input
+                    label="Home Phone"
+                    type={Types.tel}
+                    name="home_phone"
+                    register={register}
+                    placeholder="01845 123456"
+                  />
                 </div>
 
-                <h1 className="title is-4 pt-5">Your Contact Information</h1>
-
-                <div className="field-body">
-                  <div className="field is-expanded">
-                    <label className="label">Mobile Phone</label>
-                    <p className="control is-expanded">
-                      <input
-                        className="input"
-                        type="tel"
-                        placeholder="Your phone number"
-                      />
-                    </p>
-                  </div>
-                  <div className="field is-expanded">
-                    <label className="label">Home Phone</label>
-                    <p className="control is-expanded">
-                      <input
-                        className="input"
-                        type="tel"
-                        placeholder="Your phone number"
-                      />
-                    </p>
-                  </div>
-                </div>
                 <h1 className="title is-4 pt-5">Member Details</h1>
 
                 <p>
@@ -139,190 +90,80 @@ const register = () => {
                       style={{ borderLeft: "5px solid lightgrey" }}
                     >
                       <div className="field-body pb-2">
-                        <div className="field">
-                          <label className="label">First Name</label>
-                          <div className="control">
-                            <input
-                              className="input"
-                              type="text"
-                              placeholder="John"
-                              value={member["given_name"]}
-                              onChange={(e) =>
-                                onChangeMember(
-                                  index,
-                                  "given_name",
-                                  e.target.value
-                                )
-                              }
-                              disabled={index == 0}
-                            />
-                          </div>
-                        </div>
-                        <div className="field">
-                          <label className="label">Last Name</label>
-                          <div className="control">
-                            <input
-                              className="input"
-                              type="text"
-                              placeholder="Smith"
-                              value={member["family_name"]}
-                              onChange={(e) =>
-                                onChangeMember(
-                                  index,
-                                  "family_name",
-                                  e.target.value
-                                )
-                              }
-                              disabled={index == 0}
-                            />
-                          </div>
-                        </div>
-                        <div className="field">
-                          <label className="label">Date of Birth</label>
-                          <div className="control">
-                            <input
-                              className="input"
-                              type="date"
-                              value={member["date_of_birth"]}
-                              disabled={index == 0}
-                              onChange={(e) =>
-                                onChangeMember(
-                                  index,
-                                  "date_of_birth",
-                                  e.target.value
-                                )
-                              }
-                            />
-                          </div>
-                        </div>
+                        <Input
+                          label="First Name"
+                          name={`members[${index}].given_name`}
+                          register={register}
+                          placeholder="John"
+                        />
+                        <Input
+                          label="Last Name"
+                          name={`members[${index}].family_name`}
+                          register={register}
+                          placeholder="Smith"
+                        />
+                        <Input
+                          label="Date of Birth"
+                          type={Types.date}
+                          name={`members[${index}].date_of_birth`}
+                          register={register}
+                        />
+                      </div>
+
+                      <div className="field-body mt-2">
+                        <Input
+                          label="Allergies"
+                          name={`members[${index}].allergies`}
+                          register={register}
+                          type={Types.textarea}
+                        />
+                        <Input
+                          label="Disabilities"
+                          name={`members[${index}].disabilities`}
+                          register={register}
+                          type={Types.textarea}
+                        />
+                        <Input
+                          label="Other Medical Info"
+                          name={`members[${index}].other_medical`}
+                          register={register}
+                          type={Types.textarea}
+                        />
                       </div>
                       <div className="field-body mt-2">
-                        <div className="field is-narrow">
-                          <div className="label">
-                            BCU Member ID (if applicable){" "}
-                          </div>
-                          <div className="control">
-                            <input
-                              type="text"
-                              className="input"
-                              value={member["bcu_member_id"]}
-                              onChange={(e) =>
-                                onChangeMember(
-                                  index,
-                                  "bcu_member_id",
-                                  e.target.value
-                                )
-                              }
-                            />
-                          </div>
-                        </div>
-                        <div className="field is-narrow">
-                          <label className="label">Kayaking</label>
-                          <div className="control">
-                            <div className="select">
-                              <select
-                                value={member["kayaking_ability"]}
-                                onChange={(e) =>
-                                  onChangeMember(
-                                    index,
-                                    "kayaking_ability",
-                                    e.target.value
-                                  )
-                                }
-                              >
-                                <option>Beginner</option>
-                                <option>Intermediate</option>
-                                <option>Advanced</option>
-                              </select>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="field is-narrow">
-                          <label className="label ">Canoeing</label>
-                          <div className="control">
-                            <div className="select">
-                              <select
-                                value={member["canoeing_ability"]}
-                                onChange={(e) =>
-                                  onChangeMember(
-                                    index,
-                                    "canoeing_ability",
-                                    e.target.value
-                                  )
-                                }
-                              >
-                                <option>Beginner</option>
-                                <option>Intermediate</option>
-                                <option>Advanced</option>
-                              </select>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="field">
-                          <div className="label">Swim 25m</div>
-                          <div className="control">
-                            <input
-                              type="checkbox"
-                              className="checkbox"
-                              value={member["swim_25"]}
-                              onChange={(e) =>
-                                onChangeMember(index, "swim_25", e.target.value)
-                              }
-                            />
-                          </div>
-                        </div>
-                      </div>
-                      <div className="field-body mt-2">
-                        <div className="field">
-                          <div className="label">Allergies</div>
-                          <div className="control">
-                            <textarea
-                              className="textarea"
-                              value={member["allergies"]}
-                              onChange={(e) =>
-                                onChangeMember(
-                                  index,
-                                  "allergies",
-                                  e.target.value
-                                )
-                              }
-                            />
-                          </div>
-                        </div>
-
-                        <div className="field">
-                          <div className="label">Disabilities</div>
-                          <div className="control">
-                            <textarea
-                              className="textarea"
-                              value={member["disabilities"]}
-                              onChange={(e) =>
-                                onChangeMember(
-                                  index,
-                                  "disabilities",
-                                  e.target.value
-                                )
-                              }
-                            />
-                          </div>
-                        </div>
-                        <div className="field">
-                          <div className="label">Other Medical Info</div>
-                          <div className="control">
-                            <textarea
-                              className="textarea"
-                              value={member["other_medical"]}
-                              onChange={(e) =>
-                                onChangeMember(
-                                  index,
-                                  "other_medical",
-                                  e.target.value
-                                )
-                              }
-                            />
-                          </div>
-                        </div>
-
+                        <Input
+                          label="BCU Member ID (if applicable)"
+                          name={`members[${index}].bcu_member_id`}
+                          register={register}
+                          narrow
+                        />
+                        <Input
+                          label="Kayaking"
+                          select={["Beginner", "Intermediate", "Advanced"]}
+                          name={`members[${index}].kayaking_level`}
+                          register={register}
+                          narrow
+                        />
+                        <Input
+                          label="Canoeing"
+                          select={["Beginner", "Intermediate", "Advanced"]}
+                          name={`members[${index}].canoeing_level`}
+                          register={register}
+                          narrow
+                        />
+                        <Input
+                          label="Swim 25m"
+                          type={Types.checkbox}
+                          name={`members[${index}].can_swim_25`}
+                          register={register}
+                          narrow
+                        />
+                        <Input
+                          label="Photo Consent"
+                          type={Types.checkbox}
+                          name={`members[${index}].photo_concent`}
+                          register={register}
+                        />
                         <button
                           className="button is-danger"
                           style={{ alignSelf: "flex-end" }}
@@ -399,12 +240,17 @@ const register = () => {
                 </ol>
                 <div className="field">
                   <label className="checkbox">
-                    <input type="checkbox" /> I agree to the above terms and
-                    conditions
+                    <input type="checkbox" ref={register} name="signed_tos" /> I
+                    agree to the above terms and conditions
                   </label>
                 </div>
 
-                <button className="button is-primary mt-5">Submit</button>
+                <button
+                  className="button is-primary mt-5"
+                  onClick={handleSubmit(onSubmit)}
+                >
+                  Submit
+                </button>
               </form>
             </div>
           </div>

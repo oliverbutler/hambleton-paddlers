@@ -6,6 +6,7 @@ import actions from "redux/actions";
 import { getToast } from "utils/functions";
 import MenuToggle from "./MenuToggle";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const Navbar = () => {
   const currentUser = useSelector((state) => state.currentUser);
@@ -43,7 +44,7 @@ const Navbar = () => {
         <div className="navigation-brand">
           <Link href="/">
             <a onClick={handleClose}>
-              <img alt="brand logo" src="logo.png" />
+              <Image alt="brand logo" src="/logo.png" width={40} height={40} />
             </a>
           </Link>
         </div>
