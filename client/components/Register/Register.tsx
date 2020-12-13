@@ -1,8 +1,16 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import PasswordField from "components/Input/PasswordField";
 import Input from "components/Input";
 import { useForm } from "react-hook-form";
+import { joiResolver } from "@hookform/resolvers/joi";
+import Joi from "joi";
 import { Types } from "components/Input/Input";
+
+const schema = Joi.object({
+  email: Joi.string().required(),
+  mobile_phone: Joi.string().min(9).required(),
+  home_phone: Joi.string(),
+});
 
 const Register = () => {
   const [family, setFamily] = useState([{}]);
@@ -17,8 +25,15 @@ const Register = () => {
     setFamily(fam);
   };
 
-  const { register, handleSubmit, errors } = useForm();
-  const onSubmit = (data) => console.log(data, errors);
+  const { register, handleSubmit, errors } = useForm({
+    resolver: joiResolver(schema),
+  });
+
+  useEffect(() => {
+    console.log(errors);
+  }, [errors]);
+
+  const onSubmit = (data) => console.log(data);
 
   return (
     <div>
@@ -30,10 +45,10 @@ const Register = () => {
               label="Email"
               type={Types.email}
               name="email"
-              register={register({ required: true })}
+              register={register}
               placeholder="johnsmith@gmail.com"
             />
-
+            <p>{errors.email?.message}</p>
             <div className="field-body">
               <Input
                 label="Mobile Phone"
@@ -42,6 +57,7 @@ const Register = () => {
                 register={register}
                 placeholder="07911 123456"
               />
+
               <Input
                 label="Home Phone"
                 type={Types.tel}
@@ -50,6 +66,7 @@ const Register = () => {
                 placeholder="01845 123456"
               />
             </div>
+            <p>{errors.mobile_phone?.message}</p>
 
             <h1 className="title is-4 pt-5">Member Details</h1>
 

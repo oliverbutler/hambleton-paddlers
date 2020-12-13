@@ -75,9 +75,9 @@ const App = ({ Component, pageProps }) => {
             noModule={false}
             src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.js"
           ></script>
-          <script
+          {/* <script
             src={`https://maps.googleapis.com/maps/api/js?key=${process.env.NEXT_PUBLIC_GOOGLE_KEY}&libraries=places`}
-          ></script>
+          ></script> */}
         </Head>
         <Navbar />
         <Component {...pageProps} />

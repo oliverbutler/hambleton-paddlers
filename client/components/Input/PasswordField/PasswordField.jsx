@@ -43,17 +43,17 @@ const PasswordField = ({ label }) => {
         <div className="control has-icons-left">
           <input
             className="input"
-            type="password"
+            type="new-password"
             value={password}
             onChange={onChange}
           />
-          <span class="icon is-small is-left">
+          <span className="icon is-small is-left">
             <ion-icon name="key-outline"></ion-icon>
           </span>
         </div>
         {password && (
           <progress
-            class={`progress is-small ${getColour()} mt-2 mb-0`}
+            className={`progress is-small ${getColour()} mt-2 mb-0`}
             value={(100 / 5) * (strength.score + 1)}
             max="100"
           ></progress>
@@ -70,11 +70,11 @@ const PasswordField = ({ label }) => {
         <div className="control has-icons-left">
           <input
             className={`input ${passwordMatch() ? "" : "is-danger"}`}
-            type="password"
+            type="new-password"
             value={verifyPassword}
             onChange={onChangeVerify}
           />
-          <span class="icon is-small is-left">
+          <span className="icon is-small is-left">
             <ion-icon name="key-outline"></ion-icon>
           </span>
         </div>

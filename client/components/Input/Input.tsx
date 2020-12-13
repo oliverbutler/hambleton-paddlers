@@ -59,8 +59,13 @@ const Input: FC<InputProps> = ({
         ) : select ? (
           <div className="select">
             <select ref={register} name={name} disabled={disabled}>
-              {select.map((val) => (
-                <option value={val.toLowerCase()}>{val}</option>
+              {select.map((val, index) => (
+                <option
+                  key={`${name}-option-${index}`}
+                  value={val.toLowerCase()}
+                >
+                  {val}
+                </option>
               ))}
             </select>
           </div>

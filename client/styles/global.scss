@@ -26,16 +26,46 @@ $family-sans-serif: "Nunito", sans-serif;
 }
 
 #about {
-  img {
-    object-fit: cover;
-    // height: 300px;
-    // margin: 0.5em;
-    // width: 30.5%;
+  .about-image {
+    img {
+      object-fit: cover;
+    }
+    height: 300px;
+    margin: 0.2em;
+    width: 30.5%;
+    position: relative;
+    display: inline-block;
     @include mobile {
       width: 100%;
     }
   }
 }
+
+.img-gradient {
+  position: relative;
+  overflow: hidden;
+  background-color: $black !important;
+  img {
+    object-fit: cover;
+  }
+}
+
+.img-gradient:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+
+  background: linear-gradient(
+    to bottom,
+    rgba($black, 0.2) 0%,
+    rgba($black, 0.6) 100%
+  );
+}
+
 @media print {
   .content {
     display: inline;

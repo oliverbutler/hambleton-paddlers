@@ -65,7 +65,7 @@ const Navbar = () => {
         }}
       >
         <div className="left">
-          <Link href="/">
+          <Link href="/about">
             <a className="navbar-item" onClick={handleClose}>
               About
             </a>
