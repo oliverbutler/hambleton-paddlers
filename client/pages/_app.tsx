@@ -15,6 +15,8 @@ import actions from "redux/actions";
 import axios from "axios";
 import { getInstance } from "utils/axios";
 
+import tawkTo from "tawkto-react";
+
 const store = createStore(
   rootReducer,
 
@@ -57,6 +59,9 @@ const Wrapper = (props) => {
 };
 
 const App = ({ Component, pageProps }) => {
+  useEffect(() => {
+    tawkTo("5fd625cda8a254155ab2e3cc");
+  }, []);
   return (
     <Provider store={store}>
       <Wrapper>
@@ -79,6 +84,7 @@ const App = ({ Component, pageProps }) => {
             src={`https://maps.googleapis.com/maps/api/js?key=${process.env.NEXT_PUBLIC_GOOGLE_KEY}&libraries=places`}
           ></script> */}
         </Head>
+
         <Navbar />
         <Component {...pageProps} />
         <Footer />
