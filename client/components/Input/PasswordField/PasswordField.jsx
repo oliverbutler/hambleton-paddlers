@@ -2,12 +2,13 @@ import React, { useState } from "react";
 import zxcvbn from "zxcvbn";
 import _ from "lodash";
 
-const PasswordField = ({ label }) => {
+const PasswordField = ({ label, setValue, errors }) => {
   const [password, setPassword] = useState("");
   const [verifyPassword, setVerifyPassword] = useState("");
   const [strength, setStrength] = useState({});
 
   const onChange = (e) => {
+    setValue("password", e.target.value, { required: true });
     setPassword(e.target.value);
     setStrength(zxcvbn(password));
   };
@@ -42,9 +43,10 @@ const PasswordField = ({ label }) => {
         <div className="label">{label}</div>
         <div className="control has-icons-left">
           <input
-            className="input"
-            type="new-password"
+            className={"input " + (_.get(errors, "password") && "is-danger")}
+            type="password"
             value={password}
+            name="password"
             onChange={onChange}
           />
           <span className="icon is-small is-left">
@@ -65,23 +67,25 @@ const PasswordField = ({ label }) => {
           </p>
         )}
       </div>
-      <div className="field">
-        <div className="label">Verify Password</div>
-        <div className="control has-icons-left">
-          <input
-            className={`input ${passwordMatch() ? "" : "is-danger"}`}
-            type="new-password"
-            value={verifyPassword}
-            onChange={onChangeVerify}
-          />
-          <span className="icon is-small is-left">
-            <ion-icon name="key-outline"></ion-icon>
-          </span>
+      {password.length > 0 && (
+        <div className="field">
+          <div className="label">Verify Password</div>
+          <div className="control has-icons-left">
+            <input
+              className={`input ${passwordMatch() ? "" : "is-danger"}`}
+              type="password"
+              value={verifyPassword}
+              onChange={onChangeVerify}
+            />
+            <span className="icon is-small is-left">
+              <ion-icon name="key-outline"></ion-icon>
+            </span>
+          </div>
+          {!passwordMatch() && (
+            <p className={`help is-danger`}>Passwords don't match</p>
+          )}
         </div>
-        {!passwordMatch() && (
-          <p className={`help is-danger`}>Passwords don't match</p>
-        )}
-      </div>
+      )}
     </div>
   );
 };

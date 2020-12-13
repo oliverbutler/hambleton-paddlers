@@ -1,60 +1,63 @@
 import React, { useEffect, useState } from "react";
 import PasswordField from "components/Input/PasswordField";
 import Input from "components/Input";
-import { useForm } from "react-hook-form";
-import { joiResolver } from "@hookform/resolvers/joi";
-import Joi from "joi";
+import { useForm, useFieldArray } from "react-hook-form";
 import { Types } from "components/Input/Input";
-
-const schema = Joi.object({
-  email: Joi.string().required(),
-  mobile_phone: Joi.string().min(9).required(),
-  home_phone: Joi.string(),
-});
+import { getAge } from "utils/functions";
+import { getInstance } from "utils/axios";
 
 const Register = () => {
-  const [family, setFamily] = useState([{}]);
+  const { register, handleSubmit, errors, control } = useForm();
+  const { fields, append, prepend, remove, swap, move, insert } = useFieldArray(
+    {
+      control,
+      name: "members",
+    }
+  );
 
-  const addFamilyMember = () => {
-    setFamily([...family, {}]);
-  };
-
-  const deleteFamilyMember = (index) => {
-    var fam = [...family];
-    fam.splice(index, 1);
-    setFamily(fam);
-  };
-
-  const { register, handleSubmit, errors } = useForm({
-    resolver: joiResolver(schema),
-  });
+  useEffect(() => {
+    if (fields.length == 0) append({});
+  }, []);
 
   useEffect(() => {
     console.log(errors);
   }, [errors]);
 
-  const onSubmit = (data) => console.log(data);
+  const is16 = (dateOfBirth) => {
+    if (getAge(dateOfBirth) < 16) return "Must be 16 or older";
+    else return true;
+  };
+
+  const onSubmit = (data) => {
+    getInstance()
+      .post("/auth/local/register", data)
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
+  };
 
   return (
     <div>
       <h1 className="title is-4 pt-5">Your Information</h1>
       <div className="columns mt-4">
         <div className="column">
-          <form>
+          <form onSubmit={handleSubmit(onSubmit)}>
             <Input
               label="Email"
               type={Types.email}
               name="email"
-              register={register}
+              register={register({ required: true })}
+              errors={errors}
               placeholder="johnsmith@gmail.com"
             />
-            <p>{errors.email?.message}</p>
             <div className="field-body">
               <Input
                 label="Mobile Phone"
                 type={Types.tel}
                 name="mobile_phone"
-                register={register}
+                register={register({
+                  required: true,
+                })}
+                errors={errors}
                 placeholder="07911 123456"
               />
 
@@ -63,10 +66,10 @@ const Register = () => {
                 type={Types.tel}
                 name="home_phone"
                 register={register}
+                errors={errors}
                 placeholder="01845 123456"
               />
             </div>
-            <p>{errors.mobile_phone?.message}</p>
 
             <h1 className="title is-4 pt-5">Member Details</h1>
 
@@ -87,7 +90,7 @@ const Register = () => {
               designated helpers can participate in a safe environment
             </p>
             <div>
-              {family.map((member, index) => (
+              {fields.map((member, index) => (
                 <div
                   key={`member-${index}`}
                   className="mt-5 pl-3"
@@ -97,20 +100,28 @@ const Register = () => {
                     <Input
                       label="First Name"
                       name={`members[${index}].given_name`}
-                      register={register}
+                      register={register({
+                        required: true,
+                      })}
+                      errors={errors}
                       placeholder="John"
                     />
                     <Input
                       label="Last Name"
                       name={`members[${index}].family_name`}
-                      register={register}
+                      register={register({ required: true })}
+                      errors={errors}
                       placeholder="Smith"
                     />
                     <Input
                       label="Date of Birth"
                       type={Types.date}
                       name={`members[${index}].date_of_birth`}
-                      register={register}
+                      errors={errors}
+                      register={register({
+                        required: true,
+                        validate: is16,
+                      })}
                     />
                   </div>
 
@@ -145,14 +156,16 @@ const Register = () => {
                       label="Kayaking"
                       select={["Beginner", "Intermediate", "Advanced"]}
                       name={`members[${index}].kayaking_level`}
-                      register={register}
+                      register={register({ required: true })}
+                      errors={errors}
                       narrow
                     />
                     <Input
                       label="Canoeing"
                       select={["Beginner", "Intermediate", "Advanced"]}
                       name={`members[${index}].canoeing_level`}
-                      register={register}
+                      register={register({ required: true })}
+                      errors={errors}
                       narrow
                     />
                     <Input
@@ -171,10 +184,7 @@ const Register = () => {
                     <button
                       className="button is-danger"
                       style={{ alignSelf: "flex-end" }}
-                      onClick={(e) => {
-                        e.preventDefault();
-                        deleteFamilyMember(index);
-                      }}
+                      onClick={() => remove(index)}
                       disabled={index == 0}
                     >
                       Delete
@@ -182,16 +192,20 @@ const Register = () => {
                   </div>
                 </div>
               ))}
-              <a className="button is-info mt-5" onClick={addFamilyMember}>
+              <a className="button is-info mt-5" onClick={() => append({})}>
                 Add Family Member
               </a>
             </div>
 
             <h1 className="title is-4">Account Details</h1>
 
-            <PasswordField label="Create account Password" />
+            <PasswordField
+              label="Create account Password"
+              ref={register}
+              errors={errors}
+            />
 
-            <h1 className="title is-4">Declaration</h1>
+            <h1 className="title is-4">Terms and Conditions</h1>
 
             <ol>
               <li>
@@ -226,11 +240,12 @@ const Register = () => {
                 in "My Profile".
               </li>
               <li>
-                I agree that all personal data provided will be stored{" "}
-                <b>sole use</b> of Hambleton Paddlers Canoe Club. The data will
-                be deleted once you leave the club or request for the data to be
-                removed. As to comply with GDPR you may also request access to
-                any and all data we hold against you, please contact us at{" "}
+                I understand and gree that all personal data provided will be
+                stored <b>sole use</b> of Hambleton Paddlers Canoe Club. The
+                data will be deleted once you leave the club or request for the
+                data to be removed. As to comply with GDPR you may also request
+                access to any and all data we hold against you, please contact
+                us at{" "}
                 <a href="mailto:hambletonpaddlers02@gmail.com">
                   hambletonpaddlers02@gmail.com
                 </a>
@@ -240,17 +255,20 @@ const Register = () => {
                 the account may lead to membership and account revocation.
               </li>
             </ol>
-            <div className="field">
-              <label className="checkbox">
-                <input type="checkbox" ref={register} name="signed_tos" /> I
-                agree to the above terms and conditions
-              </label>
-            </div>
+            <Input
+              type={Types.checkbox}
+              name="signed_tos"
+              label="I agree to the above terms and conditions"
+              register={register({
+                required: {
+                  value: true,
+                  message: "You must agree to the tos to progress",
+                },
+              })}
+              errors={errors}
+            />
 
-            <button
-              className="button is-primary mt-5"
-              onClick={handleSubmit(onSubmit)}
-            >
+            <button className="button is-primary mt-5" type="submit">
               Submit
             </button>
           </form>

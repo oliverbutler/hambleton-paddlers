@@ -8,6 +8,7 @@ import Image from "next/image";
 import Setting from "./Setting";
 import { getInstance } from "utils/axios";
 import { getToast } from "utils/functions";
+import PasswordField from "components/Input/PasswordField";
 
 const Profile = () => {
   const currentUser = useSelector((state) => state.currentUser);
@@ -51,7 +52,7 @@ const Profile = () => {
       </p>
       <div className="columns ">
         {user.members.map((member, index) => (
-          <div className="column is-narrow">
+          <div className="column is-narrow" key={`member-${index}`}>
             <figure
               className="image is-128x128 mx-2 my-2 mb-4"
               key={`attendee-${index}`}
@@ -123,7 +124,7 @@ const Profile = () => {
         </div>
       ))}
       <h1 className="title is-4">Account Security</h1>
-      <div className="field">
+      {/* <div className="field">
         <label className="label">New Password</label>
         <div className="control">
           <input className="input" type="password" placeholder="************" />
@@ -134,7 +135,8 @@ const Profile = () => {
         <div className="control">
           <input className="input" type="password" placeholder="************" />
         </div>
-      </div>
+      </div> */}
+      <PasswordField label="New Password" />
       <button className="button is-info">Update Password</button>
     </div>
   );

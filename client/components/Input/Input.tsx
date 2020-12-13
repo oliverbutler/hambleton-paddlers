@@ -1,4 +1,5 @@
 import React, { FC } from "react";
+import _, { has } from "lodash";
 
 export enum Types {
   text = "text",
@@ -22,6 +23,7 @@ interface InputProps {
   expanded?: boolean;
   select?: string[];
   help?: any;
+  errors?: {};
 }
 
 const Input: FC<InputProps> = ({
@@ -35,7 +37,13 @@ const Input: FC<InputProps> = ({
   expanded = false,
   select,
   help,
+  errors,
 }) => {
+  const hasErrors = () => {
+    // return Boolean(_.get(errors, `[${name}]`));
+    return Boolean(_.get(errors, name));
+  };
+
   return (
     <div
       className={`field ${narrow ? "is-narrow " : ""} ${
@@ -71,13 +79,20 @@ const Input: FC<InputProps> = ({
           </div>
         ) : (
           <input
-            className={type == Types.checkbox ? "checkbox" : "input"}
+            className={
+              type == Types.checkbox
+                ? "checkbox"
+                : "input" + (hasErrors() ? " is-danger" : " ")
+            }
             ref={register}
             name={name}
             type={type}
             placeholder={placeholder}
             disabled={disabled}
           />
+        )}
+        {hasErrors() && (
+          <p className="help is-danger">{_.get(errors, name).message}</p>
         )}
         <p className="help">{help}</p>
       </div>

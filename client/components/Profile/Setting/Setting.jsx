@@ -24,7 +24,7 @@ const Setting = ({ title, value, save, type = "Text", disabled, textarea }) => {
       <label className="label">{title}</label>
       {/* <b>{title}: </b> <br /> */}
 
-      <div class={`control ${status ? "is-loading" : ""}`}>
+      <div className={`control ${status ? "is-loading" : ""}`}>
         {textarea ? (
           <textarea
             className="textarea"

@@ -30,4 +30,5 @@ module.exports = {
 
     return sanitize(user);
   },
+
 };

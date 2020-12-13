@@ -12,10 +12,7 @@ import rootReducer from "redux/reducers";
 import { useDispatch } from "react-redux";
 import actions from "redux/actions";
 
-import axios from "axios";
 import { getInstance } from "utils/axios";
-
-import tawkTo from "tawkto-react";
 
 const store = createStore(
   rootReducer,
@@ -59,9 +56,6 @@ const Wrapper = (props) => {
 };
 
 const App = ({ Component, pageProps }) => {
-  useEffect(() => {
-    tawkTo("5fd625cda8a254155ab2e3cc");
-  }, []);
   return (
     <Provider store={store}>
       <Wrapper>
