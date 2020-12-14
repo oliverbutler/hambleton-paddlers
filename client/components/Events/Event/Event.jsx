@@ -4,6 +4,7 @@ import Link from "next/link";
 import _ from "lodash";
 import { useSelector, useDispatch } from "react-redux";
 import EventTab from "../EventTab";
+import Image from "next/image";
 
 const Event = ({ event }) => {
   const currentUser = useSelector((state) => state.currentUser);
@@ -42,9 +43,11 @@ const Event = ({ event }) => {
               <div className="columns">
                 <div className="column is-narrow">
                   <figure class="image is-64x64 mx-2 my-2">
-                    <img
+                    <Image
                       className="is-rounded"
                       src={event.lead_member.picture.url}
+                      width={64}
+                      height={64}
                     />
                   </figure>
                 </div>
@@ -104,9 +107,11 @@ const Event = ({ event }) => {
                       class="image is-64x64 mx-2 my-2 mb-6"
                       key={`attendee-${index}`}
                     >
-                      <img
+                      <Image
                         className="is-rounded"
                         src={_.get(member.member, "picture.url", "")}
+                        width={64}
+                        height={64}
                       />
                       <p>{member.member.given_name}</p>
                     </figure>

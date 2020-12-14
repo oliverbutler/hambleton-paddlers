@@ -26,7 +26,7 @@ const join = () => {
             </div>
             <div className="column is-half">
               <p className="title">
-                Join Online <span className="tag is-success">COMING SOON</span>
+                Join Online <span className="tag is-success">NEW</span>
               </p>
               <p>
                 Please just fill out the form below to join us online! <br />{" "}

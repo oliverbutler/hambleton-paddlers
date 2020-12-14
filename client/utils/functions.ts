@@ -8,9 +8,9 @@ export function getToast() {
     toast: true,
     position: "bottom-end",
     showConfirmButton: false,
-    timer: 3000,
+    timer: 5000,
     timerProgressBar: true,
-    onOpen: (toast) => {
+    didOpen: (toast) => {
       toast.addEventListener("mouseenter", Swal.stopTimer);
       toast.addEventListener("mouseleave", Swal.resumeTimer);
     },
@@ -22,7 +22,7 @@ export function getToast() {
  *
  * @param level 0 - 3
  */
-export function colour(level) {
+export function colour(level):string {
   var perc = 100 - (level / 3) * 100;
 
   var r,
@@ -37,4 +37,19 @@ export function colour(level) {
   }
   var h = r * 0x10000 + g * 0x100 + b * 0x1;
   return "#" + ("000000" + h.toString(16)).slice(-6);
+}
+
+/**
+ * 
+ * @param DOB Returns int of age
+ */
+export function getAge(DOB) {
+  var today = new Date();
+  var birthDate = new Date(DOB);
+  var age = today.getFullYear() - birthDate.getFullYear();
+  var m = today.getMonth() - birthDate.getMonth();
+  if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+      age--;
+  }    
+  return age;
 }

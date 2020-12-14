@@ -2,7 +2,8 @@
   "collectionName": "components_membership_payments",
   "info": {
     "name": "payment",
-    "icon": "dollar-sign"
+    "icon": "dollar-sign",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -33,6 +34,9 @@
     "date_end": {
       "type": "date",
       "required": true
+    },
+    "note": {
+      "type": "text"
     }
   }
 }

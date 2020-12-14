@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/committee-members",
+      "handler": "committee-member.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/committee-members/count",
+      "handler": "committee-member.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/committee-members/:id",
+      "handler": "committee-member.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/committee-members",
+      "handler": "committee-member.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/committee-members/:id",
+      "handler": "committee-member.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/committee-members/:id",
+      "handler": "committee-member.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

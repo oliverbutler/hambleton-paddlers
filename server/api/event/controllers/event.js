@@ -29,8 +29,7 @@ const sanitizeMember = (role, member, contact = false) => {
 };
 
 const sanitize = (role, uid, obj) => {
-  if (obj.lead_member && String(uid) == String(obj.lead_member.user))
-    role = "Committee";
+  if (String(uid) == String(obj.lead_member.user)) role = "Committee";
 
   obj = _.omit(obj, ["created_by", "updated_by", "id"]);
 
@@ -44,7 +43,7 @@ const sanitize = (role, uid, obj) => {
   }
 
   // Lead member
-  if (role && obj["lead_member"]) {
+  if (role) {
     obj["lead_member"] = sanitizeMember(role, obj["lead_member"], true);
   } else {
     _.unset(obj, "lead_member");
@@ -95,19 +94,13 @@ module.exports = {
       });
     }
 
-    return entities
-      .map((entity) =>
-        sanitize(
-          role,
-          uid,
-          sanitizeEntity(entity, { model: strapi.models.event })
-        )
+    return entities.map((entity) =>
+      sanitize(
+        role,
+        uid,
+        sanitizeEntity(entity, { model: strapi.models.event })
       )
-      .sort((a, b) => {
-        if (new Date(a.date_start) < new Date(b.date_start)) return 1;
-        if (new Date(a.date_start) > new Date(b.date_start)) return -1;
-        return 0;
-      });
+    );
   },
 
   async findPast() {
@@ -116,19 +109,13 @@ module.exports = {
       return new Date(ent.date_start) < new Date(new Date().toDateString());
     });
 
-    return entities
-      .map((e) =>
-        sanitize(
-          undefined,
-          false,
-          sanitizeEntity(e, { model: strapi.models.event })
-        )
+    return entities.map((e) =>
+      sanitize(
+        undefined,
+        false,
+        sanitizeEntity(e, { model: strapi.models.event })
       )
-      .sort((a, b) => {
-        if (new Date(a.date_start) < new Date(b.date_start)) return 1;
-        if (new Date(a.date_start) > new Date(b.date_start)) return -1;
-        return 0;
-      });
+    );
   },
 
   async findOne(ctx) {
@@ -152,4 +139,12 @@ module.exports = {
       sanitizeEntity(entity, { model: strapi.models.event })
     );
   },
+
+  async going(ctx) {
+
+    const { id } = ctx.params;
+
+    return id
+
+  }
 };

@@ -559,6 +559,9 @@
                 "role": {
                   "type": "string"
                 },
+                "confirmationToken": {
+                  "type": "string"
+                },
                 "payments": {
                   "type": "component"
                 },
@@ -570,6 +573,15 @@
                   "items": {
                     "type": "string"
                   }
+                },
+                "renewal_cost": {
+                  "type": "number"
+                },
+                "contact": {
+                  "type": "component"
+                },
+                "signed_tos": {
+                  "type": "boolean"
                 },
                 "created_by": {
                   "type": "string"

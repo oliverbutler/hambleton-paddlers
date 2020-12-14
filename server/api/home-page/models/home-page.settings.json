@@ -2,11 +2,13 @@
   "kind": "singleType",
   "collectionName": "home_pages",
   "info": {
-    "name": "Home Page"
+    "name": "Home Page",
+    "description": ""
   },
   "options": {
     "increments": true,
-    "timestamps": true
+    "timestamps": true,
+    "draftAndPublish": false
   },
   "attributes": {
     "main_body": {

@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "committee_members",
+  "info": {
+    "name": "Committee Member",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "role": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "text"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "member": {
+      "model": "member"
+    },
+    "order": {
+      "type": "integer",
+      "unique": true,
+      "required": true
+    }
+  }
+}

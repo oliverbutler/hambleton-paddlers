@@ -6,7 +6,8 @@
     "description": ""
   },
   "options": {
-    "timestamps": true
+    "timestamps": true,
+    "draftAndPublish": false
   },
   "attributes": {
     "username": {
@@ -53,6 +54,11 @@
       "plugin": "users-permissions",
       "configurable": false
     },
+    "confirmationToken": {
+      "type": "string",
+      "configurable": false,
+      "private": true
+    },
     "payments": {
       "type": "component",
       "repeatable": true,
@@ -64,8 +70,20 @@
       "required": true
     },
     "members": {
-      "via": "users",
-      "collection": "member"
+      "collection": "member",
+      "via": "users"
+    },
+    "renewal_cost": {
+      "type": "decimal",
+      "default": 10
+    },
+    "contact": {
+      "type": "component",
+      "repeatable": false,
+      "component": "membership.contact"
+    },
+    "signed_tos": {
+      "type": "boolean"
     }
   }
 }

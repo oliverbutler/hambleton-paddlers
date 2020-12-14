@@ -25,7 +25,9 @@ const commitee_members = ({ content }) => {
 export default commitee_members;
 
 export const getStaticProps = async () => {
-  const content = await Axios.get(process.env.NEXT_PUBLIC_HOST + "/committee")
+  const content = await Axios.get(
+    process.env.NEXT_PUBLIC_HOST + "/committee-members"
+  )
     .then((res) => res.data)
     .catch(() => []);
 

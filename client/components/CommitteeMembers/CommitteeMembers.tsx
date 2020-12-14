@@ -8,6 +8,7 @@ const CommitteeMembers = ({ content }) => {
   return content.map((member, index) => {
     return (
       <CommitteeMember
+        key={`member-${index}`}
         member={member}
         index={index}
         openIndex={openIndex}
