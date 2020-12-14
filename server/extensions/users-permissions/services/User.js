@@ -140,22 +140,30 @@ module.exports = {
 
     await this.edit({ id: user.id }, { confirmationToken });
 
+
     settings.message = await userPermissionService.template(settings.message, {
       URL: `${getAbsoluteServerUrl(strapi.config)}/auth/email-confirmation`,
       USER: userInfo,
       TOKEN: confirmationToken,
-    });
-
+    }); 
+    
     settings.object = await userPermissionService.template(settings.object, { USER: userInfo });
+
+
+    // await strapi.plugins['email'].services.email.send({
+    //   to: user.email,
+    //   subject: "confirm",
+    //   text: settings.message
+    // });
 
     // Send an email to the user.
     await strapi.plugins['email'].services.email.send({
       to: user.email,
-      from:
-        settings.from.email && settings.from.name
-          ? `${settings.from.name} <${settings.from.email}>`
-          : undefined,
-      replyTo: settings.response_email,
+      // from:
+      //   settings.from.email && settings.from.name
+      //     ? `${settings.from.name} <${settings.from.email}>`
+      //     : undefined,
+      // replyTo: settings.response_email,
       subject: settings.object,
       text: settings.message,
       html: settings.message,

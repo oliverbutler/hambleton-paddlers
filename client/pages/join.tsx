@@ -34,7 +34,7 @@ const join = () => {
                 we can!
               </p>
               <Link href="/register">
-                <button className="button is-primary my-4">
+                <button className="button is-primary my-4" disabled>
                   Join Us Online
                 </button>
               </Link>

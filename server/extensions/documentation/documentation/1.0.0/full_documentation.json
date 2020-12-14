@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "12/13/2020 5:52:33 PM"
+    "x-generation-date": "12/14/2020 2:16:29 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -1405,7 +1405,7 @@
         ]
       }
     },
-    "/committee": {
+    "/committee-members": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -1457,7 +1457,7 @@
         },
         "summary": "",
         "tags": [
-          "Committee"
+          "Committee-member"
         ],
         "parameters": [
           {
@@ -1595,6 +1595,336 @@
               }
             },
             "deprecated": false
+          }
+        ]
+      },
+      "post": {
+        "deprecated": false,
+        "description": "Create a new record",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Committee-member"
+        ],
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewCommittee-member"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/committee-members/count": {
+      "get": {
+        "deprecated": false,
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Committee-member"
+        ],
+        "parameters": []
+      }
+    },
+    "/committee-members/{id}": {
+      "get": {
+        "deprecated": false,
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Committee-member"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      },
+      "put": {
+        "deprecated": false,
+        "description": "Update a record",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Committee-member"
+        ],
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewCommittee-member"
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      },
+      "delete": {
+        "deprecated": false,
+        "description": "Delete a record",
+        "responses": {
+          "200": {
+            "description": "deletes a single record based on the ID supplied",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int64"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Committee-member"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ]
       }
@@ -6262,6 +6592,120 @@
           }
         }
       },
+      "Committee-member": {
+        "required": [
+          "id",
+          "order"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string"
+          },
+          "summary": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "member": {
+            "required": [
+              "id",
+              "given_name",
+              "family_name",
+              "date_of_birth"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "given_name": {
+                "type": "string"
+              },
+              "family_name": {
+                "type": "string"
+              },
+              "date_of_birth": {
+                "type": "string"
+              },
+              "bcu_awards": {
+                "type": "string"
+              },
+              "bcu_coaching_awards": {
+                "type": "string"
+              },
+              "picture": {
+                "type": "string"
+              },
+              "committee": {
+                "type": "component"
+              },
+              "contact": {
+                "type": "component"
+              },
+              "allergies": {
+                "type": "string"
+              },
+              "other_medical": {
+                "type": "string"
+              },
+              "users": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
+          "order": {
+            "type": "integer"
+          },
+          "published_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "NewCommittee-member": {
+        "required": [
+          "order"
+        ],
+        "properties": {
+          "role": {
+            "type": "string"
+          },
+          "summary": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "member": {
+            "type": "string"
+          },
+          "order": {
+            "type": "integer"
+          },
+          "published_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "created_by": {
+            "type": "string"
+          },
+          "updated_by": {
+            "type": "string"
+          }
+        }
+      },
       "Documents": {
         "required": [
           "id"
@@ -7409,6 +7853,9 @@
               },
               "mobile_phone": {
                 "type": "string"
+              },
+              "home_phone": {
+                "type": "string"
               }
             }
           },
@@ -7455,6 +7902,9 @@
                 "role": {
                   "type": "string"
                 },
+                "confirmationToken": {
+                  "type": "string"
+                },
                 "payments": {
                   "type": "component"
                 },
@@ -7469,6 +7919,12 @@
                 },
                 "renewal_cost": {
                   "type": "number"
+                },
+                "contact": {
+                  "type": "component"
+                },
+                "signed_tos": {
+                  "type": "boolean"
                 },
                 "created_by": {
                   "type": "string"
@@ -7544,6 +8000,9 @@
                 "type": "string"
               },
               "mobile_phone": {
+                "type": "string"
+              },
+              "home_phone": {
                 "type": "string"
               }
             }
@@ -7665,6 +8124,9 @@
                 "role": {
                   "type": "string"
                 },
+                "confirmationToken": {
+                  "type": "string"
+                },
                 "payments": {
                   "type": "component"
                 },
@@ -7679,6 +8141,12 @@
                 },
                 "renewal_cost": {
                   "type": "number"
+                },
+                "contact": {
+                  "type": "component"
+                },
+                "signed_tos": {
+                  "type": "boolean"
                 },
                 "created_by": {
                   "type": "string"
@@ -7955,6 +8423,29 @@
           "renewal_cost": {
             "type": "number",
             "default": 10
+          },
+          "contact": {
+            "type": "object",
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              },
+              "mobile_phone": {
+                "type": "string"
+              },
+              "home_phone": {
+                "type": "string"
+              }
+            }
+          },
+          "signed_tos": {
+            "type": "boolean"
           }
         }
       },
@@ -7993,6 +8484,9 @@
             "default": false
           },
           "role": {
+            "type": "string"
+          },
+          "confirmationToken": {
             "type": "string"
           },
           "payments": {
@@ -8105,6 +8599,29 @@
             "type": "number",
             "default": 10
           },
+          "contact": {
+            "type": "object",
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              },
+              "mobile_phone": {
+                "type": "string"
+              },
+              "home_phone": {
+                "type": "string"
+              }
+            }
+          },
+          "signed_tos": {
+            "type": "boolean"
+          },
           "created_by": {
             "type": "string"
           },
@@ -8138,9 +8655,6 @@
     }
   },
   "tags": [
-    {
-      "name": "Committee"
-    },
     {
       "name": "Documents"
     },

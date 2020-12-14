@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import PasswordField from "components/Input/PasswordField";
 import Input from "components/Input";
 import { useForm, useFieldArray } from "react-hook-form";
 import { Types } from "components/Input/Input";
-import { getAge } from "utils/functions";
+import { getAge, getToast } from "utils/functions";
 import { getInstance } from "utils/axios";
+import _ from "lodash";
+import Router from "next/router";
 
 const Register = () => {
   const { register, handleSubmit, errors, control } = useForm();
@@ -19,9 +21,9 @@ const Register = () => {
     if (fields.length == 0) append({});
   }, []);
 
-  useEffect(() => {
-    console.log(errors);
-  }, [errors]);
+  // useEffect(() => {
+  //   console.log(errors);
+  // }, [errors]);
 
   const is16 = (dateOfBirth) => {
     if (getAge(dateOfBirth) < 16) return "Must be 16 or older";
@@ -29,10 +31,24 @@ const Register = () => {
   };
 
   const onSubmit = (data) => {
+    data.username = data.email;
+
     getInstance()
-      .post("/auth/local/register", data)
-      .then((res) => console.log(res))
-      .catch((err) => console.log(err));
+      .post("/auth/local/register", data, { timeout: 5000 })
+      .then((res) => {
+        console.log(res);
+        getToast().fire({
+          icon: "success",
+          title: "Account successfully created!",
+        });
+        Router.push("/login");
+      })
+      .catch((err) => {
+        getToast().fire({
+          icon: "error",
+          title: _.get(err, "response.data.message[0].messages[0].message"),
+        });
+      });
   };
 
   return (
@@ -180,6 +196,7 @@ const Register = () => {
                       type={Types.checkbox}
                       name={`members[${index}].photo_concent`}
                       register={register}
+                      help="See the data protection form"
                     />
                     <button
                       className="button is-danger"
@@ -201,7 +218,7 @@ const Register = () => {
 
             <PasswordField
               label="Create account Password"
-              ref={register}
+              register={register}
               errors={errors}
             />
 

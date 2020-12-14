@@ -59,7 +59,7 @@ const Profile = () => {
             >
               <Image
                 className="is-rounded"
-                src={_.get(member, "picture.url", "")}
+                src={_.get(member, "picture.url", "/public/profile.jpg")}
                 width={128}
                 height={128}
               />
@@ -136,7 +136,7 @@ const Profile = () => {
           <input className="input" type="password" placeholder="************" />
         </div>
       </div> */}
-      <PasswordField label="New Password" />
+      {/* <PasswordField label="New Password" /> */}
       <button className="button is-info">Update Password</button>
     </div>
   );

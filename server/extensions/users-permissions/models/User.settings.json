@@ -54,6 +54,11 @@
       "plugin": "users-permissions",
       "configurable": false
     },
+    "confirmationToken": {
+      "type": "string",
+      "configurable": false,
+      "private": true
+    },
     "payments": {
       "type": "component",
       "repeatable": true,
@@ -71,6 +76,14 @@
     "renewal_cost": {
       "type": "decimal",
       "default": 10
+    },
+    "contact": {
+      "type": "component",
+      "repeatable": false,
+      "component": "membership.contact"
+    },
+    "signed_tos": {
+      "type": "boolean"
     }
   }
 }

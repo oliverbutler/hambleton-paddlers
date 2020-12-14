@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import _, { has } from "lodash";
+import classNames from "classnames";
 
 export enum Types {
   text = "text",
@@ -10,6 +11,7 @@ export enum Types {
   checkbox = "checkbox",
   select = "select",
   textarea = "textarea",
+  password = "password",
 }
 
 interface InputProps {
@@ -24,6 +26,8 @@ interface InputProps {
   select?: string[];
   help?: any;
   errors?: {};
+  onChange?: any;
+  iconLeft?: string;
 }
 
 const Input: FC<InputProps> = ({
@@ -38,6 +42,8 @@ const Input: FC<InputProps> = ({
   select,
   help,
   errors,
+  onChange,
+  iconLeft,
 }) => {
   const hasErrors = () => {
     // return Boolean(_.get(errors, `[${name}]`));
@@ -52,9 +58,12 @@ const Input: FC<InputProps> = ({
     >
       <label className="label">{label}</label>
       <div
-        className={`control ${narrow ? "is-narrow " : ""} ${
-          expanded ? "is-expanded " : ""
-        } `}
+        className={classNames(
+          "control",
+          { "is-narrow": narrow },
+          { "is-expanded": expanded },
+          { "has-icons-left": iconLeft }
+        )}
       >
         {type == Types.textarea ? (
           <textarea
@@ -63,6 +72,7 @@ const Input: FC<InputProps> = ({
             name={name}
             placeholder={placeholder}
             disabled={disabled}
+            onChange={onChange}
           />
         ) : select ? (
           <div className="select">
@@ -71,6 +81,7 @@ const Input: FC<InputProps> = ({
                 <option
                   key={`${name}-option-${index}`}
                   value={val.toLowerCase()}
+                  onChange={onChange}
                 >
                   {val}
                 </option>
@@ -89,7 +100,13 @@ const Input: FC<InputProps> = ({
             type={type}
             placeholder={placeholder}
             disabled={disabled}
+            onChange={onChange}
           />
+        )}
+        {iconLeft && (
+          <span className="icon is-small is-left">
+            <ion-icon name={iconLeft}></ion-icon>
+          </span>
         )}
         {hasErrors() && (
           <p className="help is-danger">{_.get(errors, name).message}</p>

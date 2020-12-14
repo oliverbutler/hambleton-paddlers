@@ -5,6 +5,7 @@ import axios from "axios";
 import actions from "redux/actions";
 import { getToast } from "utils/functions";
 import Router from "next/router";
+import _ from "lodash";
 
 const Login = () => {
   const { register, handleSubmit, watch, errors } = useForm();
@@ -21,10 +22,19 @@ const Login = () => {
         localStorage.setItem("accessToken", res.data.jwt);
       })
       .catch((err) => {
-        getToast().fire({
-          icon: "error",
-          title: "Incorrect email or password",
-        });
+        if (
+          _.get(err, "response.data.message[0].messages[0].id") ==
+          "Auth.form.error.confirmed"
+        )
+          getToast().fire({
+            icon: "warning",
+            title: "Please confirm your email",
+          });
+        else
+          getToast().fire({
+            icon: "error",
+            title: "Incorrect email or password",
+          });
       });
   };
 

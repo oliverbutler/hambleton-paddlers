@@ -704,6 +704,9 @@
               },
               "mobile_phone": {
                 "type": "string"
+              },
+              "home_phone": {
+                "type": "string"
               }
             }
           },
@@ -750,6 +753,9 @@
                 "role": {
                   "type": "string"
                 },
+                "confirmationToken": {
+                  "type": "string"
+                },
                 "payments": {
                   "type": "component"
                 },
@@ -764,6 +770,12 @@
                 },
                 "renewal_cost": {
                   "type": "number"
+                },
+                "contact": {
+                  "type": "component"
+                },
+                "signed_tos": {
+                  "type": "boolean"
                 },
                 "created_by": {
                   "type": "string"
@@ -839,6 +851,9 @@
                 "type": "string"
               },
               "mobile_phone": {
+                "type": "string"
+              },
+              "home_phone": {
                 "type": "string"
               }
             }

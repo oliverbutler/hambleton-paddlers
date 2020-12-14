@@ -1413,6 +1413,29 @@
           "renewal_cost": {
             "type": "number",
             "default": 10
+          },
+          "contact": {
+            "type": "object",
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              },
+              "mobile_phone": {
+                "type": "string"
+              },
+              "home_phone": {
+                "type": "string"
+              }
+            }
+          },
+          "signed_tos": {
+            "type": "boolean"
           }
         }
       },
@@ -1451,6 +1474,9 @@
             "default": false
           },
           "role": {
+            "type": "string"
+          },
+          "confirmationToken": {
             "type": "string"
           },
           "payments": {
@@ -1562,6 +1588,29 @@
           "renewal_cost": {
             "type": "number",
             "default": 10
+          },
+          "contact": {
+            "type": "object",
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              },
+              "mobile_phone": {
+                "type": "string"
+              },
+              "home_phone": {
+                "type": "string"
+              }
+            }
+          },
+          "signed_tos": {
+            "type": "boolean"
           },
           "created_by": {
             "type": "string"

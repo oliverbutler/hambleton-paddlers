@@ -8,9 +8,9 @@ export function getToast() {
     toast: true,
     position: "bottom-end",
     showConfirmButton: false,
-    timer: 3000,
+    timer: 5000,
     timerProgressBar: true,
-    onOpen: (toast) => {
+    didOpen: (toast) => {
       toast.addEventListener("mouseenter", Swal.stopTimer);
       toast.addEventListener("mouseleave", Swal.resumeTimer);
     },

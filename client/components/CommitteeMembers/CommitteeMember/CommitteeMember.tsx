@@ -24,8 +24,8 @@ const CommitteeMember = ({ index, member, openIndex, setOpenIndex }) => {
           <p className="image is-128x128 ml-3">
             <Image
               src={
-                member.picture
-                  ? member.picture.url
+                member.member.picture
+                  ? member.member.picture.url
                   : "https://hambleton-paddlers.s3.eu-west-2.amazonaws.com/default_user_4f14e60794.png"
               }
               width={128}
@@ -35,12 +35,12 @@ const CommitteeMember = ({ index, member, openIndex, setOpenIndex }) => {
         </div>
         <div className="column ml-3">
           <p className="title is-4">
-            {member.given_name} {member.family_name}{" "}
+            {member?.member?.given_name} {member?.member?.family_name}{" "}
             <span className="tag is-info is-medium is-light">
-              {member.committee.role}
+              {member?.role}
             </span>
           </p>
-          <p>{member.committee.summary}</p>
+          <p>{member?.summary}</p>
         </div>
       </div>
 
@@ -64,7 +64,7 @@ const CommitteeMember = ({ index, member, openIndex, setOpenIndex }) => {
               }}
               transition={{ duration: 0.8, ease: [0.04, 0.62, 0.23, 0.98] }}
             >
-              <ReactMarkdown source={member.committee.description} />
+              <ReactMarkdown source={member?.description} />
             </motion.section>
           </div>
         )}
