@@ -1,6 +1,22 @@
-import React, { useState } from "react";
+import React, { FC, useState } from "react";
 
-const Setting = ({ title, value, save, type = "Text", disabled, textarea }) => {
+interface InputProps {
+  title: string;
+  value: any;
+  save?: any;
+  type?: string;
+  disabled?: boolean;
+  textarea?: boolean;
+}
+
+const Setting: FC<InputProps> = ({
+  title,
+  value,
+  save,
+  type = "text",
+  disabled,
+  textarea,
+}) => {
   const [text, setText] = useState(value);
   const [status, setStatus] = useState(false);
 
