@@ -44,7 +44,7 @@ const Setting: FC<InputProps> = ({
         {textarea ? (
           <textarea
             className="textarea"
-            type={type}
+            // type={type}
             value={text}
             onBlur={onBlur}
             onChange={onChange}
