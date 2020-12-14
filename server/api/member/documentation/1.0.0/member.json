@@ -663,33 +663,6 @@
               }
             }
           },
-          "committee": {
-            "type": "object",
-            "required": [
-              "id",
-              "role",
-              "description",
-              "summary",
-              "order"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "role": {
-                "type": "string"
-              },
-              "description": {
-                "type": "string"
-              },
-              "summary": {
-                "type": "string"
-              },
-              "order": {
-                "type": "integer"
-              }
-            }
-          },
           "contact": {
             "type": "object",
             "required": [
@@ -810,33 +783,6 @@
           },
           "bcu_coaching_awards": {
             "type": "string"
-          },
-          "committee": {
-            "type": "object",
-            "required": [
-              "id",
-              "role",
-              "description",
-              "summary",
-              "order"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "role": {
-                "type": "string"
-              },
-              "description": {
-                "type": "string"
-              },
-              "summary": {
-                "type": "string"
-              },
-              "order": {
-                "type": "integer"
-              }
-            }
           },
           "contact": {
             "type": "object",

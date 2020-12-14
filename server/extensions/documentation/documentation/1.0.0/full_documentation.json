@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "12/14/2020 2:16:29 PM"
+    "x-generation-date": "12/14/2020 2:44:20 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -6639,9 +6639,6 @@
               "picture": {
                 "type": "string"
               },
-              "committee": {
-                "type": "component"
-              },
               "contact": {
                 "type": "component"
               },
@@ -7139,9 +7136,6 @@
               "picture": {
                 "type": "string"
               },
-              "committee": {
-                "type": "component"
-              },
               "contact": {
                 "type": "component"
               },
@@ -7302,9 +7296,6 @@
                     "picture": {
                       "type": "string"
                     },
-                    "committee": {
-                      "type": "component"
-                    },
                     "contact": {
                       "type": "component"
                     },
@@ -7449,9 +7440,6 @@
                     },
                     "picture": {
                       "type": "string"
-                    },
-                    "committee": {
-                      "type": "component"
                     },
                     "contact": {
                       "type": "component"
@@ -7812,33 +7800,6 @@
               }
             }
           },
-          "committee": {
-            "type": "object",
-            "required": [
-              "id",
-              "role",
-              "description",
-              "summary",
-              "order"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "role": {
-                "type": "string"
-              },
-              "description": {
-                "type": "string"
-              },
-              "summary": {
-                "type": "string"
-              },
-              "order": {
-                "type": "integer"
-              }
-            }
-          },
           "contact": {
             "type": "object",
             "required": [
@@ -7959,33 +7920,6 @@
           },
           "bcu_coaching_awards": {
             "type": "string"
-          },
-          "committee": {
-            "type": "object",
-            "required": [
-              "id",
-              "role",
-              "description",
-              "summary",
-              "order"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "role": {
-                "type": "string"
-              },
-              "description": {
-                "type": "string"
-              },
-              "summary": {
-                "type": "string"
-              },
-              "order": {
-                "type": "integer"
-              }
-            }
           },
           "contact": {
             "type": "object",
@@ -8318,9 +8252,6 @@
                     "picture": {
                       "type": "string"
                     },
-                    "committee": {
-                      "type": "component"
-                    },
                     "contact": {
                       "type": "component"
                     },
@@ -8392,9 +8323,6 @@
                 },
                 "picture": {
                   "type": "string"
-                },
-                "committee": {
-                  "type": "component"
                 },
                 "contact": {
                   "type": "component"
@@ -8544,9 +8472,6 @@
                     },
                     "picture": {
                       "type": "string"
-                    },
-                    "committee": {
-                      "type": "component"
                     },
                     "contact": {
                       "type": "component"
