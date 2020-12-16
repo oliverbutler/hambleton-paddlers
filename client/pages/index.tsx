@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Events from "components/Events";
 import About from "components/About/About";
-import Image from "next/image";
+import Image from "components/Image";
 import { motion } from "framer-motion";
 
 const index = ({ content }) => {
@@ -15,9 +15,10 @@ const index = ({ content }) => {
           }}
         >
           <Image
-            src={content.header_photo.url}
-            layout="fill"
+            image={content.header_photo}
             alt="Header image of kayakers kayaking"
+            style={{ position: "absolute" }}
+            blur
           />
 
           <div className="hero-body" id="header">
@@ -33,13 +34,14 @@ const index = ({ content }) => {
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
             <About content={content} />
 
-            <div className="img-gradient">
+            {/* <div className="img-gradient">
               <Image
                 src={content.header_photo.url}
                 layout="fill"
                 alt="Header image of kayakers kayaking"
               />
-            </div>
+            </div> */}
+            {/* <Image image={content.header_photo} /> */}
           </motion.div>
         </div>
       </div>

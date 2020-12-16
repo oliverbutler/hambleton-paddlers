@@ -1,13 +1,13 @@
 import React from "react";
 import ReactMarkdown from "react-markdown";
-import Image from "next/image";
+import Image from "components/Image";
 
 const About = ({ content }) => {
   const renderers = {
     image: ({ src, alt }) => {
       return (
         <div className="about-image">
-          <Image src={src} layout="fill" alt={alt} />
+          <Image src={src} alt={alt} />
         </div>
       );
     },

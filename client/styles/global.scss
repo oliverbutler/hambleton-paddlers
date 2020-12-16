@@ -27,13 +27,9 @@ $family-sans-serif: "Nunito", sans-serif;
 
 #about {
   .about-image {
-    img {
-      object-fit: cover;
-    }
     height: 300px;
     margin: 0.2em;
     width: 30.5%;
-    position: relative;
     display: inline-block;
     @include mobile {
       width: 100%;
@@ -42,12 +38,7 @@ $family-sans-serif: "Nunito", sans-serif;
 }
 
 .img-gradient {
-  position: relative;
-  overflow: hidden;
   background-color: $black !important;
-  img {
-    object-fit: cover;
-  }
 }
 
 .img-gradient:after {

@@ -2,7 +2,8 @@
   "kind": "singleType",
   "collectionName": "about_pages",
   "info": {
-    "name": "About Page"
+    "name": "About Page",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -12,6 +13,25 @@
   "attributes": {
     "main_body": {
       "type": "richtext"
+    },
+    "photos_touring": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "content": {
+      "type": "dynamiczone",
+      "components": [
+        "page.alert",
+        "membership.contact",
+        "membership.payment"
+      ]
     }
   }
 }

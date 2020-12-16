@@ -2,7 +2,7 @@ import React from "react";
 import { colour } from "utils/functions";
 import moment from "moment";
 import EventBadge from "components/EventBadge";
-import Image from "next/image";
+import Image from "components/Image";
 
 const EventTab = ({ event, isSingleEvent }) => {
   return (
@@ -14,7 +14,7 @@ const EventTab = ({ event, isSingleEvent }) => {
     >
       <div className="column is-narrow">
         <p className="image is-128x128">
-          <Image src={event.thumbnail.url} width={128} height={128} />
+          <Image image={event.thumbnail} blur />
         </p>
       </div>
 

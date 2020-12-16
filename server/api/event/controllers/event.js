@@ -49,7 +49,7 @@ const sanitize = (role, uid, obj) => {
     _.unset(obj, "lead_member");
   }
   // Thumbnail
-  obj["thumbnail"] = strapi.config.functions.sanitize.picture(obj["thumbnail"]);
+  // obj["thumbnail"] = strapi.config.functions.sanitize.picture(obj["thumbnail"]);
 
   if (!role) {
     _.unset(obj, "description");
@@ -141,10 +141,8 @@ module.exports = {
   },
 
   async going(ctx) {
-
     const { id } = ctx.params;
 
-    return id
-
-  }
+    return id;
+  },
 };
