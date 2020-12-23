@@ -2,11 +2,13 @@
   "kind": "collectionType",
   "collectionName": "members",
   "info": {
-    "name": "Member"
+    "name": "Member",
+    "description": ""
   },
   "options": {
     "increments": true,
-    "timestamps": true
+    "timestamps": true,
+    "draftAndPublish": false
   },
   "attributes": {
     "given_name": {
@@ -37,11 +39,6 @@
       "plugin": "upload",
       "required": false
     },
-    "committee": {
-      "type": "component",
-      "repeatable": false,
-      "component": "membership.committee-member"
-    },
     "contact": {
       "type": "component",
       "repeatable": false,
@@ -54,9 +51,9 @@
       "type": "text"
     },
     "users": {
-      "via": "members",
       "plugin": "users-permissions",
       "collection": "user",
+      "via": "members",
       "dominant": true
     }
   }

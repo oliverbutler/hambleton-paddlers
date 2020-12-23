@@ -1308,9 +1308,6 @@
                     "picture": {
                       "type": "string"
                     },
-                    "committee": {
-                      "type": "component"
-                    },
                     "contact": {
                       "type": "component"
                     },
@@ -1382,9 +1379,6 @@
                 },
                 "picture": {
                   "type": "string"
-                },
-                "committee": {
-                  "type": "component"
                 },
                 "contact": {
                   "type": "component"
@@ -1534,9 +1528,6 @@
                     },
                     "picture": {
                       "type": "string"
-                    },
-                    "committee": {
-                      "type": "component"
                     },
                     "contact": {
                       "type": "component"

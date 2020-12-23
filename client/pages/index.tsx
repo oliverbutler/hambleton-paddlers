@@ -1,8 +1,7 @@
-import Head from "next/head";
-import Events from "components/Events";
-import About from "components/About/About";
 import Image from "components/Image";
+import PageContent from "components/PageContent";
 import { motion } from "framer-motion";
+import Markdown from "components/Markdown";
 
 const index = ({ content }) => {
   return (
@@ -32,16 +31,21 @@ const index = ({ content }) => {
       <div className="container mt-5">
         <div className="content" id="about">
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-            <About content={content} />
+            <PageContent content={content.dynamic_content} />
 
-            {/* <div className="img-gradient">
-              <Image
-                src={content.header_photo.url}
-                layout="fill"
-                alt="Header image of kayakers kayaking"
-              />
-            </div> */}
-            {/* <Image image={content.header_photo} /> */}
+            {content.alerts?.map((alert, alertIndex) => (
+              <article
+                className={`mt-4 message is-${alert.type}`}
+                key={`alert-${alertIndex}`}
+              >
+                <div className="message-header">
+                  <p>{alert.header}</p>
+                </div>
+                <div className="message-body">
+                  <Markdown>{alert.body}</Markdown>
+                </div>
+              </article>
+            ))}
           </motion.div>
         </div>
       </div>

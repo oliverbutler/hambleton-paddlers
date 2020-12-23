@@ -11,9 +11,6 @@
     "draftAndPublish": false
   },
   "attributes": {
-    "main_body": {
-      "type": "richtext"
-    },
     "header": {
       "type": "text"
     },
@@ -32,6 +29,14 @@
       ],
       "plugin": "upload",
       "required": false
+    },
+    "dynamic_content": {
+      "type": "dynamiczone",
+      "components": [
+        "page.alert",
+        "page.carousel",
+        "page.text"
+      ]
     }
   }
 }

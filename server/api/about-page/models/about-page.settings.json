@@ -11,26 +11,15 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "main_body": {
-      "type": "richtext"
+    "page_title": {
+      "type": "string"
     },
-    "photos_touring": {
-      "collection": "file",
-      "via": "related",
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos"
-      ],
-      "plugin": "upload",
-      "required": false
-    },
-    "content": {
+    "page_content": {
       "type": "dynamiczone",
       "components": [
         "page.alert",
-        "membership.contact",
-        "membership.payment"
+        "page.carousel",
+        "page.text"
       ]
     }
   }

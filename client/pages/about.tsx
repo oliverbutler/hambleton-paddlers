@@ -1,4 +1,4 @@
-import About from "components/About/About";
+import PageContent from "components/PageContent";
 import { motion } from "framer-motion";
 
 const about = ({ content }) => {
@@ -6,7 +6,8 @@ const about = ({ content }) => {
     <div className="container mt-5">
       <div className="content" id="about">
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-          <About content={content} />
+          <h3 className="title is-3">{content.page_title}</h3>
+          <PageContent content={content.page_content} />
         </motion.div>
       </div>
     </div>

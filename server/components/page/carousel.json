@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_page_carousels",
+  "info": {
+    "name": "carousel",
+    "icon": "photo-video"
+  },
+  "options": {},
+  "attributes": {
+    "photos": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    }
+  }
+}

@@ -323,80 +323,10 @@
           "id": {
             "type": "string"
           },
-          "main_body": {
+          "page_title": {
             "type": "string"
           },
-          "photos_touring": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id",
-                "name",
-                "hash",
-                "mime",
-                "size",
-                "url",
-                "provider"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "name": {
-                  "type": "string"
-                },
-                "alternativeText": {
-                  "type": "string"
-                },
-                "caption": {
-                  "type": "string"
-                },
-                "width": {
-                  "type": "integer"
-                },
-                "height": {
-                  "type": "integer"
-                },
-                "formats": {
-                  "type": "object"
-                },
-                "hash": {
-                  "type": "string"
-                },
-                "ext": {
-                  "type": "string"
-                },
-                "mime": {
-                  "type": "string"
-                },
-                "size": {
-                  "type": "number"
-                },
-                "url": {
-                  "type": "string"
-                },
-                "previewUrl": {
-                  "type": "string"
-                },
-                "provider": {
-                  "type": "string"
-                },
-                "provider_metadata": {
-                  "type": "object"
-                },
-                "related": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
-          },
-          "content": {
+          "page_content": {
             "type": "array",
             "items": {
               "oneOf": [
@@ -406,8 +336,8 @@
                       "type": "string",
                       "enum": [
                         "page.alert",
-                        "membership.contact",
-                        "membership.payment"
+                        "page.carousel",
+                        "page.text"
                       ]
                     },
                     "id": {
@@ -427,6 +357,15 @@
                     },
                     "body": {
                       "type": "string"
+                    },
+                    "position": {
+                      "type": "string",
+                      "default": "normal",
+                      "enum": [
+                        "normal",
+                        "top",
+                        "bottom"
+                      ]
                     }
                   },
                   "required": [
@@ -439,125 +378,107 @@
                       "type": "string",
                       "enum": [
                         "page.alert",
-                        "membership.contact",
-                        "membership.payment"
+                        "page.carousel",
+                        "page.text"
                       ]
                     },
                     "id": {
                       "type": "string"
                     },
-                    "email": {
-                      "type": "string"
-                    },
-                    "mobile_phone": {
-                      "type": "string"
-                    },
-                    "home_phone": {
-                      "type": "string"
-                    }
-                  },
-                  "required": [
-                    "id"
-                  ]
-                },
-                {
-                  "properties": {
-                    "__component": {
-                      "type": "string",
-                      "enum": [
-                        "page.alert",
-                        "membership.contact",
-                        "membership.payment"
-                      ]
-                    },
-                    "id": {
-                      "type": "string"
-                    },
-                    "amount_paid": {
-                      "type": "number"
-                    },
-                    "payment_method": {
-                      "type": "string",
-                      "enum": [
-                        "CASH",
-                        "BACS",
-                        "ONLINE",
-                        "CHEQUE"
-                      ]
-                    },
-                    "authorized_by": {
-                      "required": [
-                        "id",
-                        "given_name",
-                        "family_name",
-                        "date_of_birth"
-                      ],
-                      "properties": {
-                        "id": {
-                          "type": "string"
-                        },
-                        "given_name": {
-                          "type": "string"
-                        },
-                        "family_name": {
-                          "type": "string"
-                        },
-                        "date_of_birth": {
-                          "type": "string"
-                        },
-                        "bcu_awards": {
-                          "type": "string"
-                        },
-                        "bcu_coaching_awards": {
-                          "type": "string"
-                        },
-                        "picture": {
-                          "type": "string"
-                        },
-                        "committee": {
-                          "type": "component"
-                        },
-                        "contact": {
-                          "type": "component"
-                        },
-                        "allergies": {
-                          "type": "string"
-                        },
-                        "other_medical": {
-                          "type": "string"
-                        },
-                        "users": {
-                          "type": "array",
-                          "items": {
+                    "photos": {
+                      "type": "array",
+                      "items": {
+                        "required": [
+                          "id",
+                          "name",
+                          "hash",
+                          "mime",
+                          "size",
+                          "url",
+                          "provider"
+                        ],
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "alternativeText": {
+                            "type": "string"
+                          },
+                          "caption": {
+                            "type": "string"
+                          },
+                          "width": {
+                            "type": "integer"
+                          },
+                          "height": {
+                            "type": "integer"
+                          },
+                          "formats": {
+                            "type": "object"
+                          },
+                          "hash": {
+                            "type": "string"
+                          },
+                          "ext": {
+                            "type": "string"
+                          },
+                          "mime": {
+                            "type": "string"
+                          },
+                          "size": {
+                            "type": "number"
+                          },
+                          "url": {
+                            "type": "string"
+                          },
+                          "previewUrl": {
+                            "type": "string"
+                          },
+                          "provider": {
+                            "type": "string"
+                          },
+                          "provider_metadata": {
+                            "type": "object"
+                          },
+                          "related": {
+                            "type": "string"
+                          },
+                          "created_by": {
+                            "type": "string"
+                          },
+                          "updated_by": {
                             "type": "string"
                           }
-                        },
-                        "created_by": {
-                          "type": "string"
-                        },
-                        "updated_by": {
-                          "type": "string"
                         }
                       }
-                    },
-                    "date_start": {
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                },
+                {
+                  "properties": {
+                    "__component": {
                       "type": "string",
-                      "format": "date"
+                      "enum": [
+                        "page.alert",
+                        "page.carousel",
+                        "page.text"
+                      ]
                     },
-                    "date_end": {
-                      "type": "string",
-                      "format": "date"
+                    "id": {
+                      "type": "string"
                     },
-                    "note": {
+                    "rich_text": {
                       "type": "string"
                     }
                   },
                   "required": [
-                    "id",
-                    "amount_paid",
-                    "payment_method",
-                    "date_start",
-                    "date_end"
+                    "id"
                   ]
                 }
               ]
@@ -571,10 +492,10 @@
       },
       "NewAbout-page": {
         "properties": {
-          "main_body": {
+          "page_title": {
             "type": "string"
           },
-          "content": {
+          "page_content": {
             "type": "array",
             "items": {
               "oneOf": [
@@ -584,8 +505,8 @@
                       "type": "string",
                       "enum": [
                         "page.alert",
-                        "membership.contact",
-                        "membership.payment"
+                        "page.carousel",
+                        "page.text"
                       ]
                     },
                     "id": {
@@ -605,6 +526,15 @@
                     },
                     "body": {
                       "type": "string"
+                    },
+                    "position": {
+                      "type": "string",
+                      "default": "normal",
+                      "enum": [
+                        "normal",
+                        "top",
+                        "bottom"
+                      ]
                     }
                   },
                   "required": [
@@ -617,125 +547,107 @@
                       "type": "string",
                       "enum": [
                         "page.alert",
-                        "membership.contact",
-                        "membership.payment"
+                        "page.carousel",
+                        "page.text"
                       ]
                     },
                     "id": {
                       "type": "string"
                     },
-                    "email": {
-                      "type": "string"
-                    },
-                    "mobile_phone": {
-                      "type": "string"
-                    },
-                    "home_phone": {
-                      "type": "string"
-                    }
-                  },
-                  "required": [
-                    "id"
-                  ]
-                },
-                {
-                  "properties": {
-                    "__component": {
-                      "type": "string",
-                      "enum": [
-                        "page.alert",
-                        "membership.contact",
-                        "membership.payment"
-                      ]
-                    },
-                    "id": {
-                      "type": "string"
-                    },
-                    "amount_paid": {
-                      "type": "number"
-                    },
-                    "payment_method": {
-                      "type": "string",
-                      "enum": [
-                        "CASH",
-                        "BACS",
-                        "ONLINE",
-                        "CHEQUE"
-                      ]
-                    },
-                    "authorized_by": {
-                      "required": [
-                        "id",
-                        "given_name",
-                        "family_name",
-                        "date_of_birth"
-                      ],
-                      "properties": {
-                        "id": {
-                          "type": "string"
-                        },
-                        "given_name": {
-                          "type": "string"
-                        },
-                        "family_name": {
-                          "type": "string"
-                        },
-                        "date_of_birth": {
-                          "type": "string"
-                        },
-                        "bcu_awards": {
-                          "type": "string"
-                        },
-                        "bcu_coaching_awards": {
-                          "type": "string"
-                        },
-                        "picture": {
-                          "type": "string"
-                        },
-                        "committee": {
-                          "type": "component"
-                        },
-                        "contact": {
-                          "type": "component"
-                        },
-                        "allergies": {
-                          "type": "string"
-                        },
-                        "other_medical": {
-                          "type": "string"
-                        },
-                        "users": {
-                          "type": "array",
-                          "items": {
+                    "photos": {
+                      "type": "array",
+                      "items": {
+                        "required": [
+                          "id",
+                          "name",
+                          "hash",
+                          "mime",
+                          "size",
+                          "url",
+                          "provider"
+                        ],
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "alternativeText": {
+                            "type": "string"
+                          },
+                          "caption": {
+                            "type": "string"
+                          },
+                          "width": {
+                            "type": "integer"
+                          },
+                          "height": {
+                            "type": "integer"
+                          },
+                          "formats": {
+                            "type": "object"
+                          },
+                          "hash": {
+                            "type": "string"
+                          },
+                          "ext": {
+                            "type": "string"
+                          },
+                          "mime": {
+                            "type": "string"
+                          },
+                          "size": {
+                            "type": "number"
+                          },
+                          "url": {
+                            "type": "string"
+                          },
+                          "previewUrl": {
+                            "type": "string"
+                          },
+                          "provider": {
+                            "type": "string"
+                          },
+                          "provider_metadata": {
+                            "type": "object"
+                          },
+                          "related": {
+                            "type": "string"
+                          },
+                          "created_by": {
+                            "type": "string"
+                          },
+                          "updated_by": {
                             "type": "string"
                           }
-                        },
-                        "created_by": {
-                          "type": "string"
-                        },
-                        "updated_by": {
-                          "type": "string"
                         }
                       }
-                    },
-                    "date_start": {
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                },
+                {
+                  "properties": {
+                    "__component": {
                       "type": "string",
-                      "format": "date"
+                      "enum": [
+                        "page.alert",
+                        "page.carousel",
+                        "page.text"
+                      ]
                     },
-                    "date_end": {
-                      "type": "string",
-                      "format": "date"
+                    "id": {
+                      "type": "string"
                     },
-                    "note": {
+                    "rich_text": {
                       "type": "string"
                     }
                   },
                   "required": [
-                    "id",
-                    "amount_paid",
-                    "payment_method",
-                    "date_start",
-                    "date_end"
+                    "id"
                   ]
                 }
               ]
