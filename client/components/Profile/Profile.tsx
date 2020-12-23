@@ -64,6 +64,26 @@ const Profile = () => {
                 height={128}
               />
             </figure>
+
+            <div className="file is-small">
+              <label className="file-label">
+                <input
+                  className="file-input"
+                  type="file"
+                  name="resume"
+                  onChange={(e) => console.log(e.target.files[0])}
+                />
+                <span className="file-cta">
+                  <span className="file-icon">
+                    <ion-icon name="cloud-upload-outline"></ion-icon>
+                  </span>
+                  <span className="file-label">Choose a file…</span>
+                </span>
+              </label>
+            </div>
+            <button className="button  is-small">
+              <ion-icon name="trash-outline"></ion-icon>
+            </button>
             <Setting
               title="First Name"
               value={member.given_name}
@@ -79,11 +99,16 @@ const Profile = () => {
               value={member.date_of_birth}
               disabled
             />
-
             <Setting
               title="Allergies"
               value={member.allergies}
               save={(val) => updateProperty(member, "allergies", val)}
+              textarea
+            />
+            <Setting
+              title="Disabilities"
+              value={member.disabilities}
+              save={(val) => updateProperty(member, "disabilities", val)}
               textarea
             />
             <Setting
