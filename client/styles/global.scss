@@ -49,6 +49,17 @@ $family-sans-serif: "Nunito", sans-serif;
   background-color: $black !important;
 }
 
+.profile-container {
+  display: flex;
+  flex-wrap: wrap;
+
+  .menu {
+    padding: 1em;
+    // background-color: #fafafa;
+    min-height: 80vh;
+  }
+}
+
 .img-gradient:after {
   content: "";
   position: absolute;

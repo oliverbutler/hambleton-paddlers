@@ -13,9 +13,9 @@ const EventTab = ({ event, isSingleEvent }) => {
       }}
     >
       <div className="column is-narrow">
-        <p className="image is-128x128">
+        <div className="image is-128x128">
           <Image image={event.thumbnail} blur />
-        </p>
+        </div>
       </div>
 
       <div className="column">

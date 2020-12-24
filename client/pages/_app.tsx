@@ -47,11 +47,11 @@ const Wrapper = (props) => {
   useEffect(() => {
     getInstance()
       .get("events")
-      .then((res) => dispatch(actions.events.setEvents(res.data)));
+      .then((res) => dispatch(actions.events.setEvents(res.data)))
+      .catch((e) => console.log(e));
   }, []);
 
   // Get Committee Members
-
   return <>{props.children}</>;
 };
 
@@ -65,7 +65,6 @@ const App = ({ Component, pageProps }) => {
             name="viewport"
             content="initial-scale=1.0, width=device-width"
           />
-          {/* <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script> */}
           <script
             type="module"
             src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.esm.js"
@@ -74,9 +73,6 @@ const App = ({ Component, pageProps }) => {
             noModule={false}
             src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.js"
           ></script>
-          {/* <script
-            src={`https://maps.googleapis.com/maps/api/js?key=${process.env.NEXT_PUBLIC_GOOGLE_KEY}&libraries=places`}
-          ></script> */}
         </Head>
 
         <Navbar />
