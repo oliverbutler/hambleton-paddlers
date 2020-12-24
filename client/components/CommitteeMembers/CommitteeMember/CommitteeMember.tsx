@@ -21,7 +21,7 @@ const CommitteeMember = ({ index, member, openIndex, setOpenIndex }) => {
     >
       <div className="columns mb-0">
         <div className="column is-narrow pr-0">
-          <p className="image is-128x128 ml-3">
+          <div className="image is-128x128 ml-3">
             {member.member.picture && (
               <Image
                 image={member.member.picture}
@@ -30,7 +30,7 @@ const CommitteeMember = ({ index, member, openIndex, setOpenIndex }) => {
                 height={128}
               />
             )}
-          </p>
+          </div>
         </div>
         <div className="column ml-3">
           <p className="title is-4">

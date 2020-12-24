@@ -3,7 +3,6 @@ import PageContent from "components/PageContent";
 import { motion } from "framer-motion";
 import Markdown from "components/Markdown";
 import Axios from "axios";
-import axios from "axios";
 
 const index = ({ content }) => {
   return (

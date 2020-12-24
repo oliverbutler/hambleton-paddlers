@@ -42,6 +42,8 @@ const Profile = () => {
       <div className="content">
         <h1>Dashboard</h1>
 
+        <h3>Membership</h3>
+
         {payments.length > 0 ? (
           <p>
             Your membership {user.member && "will"} expire{!user.member && "d"}{" "}
@@ -57,7 +59,7 @@ const Profile = () => {
             {user.member ? "Renew" : "Purchase"} your membership
           </button>
         </Link>
-        <h1 className="title is-4">Payments</h1>
+        {/* <h1 className="title is-4">Payments</h1>
         {payments.map((payment, paymentIndex) => (
           <div key={`payment-${paymentIndex}`} className="ml-4 mb-4">
             <p>
@@ -67,7 +69,7 @@ const Profile = () => {
               <b>Expires:</b> {moment(payment.date_end).format("LL")}
             </p>
           </div>
-        ))}
+        ))} */}
       </div>
     </div>
   );
