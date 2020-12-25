@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "payments",
+  "info": {
+    "name": "Payment",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "amount": {
+      "type": "decimal"
+    },
+    "payment_type": {
+      "type": "enumeration",
+      "enum": [
+        "stripe",
+        "cash",
+        "cheque",
+        "bank"
+      ]
+    },
+    "time": {
+      "type": "datetime"
+    }
+  }
+}

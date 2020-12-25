@@ -6,14 +6,11 @@ import moment from "moment";
 import Link from "next/link";
 import { getInstance } from "utils/axios";
 import { getToast } from "utils/functions";
+import Checkout from "components/Checkout";
 
 const Profile = () => {
   const currentUser = useSelector((state) => state.currentUser);
   const user = currentUser.user;
-
-  // const payments = user.payments.sort((a, b) =>
-  //   moment(a.date_start) > moment(b.date_start) ? 1 : -1
-  // );
 
   const payments = [];
 
@@ -22,20 +19,6 @@ const Profile = () => {
   }, [currentUser]);
 
   if (!currentUser.loggedIn) return <p>Loading...</p>;
-
-  // const updateProperty = (member, propertyName, newValue) => {
-  //   console.log(member._id, propertyName, newValue);
-
-  //   getInstance()
-  //     .put(`/members/${member._id}`, { [propertyName]: newValue })
-  //     .then((res) => {
-  //       getToast().fire({
-  //         icon: "success",
-  //         title: `Updated ${member.given_name}'s ${propertyName}`,
-  //       });
-  //     })
-  //     .catch((err) => console.log(err));
-  // };
 
   return (
     <div className="container my-5">
@@ -59,6 +42,9 @@ const Profile = () => {
             {user.member ? "Renew" : "Purchase"} your membership
           </button>
         </Link>
+
+        <Checkout />
+
         {/* <h1 className="title is-4">Payments</h1>
         {payments.map((payment, paymentIndex) => (
           <div key={`payment-${paymentIndex}`} className="ml-4 mb-4">
