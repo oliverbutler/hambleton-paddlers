@@ -51,10 +51,18 @@ $family-sans-serif: "Nunito", sans-serif;
 
 .profile-container {
   display: flex;
-  flex-wrap: wrap;
+
+  // > div {
+  //   flex: 1;
+  // }
+  // > div {
+  //   flex: 1 2;
+  // }
 
   .menu {
+    // flex-shrink: 1;
     padding: 1em;
+    // width: fit-content;
     // background-color: #fafafa;
     min-height: 80vh;
   }
