@@ -758,6 +758,10 @@
                 }
               }
             }
+          },
+          "student_discount": {
+            "type": "boolean",
+            "default": false
           }
         }
       },
@@ -815,6 +819,10 @@
             "items": {
               "type": "string"
             }
+          },
+          "student_discount": {
+            "type": "boolean",
+            "default": false
           },
           "created_by": {
             "type": "string"

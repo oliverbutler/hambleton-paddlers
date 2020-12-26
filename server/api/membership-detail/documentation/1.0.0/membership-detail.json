@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/committee-members": {
+    "/membership-details": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -52,7 +52,7 @@
         },
         "summary": "",
         "tags": [
-          "Committee-member"
+          "Membership-detail"
         ],
         "parameters": [
           {
@@ -244,7 +244,7 @@
         },
         "summary": "",
         "tags": [
-          "Committee-member"
+          "Membership-detail"
         ],
         "requestBody": {
           "description": "",
@@ -252,14 +252,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewCommittee-member"
+                "$ref": "#/components/schemas/NewMembership-detail"
               }
             }
           }
         }
       }
     },
-    "/committee-members/count": {
+    "/membership-details/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -311,12 +311,12 @@
         },
         "summary": "",
         "tags": [
-          "Committee-member"
+          "Membership-detail"
         ],
         "parameters": []
       }
     },
-    "/committee-members/{id}": {
+    "/membership-details/{id}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -368,7 +368,7 @@
         },
         "summary": "",
         "tags": [
-          "Committee-member"
+          "Membership-detail"
         ],
         "parameters": [
           {
@@ -434,7 +434,7 @@
         },
         "summary": "",
         "tags": [
-          "Committee-member"
+          "Membership-detail"
         ],
         "requestBody": {
           "description": "",
@@ -442,7 +442,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewCommittee-member"
+                "$ref": "#/components/schemas/NewMembership-detail"
               }
             }
           }
@@ -508,7 +508,7 @@
         },
         "summary": "",
         "tags": [
-          "Committee-member"
+          "Membership-detail"
         ],
         "parameters": [
           {
@@ -527,111 +527,87 @@
   },
   "components": {
     "schemas": {
-      "Committee-member": {
+      "Membership-detail": {
         "required": [
           "id",
-          "order"
+          "start_date",
+          "end_date",
+          "junior_cost",
+          "adult_cost",
+          "family_cost",
+          "international_cost",
+          "discount_late"
         ],
         "properties": {
           "id": {
             "type": "string"
           },
-          "role": {
-            "type": "string"
+          "start_date": {
+            "type": "string",
+            "format": "date"
           },
-          "summary": {
-            "type": "string"
+          "end_date": {
+            "type": "string",
+            "format": "date"
+          },
+          "junior_cost": {
+            "type": "number"
+          },
+          "adult_cost": {
+            "type": "number"
+          },
+          "family_cost": {
+            "type": "number"
+          },
+          "international_cost": {
+            "type": "number"
+          },
+          "discount_late": {
+            "type": "integer",
+            "default": 50
           },
           "description": {
             "type": "string"
-          },
-          "member": {
-            "required": [
-              "id",
-              "given_name",
-              "family_name",
-              "date_of_birth"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "given_name": {
-                "type": "string"
-              },
-              "family_name": {
-                "type": "string"
-              },
-              "date_of_birth": {
-                "type": "string"
-              },
-              "bcu_awards": {
-                "type": "string"
-              },
-              "bcu_coaching_awards": {
-                "type": "string"
-              },
-              "picture": {
-                "type": "string"
-              },
-              "contact": {
-                "type": "component"
-              },
-              "allergies": {
-                "type": "string"
-              },
-              "other_medical": {
-                "type": "string"
-              },
-              "users": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "student_discount": {
-                "type": "boolean"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
-          },
-          "order": {
-            "type": "integer"
-          },
-          "published_at": {
-            "type": "string",
-            "format": "date-time"
           }
         }
       },
-      "NewCommittee-member": {
+      "NewMembership-detail": {
         "required": [
-          "order"
+          "start_date",
+          "end_date",
+          "junior_cost",
+          "adult_cost",
+          "family_cost",
+          "international_cost",
+          "discount_late"
         ],
         "properties": {
-          "role": {
-            "type": "string"
+          "start_date": {
+            "type": "string",
+            "format": "date"
           },
-          "summary": {
-            "type": "string"
+          "end_date": {
+            "type": "string",
+            "format": "date"
+          },
+          "junior_cost": {
+            "type": "number"
+          },
+          "adult_cost": {
+            "type": "number"
+          },
+          "family_cost": {
+            "type": "number"
+          },
+          "international_cost": {
+            "type": "number"
+          },
+          "discount_late": {
+            "type": "integer",
+            "default": 50
           },
           "description": {
             "type": "string"
-          },
-          "member": {
-            "type": "string"
-          },
-          "order": {
-            "type": "integer"
-          },
-          "published_at": {
-            "type": "string",
-            "format": "date-time"
           },
           "created_by": {
             "type": "string"

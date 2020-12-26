@@ -35,7 +35,7 @@ const Profile = () => {
         ) : (
           <p>You have yet to purchase a membership</p>
         )}
-        <Link href="renew">
+        <Link href="checkout">
           <button
             className={"button " + (user.member ? "is-success" : "is-danger")}
           >
@@ -43,7 +43,7 @@ const Profile = () => {
           </button>
         </Link>
 
-        <Checkout />
+        {/* <Checkout /> */}
 
         {/* <h1 className="title is-4">Payments</h1>
         {payments.map((payment, paymentIndex) => (

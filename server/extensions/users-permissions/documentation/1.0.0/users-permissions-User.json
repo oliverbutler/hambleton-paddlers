@@ -1323,6 +1323,9 @@
                         "type": "string"
                       }
                     },
+                    "student_discount": {
+                      "type": "boolean"
+                    },
                     "created_by": {
                       "type": "string"
                     },
@@ -1394,6 +1397,9 @@
                   "items": {
                     "type": "string"
                   }
+                },
+                "student_discount": {
+                  "type": "boolean"
                 },
                 "created_by": {
                   "type": "string"
@@ -1543,6 +1549,9 @@
                       "items": {
                         "type": "string"
                       }
+                    },
+                    "student_discount": {
+                      "type": "boolean"
                     },
                     "created_by": {
                       "type": "string"

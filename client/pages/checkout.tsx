@@ -3,8 +3,9 @@ import Link from "next/link";
 import { useSelector, useDispatch } from "react-redux";
 import { motion } from "framer-motion";
 import { SubscriptionManager } from "framer-motion/types/utils/subscription-manager";
+import Checkout from "components/Checkout";
 
-const renew = () => {
+const checkout = () => {
   const currentUser = useSelector((state) => state.currentUser);
   const user = currentUser.user;
 
@@ -20,15 +21,9 @@ const renew = () => {
       <div className="content">
         {currentUser.loggedIn ? (
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-            <h1 className="title is-4">Renew your Membership</h1>
-            <p>
-              To renew our membership we rely on BACS bank transfers as our
-              primary and preferred method, if you wish to pay by cash or cheque
-              please contact us directly rather than using the online forms
-            </p>
+            <h1 className="title is-4">Purchase your Membership</h1>
 
-            <p>Please pay: £{user.renewal_cost}</p>
-            <p>Reference: M-{user._id.substring(1, 6)}</p>
+            <Checkout />
           </motion.div>
         ) : (
           <></>
@@ -38,4 +33,4 @@ const renew = () => {
   );
 };
 
-export default renew;
+export default checkout;

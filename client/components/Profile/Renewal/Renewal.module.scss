@@ -1,0 +1,9 @@
+.cost {
+  border-radius: 4px;
+  padding: 1em;
+  margin-bottom: 1em;
+  cursor: pointer;
+  &:hover {
+    background-color: hsl(0, 0%, 96%);
+  }
+}

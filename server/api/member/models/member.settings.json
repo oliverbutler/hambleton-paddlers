@@ -55,6 +55,10 @@
       "collection": "user",
       "via": "members",
       "dominant": true
+    },
+    "student_discount": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

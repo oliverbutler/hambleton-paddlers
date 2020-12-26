@@ -1,7 +1,10 @@
 import axios, { AxiosInstance } from "axios";
 
 export const getInstance = (): AxiosInstance => {
-  const accessToken: String = localStorage.getItem("accessToken");
+  var accessToken: String = "";
+  
+  if (typeof localStorage !== 'undefined')
+    accessToken = localStorage.getItem("accessToken");
 
   var headers = {
     "Accept": "application/json",

@@ -54,7 +54,9 @@ const Menu = ({ active }) => {
       <p className="menu-label">Membership</p>
       <ul className="menu-list">
         <li>
-          <a>Renewal</a>
+          <Link href="/profile/renewal">
+            <a className={isActive("renewal")}>Renewal</a>
+          </Link>
         </li>
         <li>
           <a>Payments</a>

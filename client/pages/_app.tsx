@@ -38,7 +38,7 @@ const Wrapper = (props) => {
   // Load Settings
   useEffect(() => {
     getInstance()
-      .get("settings")
+      .get("/settings")
       .then((res) => dispatch(actions.settings.setSettings(res.data)))
       .catch((e) => console.log(e));
   }, []);
@@ -48,7 +48,7 @@ const Wrapper = (props) => {
     var accessToken = localStorage.getItem("accessToken");
     if (accessToken)
       getInstance()
-        .get("users/me")
+        .get("/users/me")
         .then((res) => dispatch(actions.user.setUser(res.data)))
         .catch((e) => localStorage.removeItem("accessToken"));
   }, []);
@@ -56,7 +56,7 @@ const Wrapper = (props) => {
   // Load Events
   useEffect(() => {
     getInstance()
-      .get("events")
+      .get("/events")
       .then((res) => dispatch(actions.events.setEvents(res.data)))
       .catch((e) => console.log(e));
   }, []);

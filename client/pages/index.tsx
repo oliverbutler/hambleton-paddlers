@@ -3,6 +3,7 @@ import PageContent from "components/PageContent";
 import { motion } from "framer-motion";
 import Markdown from "components/Markdown";
 import Axios from "axios";
+import { getInstance } from "utils/axios";
 
 const index = ({ content }) => {
   return (
@@ -78,7 +79,10 @@ export const getStaticProps = async () => {
 
   // console.log(await data.json());
 
-  const content = await Axios.get(process.env.NEXT_PUBLIC_HOST + "/home-page")
+  // console.log(process.env.NEXT_PUBLIC_HOST);
+  const content = await getInstance()
+    .get("/home-page")
+    // const content = await Axios.get("http://localhost:1337/home-page")
     .then((res) => res.data)
     .catch((err) => {
       console.log(err);
