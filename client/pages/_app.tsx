@@ -15,6 +15,7 @@ import { useSelector, useDispatch } from "react-redux";
 import actions from "redux/actions";
 
 import { getInstance } from "utils/axios";
+import axios from "axios";
 
 const store = createStore(
   rootReducer,

@@ -686,9 +686,6 @@
                   "type": "string"
                 }
               },
-              "renewal_cost": {
-                "type": "number"
-              },
               "contact": {
                 "type": "component"
               },

@@ -70,12 +70,8 @@
       "required": true
     },
     "members": {
-      "via": "users",
-      "collection": "member"
-    },
-    "renewal_cost": {
-      "type": "decimal",
-      "default": 10
+      "collection": "member",
+      "via": "users"
     },
     "contact": {
       "type": "component",

@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "12/26/2020 5:47:05 PM"
+    "x-generation-date": "12/26/2020 7:46:19 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -9990,9 +9990,6 @@
                     "type": "string"
                   }
                 },
-                "renewal_cost": {
-                  "type": "number"
-                },
                 "contact": {
                   "type": "component"
                 },
@@ -10229,9 +10226,6 @@
                   "type": "string"
                 }
               },
-              "renewal_cost": {
-                "type": "number"
-              },
               "contact": {
                 "type": "component"
               },
@@ -10431,9 +10425,6 @@
                     "type": "string"
                   }
                 },
-                "renewal_cost": {
-                  "type": "number"
-                },
                 "contact": {
                   "type": "component"
                 },
@@ -10561,9 +10552,7 @@
               "required": [
                 "id",
                 "amount_paid",
-                "payment_method",
-                "date_start",
-                "date_end"
+                "payment_method"
               ],
               "properties": {
                 "id": {
@@ -10581,52 +10570,47 @@
                     "CHEQUE"
                   ]
                 },
-                "authorized_by": {
+                "note": {
+                  "type": "string"
+                },
+                "membership_detail": {
                   "required": [
                     "id",
-                    "given_name",
-                    "family_name",
-                    "date_of_birth"
+                    "start_date",
+                    "end_date",
+                    "junior_cost",
+                    "adult_cost",
+                    "family_cost",
+                    "international_cost",
+                    "discount_late"
                   ],
                   "properties": {
                     "id": {
                       "type": "string"
                     },
-                    "given_name": {
+                    "start_date": {
                       "type": "string"
                     },
-                    "family_name": {
+                    "end_date": {
                       "type": "string"
                     },
-                    "date_of_birth": {
+                    "junior_cost": {
+                      "type": "number"
+                    },
+                    "adult_cost": {
+                      "type": "number"
+                    },
+                    "family_cost": {
+                      "type": "number"
+                    },
+                    "international_cost": {
+                      "type": "number"
+                    },
+                    "discount_late": {
+                      "type": "integer"
+                    },
+                    "description": {
                       "type": "string"
-                    },
-                    "bcu_awards": {
-                      "type": "string"
-                    },
-                    "bcu_coaching_awards": {
-                      "type": "string"
-                    },
-                    "picture": {
-                      "type": "string"
-                    },
-                    "contact": {
-                      "type": "component"
-                    },
-                    "allergies": {
-                      "type": "string"
-                    },
-                    "other_medical": {
-                      "type": "string"
-                    },
-                    "users": {
-                      "type": "array",
-                      "items": {
-                        "type": "string"
-                      }
-                    },
-                    "student_discount": {
-                      "type": "boolean"
                     },
                     "created_by": {
                       "type": "string"
@@ -10636,16 +10620,12 @@
                     }
                   }
                 },
-                "date_start": {
-                  "type": "string",
-                  "format": "date"
+                "cost_breakdown": {
+                  "type": "object"
                 },
-                "date_end": {
+                "date_paid": {
                   "type": "string",
-                  "format": "date"
-                },
-                "note": {
-                  "type": "string"
+                  "format": "date-time"
                 }
               }
             }
@@ -10711,10 +10691,6 @@
                 }
               }
             }
-          },
-          "renewal_cost": {
-            "type": "number",
-            "default": 10
           },
           "contact": {
             "type": "object",
@@ -10788,9 +10764,7 @@
               "required": [
                 "id",
                 "amount_paid",
-                "payment_method",
-                "date_start",
-                "date_end"
+                "payment_method"
               ],
               "properties": {
                 "id": {
@@ -10808,52 +10782,47 @@
                     "CHEQUE"
                   ]
                 },
-                "authorized_by": {
+                "note": {
+                  "type": "string"
+                },
+                "membership_detail": {
                   "required": [
                     "id",
-                    "given_name",
-                    "family_name",
-                    "date_of_birth"
+                    "start_date",
+                    "end_date",
+                    "junior_cost",
+                    "adult_cost",
+                    "family_cost",
+                    "international_cost",
+                    "discount_late"
                   ],
                   "properties": {
                     "id": {
                       "type": "string"
                     },
-                    "given_name": {
+                    "start_date": {
                       "type": "string"
                     },
-                    "family_name": {
+                    "end_date": {
                       "type": "string"
                     },
-                    "date_of_birth": {
+                    "junior_cost": {
+                      "type": "number"
+                    },
+                    "adult_cost": {
+                      "type": "number"
+                    },
+                    "family_cost": {
+                      "type": "number"
+                    },
+                    "international_cost": {
+                      "type": "number"
+                    },
+                    "discount_late": {
+                      "type": "integer"
+                    },
+                    "description": {
                       "type": "string"
-                    },
-                    "bcu_awards": {
-                      "type": "string"
-                    },
-                    "bcu_coaching_awards": {
-                      "type": "string"
-                    },
-                    "picture": {
-                      "type": "string"
-                    },
-                    "contact": {
-                      "type": "component"
-                    },
-                    "allergies": {
-                      "type": "string"
-                    },
-                    "other_medical": {
-                      "type": "string"
-                    },
-                    "users": {
-                      "type": "array",
-                      "items": {
-                        "type": "string"
-                      }
-                    },
-                    "student_discount": {
-                      "type": "boolean"
                     },
                     "created_by": {
                       "type": "string"
@@ -10863,16 +10832,12 @@
                     }
                   }
                 },
-                "date_start": {
-                  "type": "string",
-                  "format": "date"
+                "cost_breakdown": {
+                  "type": "object"
                 },
-                "date_end": {
+                "date_paid": {
                   "type": "string",
-                  "format": "date"
-                },
-                "note": {
-                  "type": "string"
+                  "format": "date-time"
                 }
               }
             }
@@ -10886,10 +10851,6 @@
             "items": {
               "type": "string"
             }
-          },
-          "renewal_cost": {
-            "type": "number",
-            "default": 10
           },
           "contact": {
             "type": "object",

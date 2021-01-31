@@ -51,9 +51,9 @@
       "type": "text"
     },
     "users": {
+      "via": "members",
       "plugin": "users-permissions",
       "collection": "user",
-      "via": "members",
       "dominant": true
     },
     "student_discount": {

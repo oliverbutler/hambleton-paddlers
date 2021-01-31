@@ -2,7 +2,6 @@ import Image from "components/Image";
 import PageContent from "components/PageContent";
 import { motion } from "framer-motion";
 import Markdown from "components/Markdown";
-import Axios from "axios";
 import { getInstance } from "utils/axios";
 
 const index = ({ content }) => {
@@ -58,34 +57,12 @@ const index = ({ content }) => {
 export default index;
 
 export const getStaticProps = async () => {
-  // console.log(process.env.NEXT_PUBLIC_HOST + "/home-page");
-
-  // const options = {
-  //   url: process.env.NEXT_PUBLIC_HOST + "/home-page",
-  //   method: "GET",
-  //   headers: {
-  //     Accept: "application/json",
-  //     "Content-Type": "application/json;charset=UTF-8",
-  //   },
-  // };
-
-  // var response = await Axios(options);
-
-  // var response = await Axios.get(process.env.NEXT_PUBLIC_HOST + "/home-page");
-
-  // console.log(response);
-
-  // var data = await fetch(process.env.NEXT_PUBLIC_HOST + "/home-page");
-
-  // console.log(await data.json());
-
-  // console.log(process.env.NEXT_PUBLIC_HOST);
   const content = await getInstance()
-    .get("/home-page")
-    // const content = await Axios.get("http://localhost:1337/home-page")
+    .get("home-page")
     .then((res) => res.data)
     .catch((err) => {
       console.log(err);
+      return {};
     });
 
   return {

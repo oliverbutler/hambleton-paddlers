@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import Awards from "components/Awards";
 import axios from "axios";
 import Image from "components/Image";
+import { getInstance } from "utils/axios";
 
 const awards = ({ awards, coachingAwards }) => {
   return (
@@ -32,13 +33,13 @@ const awards = ({ awards, coachingAwards }) => {
 export default awards;
 
 export const getStaticProps = async () => {
-  const awards = await axios
-    .get(process.env.NEXT_PUBLIC_HOST + "/bcu-awards")
+  const awards = await getInstance()
+    .get("/bcu-awards")
     .then((res) => res.data)
     .catch(() => []);
 
-  const coachingAwards = await axios
-    .get(process.env.NEXT_PUBLIC_HOST + "/bcu-coaching-awards")
+  const coachingAwards = await getInstance()
+    .get("/bcu-coaching-awards")
     .then((res) => res.data)
     .catch(() => []);
 

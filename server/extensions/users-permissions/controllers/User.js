@@ -12,10 +12,9 @@ const sanitize = (obj) => {
 
   // obj = _.omit(obj, [""]);
 
-  obj["payments"] = obj["payments"].map((p) => {
-    p["authorized_by"] = p["authorized_by"]["_id"];
-    return p;
-  });
+  // obj["payments"] = obj["payments"].map((p) => {
+  //   return p;
+  // });
 
   return sanitizeEntity(obj, {
     model: strapi.query("user", "users-permissions").model,
