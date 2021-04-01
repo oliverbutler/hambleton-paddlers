@@ -53,6 +53,14 @@ const Image: FC<ImageProps> = ({
 
   if (blur && image.caption == "") blur = false;
 
+  if (!imgSrc) {
+    return (
+      <div>
+        <p>Missing Photo</p>
+      </div>
+    );
+  }
+
   return (
     <div
       className={

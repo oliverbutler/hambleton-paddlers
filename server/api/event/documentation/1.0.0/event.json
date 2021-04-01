@@ -739,33 +739,48 @@
             "type": "string"
           },
           "type": {
-            "required": [
-              "id",
-              "name",
-              "description",
-              "colour"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "description": {
-                "type": "string"
-              },
-              "colour": {
-                "type": "string"
-              },
-              "minimum_bcu_award": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "name",
+                "description",
+                "colour"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "colour": {
+                  "type": "string",
+                  "enum": [
+                    "black",
+                    "dark",
+                    "light",
+                    "white",
+                    "primary",
+                    "link",
+                    "info",
+                    "success",
+                    "warning",
+                    "danger"
+                  ]
+                },
+                "minimum_bcu_award": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -790,10 +805,16 @@
                 "type": "string"
               },
               "bcu_awards": {
-                "type": "string"
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               },
               "bcu_coaching_awards": {
-                "type": "string"
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               },
               "picture": {
                 "type": "string"
@@ -953,10 +974,16 @@
                       "type": "string"
                     },
                     "bcu_awards": {
-                      "type": "string"
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
                     },
                     "bcu_coaching_awards": {
-                      "type": "string"
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
                     },
                     "picture": {
                       "type": "string"
@@ -1037,7 +1064,10 @@
             "type": "string"
           },
           "type": {
-            "type": "string"
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "lead_member": {
             "type": "string"
@@ -1101,10 +1131,16 @@
                       "type": "string"
                     },
                     "bcu_awards": {
-                      "type": "string"
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
                     },
                     "bcu_coaching_awards": {
-                      "type": "string"
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
                     },
                     "picture": {
                       "type": "string"

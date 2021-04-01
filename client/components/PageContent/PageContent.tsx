@@ -22,11 +22,12 @@ const renderComponent = (component) => {
 const PageContent = ({ content }) => {
   return (
     <div>
-      {content.map((component, index) => (
-        <div key={`component-${index}`} className="content-component">
-          {renderComponent(component)}
-        </div>
-      ))}
+      {content &&
+        content.map((component, index) => (
+          <div key={`component-${index}`} className="content-component">
+            {renderComponent(component)}
+          </div>
+        ))}
     </div>
   );
 };
