@@ -5,6 +5,7 @@ import Markdown from "components/Markdown";
 import { getInstance } from "utils/axios";
 
 const index = ({ content }) => {
+  if (!content) return <></>;
   return (
     <main>
       <div>
@@ -20,7 +21,6 @@ const index = ({ content }) => {
             style={{ position: "absolute" }}
             blur
           />
-
           <div className="hero-body" id="header">
             <div className="container" style={{ zIndex: 10 }}>
               <h1 className="title is-1">Hambleton Paddlers</h1>
@@ -58,11 +58,11 @@ export default index;
 
 export const getStaticProps = async () => {
   const content = await getInstance()
-    .get("home-page")
+    .get("/home-page")
     .then((res) => res.data)
     .catch((err) => {
-      console.log(err);
-      return {};
+      console.error("[Axios] Cannot connect to /home-page");
+      return null;
     });
 
   return {

@@ -43,13 +43,15 @@ const events = ({ pastEvents }) => {
               <h1 className="title">Past Events</h1>
             </>
           )}
-          <Events
-            events={_.reject(
-              pastEvents,
-              (e) =>
-                new Date(e.date_start) > new Date(new Date().toDateString())
-            )}
-          />
+          {pastEvents && (
+            <Events
+              events={_.reject(
+                pastEvents,
+                (e) =>
+                  new Date(e.date_start) > new Date(new Date().toDateString())
+              )}
+            />
+          )}
         </motion.div>
       </div>
     </main>
@@ -62,7 +64,10 @@ export const getStaticProps = async () => {
   const pastEvents = await getInstance()
     .get("/events/past")
     .then((res) => res.data)
-    .catch((err) => console.log(err));
+    .catch((err) => {
+      console.error("[Axios] Cannot fetch /events/past");
+      return null;
+    });
 
   return {
     props: {

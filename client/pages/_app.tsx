@@ -19,13 +19,7 @@ import actions from "redux/actions";
 import { getInstance } from "utils/axios";
 import axios from "axios";
 
-const store = createStore(
-  rootReducer,
-
-  typeof window !== "undefined" && // @ts-ignore
-    window.__REDUX_DEVTOOLS_EXTENSION__ && // @ts-ignore
-    window.__REDUX_DEVTOOLS_EXTENSION__()
-);
+const store = createStore(rootReducer);
 
 declare global {
   namespace JSX {
@@ -43,7 +37,7 @@ const Wrapper = (props) => {
     getInstance()
       .get("/settings")
       .then((res) => dispatch(actions.settings.setSettings(res.data)))
-      .catch((e) => console.log(e));
+      .catch((e) => console.error("[Axios] Cannot connect to /settings"));
   }, []);
 
   // Check auth
@@ -61,7 +55,7 @@ const Wrapper = (props) => {
     getInstance()
       .get("/events")
       .then((res) => dispatch(actions.events.setEvents(res.data)))
-      .catch((e) => console.log(e));
+      .catch((e) => console.error("[Axios] Cannot connect to /events"));
   }, []);
 
   const settings = useSelector((state) => state.settings);
