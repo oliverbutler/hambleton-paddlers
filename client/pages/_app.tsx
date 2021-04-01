@@ -5,6 +5,8 @@ import dynamic from "next/dynamic";
 
 import Navbar from "components/Navbar";
 import Footer from "components/Footer";
+
+// Import ChatWoot dynamically, if it is enabled
 const ChatWoot = dynamic(() => import("components/ChatWoot"));
 
 // Redux

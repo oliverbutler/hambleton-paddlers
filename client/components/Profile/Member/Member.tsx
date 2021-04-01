@@ -16,6 +16,7 @@ const Member = ({ memberId }) => {
         <div className="image is-128x128">
           <Image image={member.picture} blur key={`image-${member.id}`} />
         </div>
+        <pre>{JSON.stringify(member, null, 2)}</pre>
       </div>
     </div>
   );
