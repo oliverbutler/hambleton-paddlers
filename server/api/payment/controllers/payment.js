@@ -1,7 +1,6 @@
 "use strict";
-const stripe = require("stripe")(
-  "sk_test_51I1xqtARo26zQ4U3021tGL3fBrmPJwlaGCH2ArUemjYhhbVAXQdNcRmq5SPNopuCmm31t1mNS3zLCVy856RK4wXY008Fo6IbiS"
-);
+
+const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
 const _ = require("lodash");
 
