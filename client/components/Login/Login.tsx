@@ -6,6 +6,7 @@ import actions from "redux/actions";
 import { getToast } from "utils/functions";
 import Router from "next/router";
 import _ from "lodash";
+import { getInstance } from "utils/axios";
 
 const Login = () => {
   const { register, handleSubmit, watch, errors } = useForm();
@@ -14,8 +15,8 @@ const Login = () => {
   const dispatch = useDispatch();
 
   const onSubmit = (data) => {
-    axios
-      .post(process.env.NEXT_PUBLIC_HOST + "/auth/local", data)
+    getInstance()
+      .post("/auth/local", data)
       .then((res) => {
         dispatch(actions.user.setUser(res.data.user));
         getToast().fire({ icon: "success", title: "Successfully Logged In" });

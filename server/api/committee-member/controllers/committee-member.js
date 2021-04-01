@@ -28,7 +28,7 @@ module.exports = {
       entity.member = _.pick(entity.member, [
         "given_name",
         "family_name",
-        "picture.url",
+        "picture",
       ]);
 
       return sanitizeEntity(entity, {

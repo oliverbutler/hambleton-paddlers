@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Documents from "components/Documents";
 import axios from "axios";
+import { getInstance } from "utils/axios";
 
 const documents = ({ documents }) => {
   return (
@@ -24,10 +25,13 @@ const documents = ({ documents }) => {
 export default documents;
 
 export const getStaticProps = async () => {
-  const documents = await axios
-    .get(process.env.NEXT_PUBLIC_HOST + "/documents")
+  const documents = await getInstance()
+    .get("/documents")
     .then((res) => res.data)
-    .catch(() => []);
+    .catch(() => {
+      console.error("[Axios] Cannot fetch /documents");
+      return [];
+    });
 
   return {
     props: {

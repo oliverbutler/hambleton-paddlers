@@ -3,7 +3,7 @@ import styles from "./CommitteeMember.module.scss";
 import ReactMarkdown from "react-markdown";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
-import Image from "next/image";
+import Image from "components/Image";
 
 const CommitteeMember = ({ index, member, openIndex, setOpenIndex }) => {
   var open = openIndex === index;
@@ -21,17 +21,16 @@ const CommitteeMember = ({ index, member, openIndex, setOpenIndex }) => {
     >
       <div className="columns mb-0">
         <div className="column is-narrow pr-0">
-          <p className="image is-128x128 ml-3">
-            <Image
-              src={
-                member.member.picture
-                  ? member.member.picture.url
-                  : "https://hambleton-paddlers.s3.eu-west-2.amazonaws.com/default_user_4f14e60794.png"
-              }
-              width={128}
-              height={128}
-            />
-          </p>
+          <div className="image is-128x128 ml-3">
+            {member.member.picture && (
+              <Image
+                image={member.member.picture}
+                blur
+                width={128}
+                height={128}
+              />
+            )}
+          </div>
         </div>
         <div className="column ml-3">
           <p className="title is-4">

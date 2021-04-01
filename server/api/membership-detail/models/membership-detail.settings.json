@@ -1,0 +1,47 @@
+{
+  "kind": "collectionType",
+  "collectionName": "membership_details",
+  "info": {
+    "name": "Membership Detail",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "start_date": {
+      "type": "date",
+      "required": true
+    },
+    "end_date": {
+      "type": "date",
+      "required": true
+    },
+    "junior_cost": {
+      "type": "decimal",
+      "required": true
+    },
+    "adult_cost": {
+      "type": "decimal",
+      "required": true
+    },
+    "family_cost": {
+      "type": "decimal",
+      "required": true
+    },
+    "international_cost": {
+      "type": "decimal",
+      "required": true
+    },
+    "discount_late": {
+      "type": "integer",
+      "default": 50,
+      "required": true
+    },
+    "description": {
+      "type": "string"
+    }
+  }
+}

@@ -22,31 +22,42 @@ $family-sans-serif: "Nunito", sans-serif;
 }
 
 .content {
-  margin: 0 20px;
+  margin: 0 2em;
+  margin-bottom: 2em;
 }
 
-#about {
-  .about-image {
-    img {
-      object-fit: cover;
-    }
-    height: 300px;
-    margin: 0.2em;
-    width: 30.5%;
+.carousel {
+  > div {
+    display: block;
     position: relative;
+    height: 300px;
+    margin: 0.5em;
+    width: calc(33.3% - 1em);
     display: inline-block;
     @include mobile {
-      width: 100%;
+      width: calc(100% - 1em);
     }
   }
 }
 
+.content-component {
+  height: fit-content;
+  width: 100%;
+}
+
 .img-gradient {
-  position: relative;
-  overflow: hidden;
   background-color: $black !important;
-  img {
-    object-fit: cover;
+}
+
+.profile-container {
+  display: flex;
+
+  .menu {
+    // flex-shrink: 1;
+    padding: 1em;
+    // width: fit-content;
+    // background-color: #fafafa;
+    min-height: 80vh;
   }
 }
 

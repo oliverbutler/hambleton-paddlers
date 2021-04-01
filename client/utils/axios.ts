@@ -1,14 +1,23 @@
 import axios, { AxiosInstance } from "axios";
 
 export const getInstance = (): AxiosInstance => {
-  const accessToken: String = localStorage.getItem("accessToken");
+  var accessToken: String = "";
 
-  var headers = {};
+  if (typeof window !== "undefined")
+    accessToken = localStorage.getItem("accessToken");
+
+  var headers = {
+    Accept: "application/json",
+    "Content-Type": "application/json;charset=UTF-8",
+  };
   if (accessToken) headers["Authorization"] = `Bearer ${accessToken}`;
 
-  return axios.create({
-    baseURL: process.env.NEXT_PUBLIC_HOST,
-    timeout: 1000,
+  var a = axios.create({
+    timeout: 5000,
     headers,
   });
+
+  a.defaults.baseURL = process.env.NEXT_PUBLIC_HOST;
+
+  return a;
 };

@@ -23,20 +23,18 @@
       "required": true,
       "private": false
     },
-    "authorized_by": {
-      "model": "member"
-    },
-    "date_start": {
-      "type": "date",
-      "private": false,
-      "required": true
-    },
-    "date_end": {
-      "type": "date",
-      "required": true
-    },
     "note": {
       "type": "text"
+    },
+    "membership_detail": {
+      "unique": true,
+      "model": "membership-detail"
+    },
+    "cost_breakdown": {
+      "type": "json"
+    },
+    "date_paid": {
+      "type": "datetime"
     }
   }
 }

@@ -1,26 +1,25 @@
 import "styles/global.scss";
-
 import React, { useEffect } from "react";
 import Head from "next/head";
+import dynamic from "next/dynamic";
+
 import Navbar from "components/Navbar";
 import Footer from "components/Footer";
+
+// Import ChatWoot dynamically, if it is enabled
+const ChatWoot = dynamic(() => import("components/ChatWoot"));
 
 // Redux
 import { Provider } from "react-redux";
 import { createStore } from "redux";
 import rootReducer from "redux/reducers";
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import actions from "redux/actions";
 
 import { getInstance } from "utils/axios";
+import axios from "axios";
 
-const store = createStore(
-  rootReducer,
-
-  typeof window !== "undefined" && // @ts-ignore
-    window.__REDUX_DEVTOOLS_EXTENSION__ && // @ts-ignore
-    window.__REDUX_DEVTOOLS_EXTENSION__()
-);
+const store = createStore(rootReducer);
 
 declare global {
   namespace JSX {
@@ -33,12 +32,20 @@ declare global {
 const Wrapper = (props) => {
   const dispatch = useDispatch();
 
+  // Load Settings
+  useEffect(() => {
+    getInstance()
+      .get("/settings")
+      .then((res) => dispatch(actions.settings.setSettings(res.data)))
+      .catch((e) => console.error("[Axios] Cannot connect to /settings"));
+  }, []);
+
   // Check auth
   useEffect(() => {
     var accessToken = localStorage.getItem("accessToken");
     if (accessToken)
       getInstance()
-        .get("users/me")
+        .get("/users/me")
         .then((res) => dispatch(actions.user.setUser(res.data)))
         .catch((e) => localStorage.removeItem("accessToken"));
   }, []);
@@ -46,13 +53,19 @@ const Wrapper = (props) => {
   // Load Events
   useEffect(() => {
     getInstance()
-      .get("events")
-      .then((res) => dispatch(actions.events.setEvents(res.data)));
+      .get("/events")
+      .then((res) => dispatch(actions.events.setEvents(res.data)))
+      .catch((e) => console.error("[Axios] Cannot connect to /events"));
   }, []);
 
-  // Get Committee Members
+  const settings = useSelector((state) => state.settings);
 
-  return <>{props.children}</>;
+  // Get Committee Members
+  return (
+    <>
+      {props.children} {settings.liveChat && <ChatWoot />}
+    </>
+  );
 };
 
 const App = ({ Component, pageProps }) => {
@@ -65,7 +78,6 @@ const App = ({ Component, pageProps }) => {
             name="viewport"
             content="initial-scale=1.0, width=device-width"
           />
-          {/* <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script> */}
           <script
             type="module"
             src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.esm.js"
@@ -74,9 +86,6 @@ const App = ({ Component, pageProps }) => {
             noModule={false}
             src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.js"
           ></script>
-          {/* <script
-            src={`https://maps.googleapis.com/maps/api/js?key=${process.env.NEXT_PUBLIC_GOOGLE_KEY}&libraries=places`}
-          ></script> */}
         </Head>
 
         <Navbar />

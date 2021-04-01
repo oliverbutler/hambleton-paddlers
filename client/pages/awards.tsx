@@ -2,17 +2,18 @@ import React from "react";
 import { motion } from "framer-motion";
 import Awards from "components/Awards";
 import axios from "axios";
+import Image from "components/Image";
+import { getInstance } from "utils/axios";
 
 const awards = ({ awards, coachingAwards }) => {
   return (
     <main className="container my-5" style={{ minHeight: "75vh" }}>
       <div className="content">
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-          <img
-            src="/bcu.png"
-            alt="British Canoeing Logo"
-            style={{ width: 300 }}
-          />
+          <div style={{ width: 395, height: 163 }}>
+            <Image src="/bcu.png" alt="British Canoeing Logo" />
+          </div>
+
           <p className="title is-3">BCU Awards</p>
           <p className="subtitle is-5">
             We offer you the opportunity to obtain the following BCU awards...
@@ -32,15 +33,21 @@ const awards = ({ awards, coachingAwards }) => {
 export default awards;
 
 export const getStaticProps = async () => {
-  const awards = await axios
-    .get(process.env.NEXT_PUBLIC_HOST + "/bcu-awards")
+  const awards = await getInstance()
+    .get("/bcu-awards")
     .then((res) => res.data)
-    .catch(() => []);
+    .catch(() => {
+      console.error("[Axios] Cannot fetch /bcu-awards");
+      return [];
+    });
 
-  const coachingAwards = await axios
-    .get(process.env.NEXT_PUBLIC_HOST + "/bcu-coaching-awards")
+  const coachingAwards = await getInstance()
+    .get("/bcu-coaching-awards")
     .then((res) => res.data)
-    .catch(() => []);
+    .catch(() => {
+      console.error("[Axios] Cannot fetch /bcu-coaching-awards");
+      return [];
+    });
 
   return {
     props: {

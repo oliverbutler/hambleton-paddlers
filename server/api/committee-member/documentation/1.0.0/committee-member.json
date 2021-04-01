@@ -566,10 +566,16 @@
                 "type": "string"
               },
               "bcu_awards": {
-                "type": "string"
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               },
               "bcu_coaching_awards": {
-                "type": "string"
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               },
               "picture": {
                 "type": "string"
@@ -588,6 +594,9 @@
                 "items": {
                   "type": "string"
                 }
+              },
+              "student_discount": {
+                "type": "boolean"
               },
               "created_by": {
                 "type": "string"

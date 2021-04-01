@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import Link from "next/link";
 import _ from "lodash";
 import { motion } from "framer-motion";
+import { getInstance } from "utils/axios";
 
 const events = ({ pastEvents }) => {
   const currentUser = useSelector((s) => s.currentUser);
@@ -42,13 +43,15 @@ const events = ({ pastEvents }) => {
               <h1 className="title">Past Events</h1>
             </>
           )}
-          <Events
-            events={_.reject(
-              pastEvents,
-              (e) =>
-                new Date(e.date_start) > new Date(new Date().toDateString())
-            )}
-          />
+          {pastEvents && (
+            <Events
+              events={_.reject(
+                pastEvents,
+                (e) =>
+                  new Date(e.date_start) > new Date(new Date().toDateString())
+              )}
+            />
+          )}
         </motion.div>
       </div>
     </main>
@@ -58,14 +61,13 @@ const events = ({ pastEvents }) => {
 export default events;
 
 export const getStaticProps = async () => {
-  const res = await fetch(process.env.NEXT_PUBLIC_HOST + "/events/past");
-
-  var pastEvents = [];
-  try {
-    pastEvents = await res.json();
-  } catch (err) {
-    console.log("Server error");
-  }
+  const pastEvents = await getInstance()
+    .get("/events/past")
+    .then((res) => res.data)
+    .catch((err) => {
+      console.error("[Axios] Cannot fetch /events/past");
+      return null;
+    });
 
   return {
     props: {

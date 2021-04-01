@@ -536,63 +536,69 @@
             "format": "date"
           },
           "bcu_awards": {
-            "required": [
-              "id",
-              "title",
-              "summary",
-              "description",
-              "order"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "title": {
-                "type": "string"
-              },
-              "summary": {
-                "type": "string"
-              },
-              "description": {
-                "type": "string"
-              },
-              "order": {
-                "type": "integer"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "title",
+                "summary",
+                "description",
+                "order"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "summary": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "order": {
+                  "type": "integer"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
               }
             }
           },
           "bcu_coaching_awards": {
-            "required": [
-              "id",
-              "title"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "title": {
-                "type": "string"
-              },
-              "summary": {
-                "type": "string"
-              },
-              "description": {
-                "type": "string"
-              },
-              "order": {
-                "type": "integer"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "title"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "summary": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "order": {
+                  "type": "integer"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -741,9 +747,6 @@
                     "type": "string"
                   }
                 },
-                "renewal_cost": {
-                  "type": "number"
-                },
                 "contact": {
                   "type": "component"
                 },
@@ -758,6 +761,10 @@
                 }
               }
             }
+          },
+          "student_discount": {
+            "type": "boolean",
+            "default": false
           }
         }
       },
@@ -779,10 +786,16 @@
             "format": "date"
           },
           "bcu_awards": {
-            "type": "string"
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "bcu_coaching_awards": {
-            "type": "string"
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "contact": {
             "type": "object",
@@ -815,6 +828,10 @@
             "items": {
               "type": "string"
             }
+          },
+          "student_discount": {
+            "type": "boolean",
+            "default": false
           },
           "created_by": {
             "type": "string"

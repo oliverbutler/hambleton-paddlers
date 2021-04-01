@@ -104,7 +104,7 @@ const Navbar = () => {
                 </a>
               </Link>
             </>
-          ) : router.pathname == "/profile" ? (
+          ) : router.pathname.startsWith("/profile") ? (
             <Link href="/">
               <a
                 className="button is-primary is-outlined"
