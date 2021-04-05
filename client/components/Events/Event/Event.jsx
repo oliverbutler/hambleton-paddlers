@@ -43,12 +43,14 @@ const Event = ({ event }) => {
               <div className="columns">
                 <div className="column is-narrow">
                   <figure class="image is-64x64 mx-2 my-2">
-                    <Image
-                      className="is-rounded"
-                      src={event.lead_member.picture.url}
-                      width={64}
-                      height={64}
-                    />
+                    {event?.lead_member?.picture && (
+                      <Image
+                        className="is-rounded"
+                        src={event.lead_member.picture.url}
+                        width={64}
+                        height={64}
+                      />
+                    )}
                   </figure>
                 </div>
                 <div className="column">

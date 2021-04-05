@@ -28,10 +28,13 @@ export const getStaticProps = async () => {
   const documents = await getInstance()
     .get("/documents")
     .then((res) => res.data)
-    .catch(() => {
-      console.error("[Axios] Cannot fetch /documents");
-      return [];
-    });
+    .catch(() => null);
+
+  if (!documents) {
+    return {
+      notFound: true,
+    };
+  }
 
   return {
     props: {

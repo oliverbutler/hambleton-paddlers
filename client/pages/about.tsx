@@ -23,10 +23,13 @@ export const getStaticProps = async () => {
   const content = await getInstance()
     .get("/about-page")
     .then((res) => res.data)
-    .catch((err) => {
-      console.error("[Axios] Cannot connect to /about-page");
-      return null;
-    });
+    .catch(() => null);
+
+  if (!content) {
+    return {
+      notFound: true,
+    };
+  }
 
   return {
     props: {
