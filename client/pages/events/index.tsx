@@ -64,10 +64,13 @@ export const getStaticProps = async () => {
   const pastEvents = await getInstance()
     .get("/events/past")
     .then((res) => res.data)
-    .catch((err) => {
-      console.error("[Axios] Cannot fetch /events/past");
-      return null;
-    });
+    .catch(() => null);
+
+  if (!pastEvents) {
+    return {
+      notFound: true,
+    };
+  }
 
   return {
     props: {

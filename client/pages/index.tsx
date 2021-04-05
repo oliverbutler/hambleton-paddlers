@@ -60,10 +60,13 @@ export const getStaticProps = async () => {
   const content = await getInstance()
     .get("/home-page")
     .then((res) => res.data)
-    .catch((err) => {
-      console.error("[Axios] Cannot connect to /home-page");
-      return null;
-    });
+    .catch((err) => null);
+
+  if (!content) {
+    return {
+      notFound: true,
+    };
+  }
 
   return {
     props: {

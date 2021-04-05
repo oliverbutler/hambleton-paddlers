@@ -29,10 +29,13 @@ export const getStaticProps = async () => {
   const content = await getInstance()
     .get("/committee-members")
     .then((res) => res.data)
-    .catch(() => {
-      console.error("[Axios] Cannot fetch /committee-members");
-      return [];
-    });
+    .catch(() => null);
+
+  if (!content) {
+    return {
+      notFound: true,
+    };
+  }
 
   return {
     props: {

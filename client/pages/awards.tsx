@@ -36,18 +36,24 @@ export const getStaticProps = async () => {
   const awards = await getInstance()
     .get("/bcu-awards")
     .then((res) => res.data)
-    .catch(() => {
-      console.error("[Axios] Cannot fetch /bcu-awards");
-      return [];
-    });
+    .catch(() => null);
+
+  if (!awards) {
+    return {
+      notFound: true,
+    };
+  }
 
   const coachingAwards = await getInstance()
     .get("/bcu-coaching-awards")
     .then((res) => res.data)
-    .catch(() => {
-      console.error("[Axios] Cannot fetch /bcu-coaching-awards");
-      return [];
-    });
+    .catch(() => null);
+
+  if (!coachingAwards) {
+    return {
+      notFound: true,
+    };
+  }
 
   return {
     props: {
