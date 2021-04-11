@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "04/01/2021 7:27:12 PM"
+    "x-generation-date": "04/11/2021 6:40:42 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -10479,12 +10479,18 @@
           },
           "live_chat": {
             "type": "boolean"
+          },
+          "membership": {
+            "type": "boolean"
           }
         }
       },
       "NewSettings": {
         "properties": {
           "live_chat": {
+            "type": "boolean"
+          },
+          "membership": {
             "type": "boolean"
           },
           "created_by": {

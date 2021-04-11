@@ -10,6 +10,8 @@ import Image from "next/image";
 
 const Navbar = () => {
   const currentUser = useSelector((state) => state.currentUser);
+  const settings = useSelector((state) => state.settings);
+
   const dispatch = useDispatch();
 
   const [isActive, setIsActive] = useState(false);
@@ -90,44 +92,46 @@ const Navbar = () => {
           </Link>
         </div>
 
-        <div className="right">
-          {!currentUser.loggedIn ? (
-            <>
-              <Link href="/join">
+        {settings.membership && (
+          <div className="right">
+            {!currentUser.loggedIn ? (
+              <>
+                <Link href="/join">
+                  <a className="button is-primary" onClick={handleClose}>
+                    <strong>Join</strong>
+                  </a>
+                </Link>
+                <Link href="/login">
+                  <a className="button is-light" onClick={handleClose}>
+                    Log in
+                  </a>
+                </Link>
+              </>
+            ) : router.pathname.startsWith("/profile") ? (
+              <Link href="/">
+                <a
+                  className="button is-primary is-outlined"
+                  onClick={() => {
+                    dispatch(actions.user.logOut());
+                    localStorage.removeItem("accessToken");
+                    getToast().fire({
+                      icon: "success",
+                      title: "Successfully Logged Out",
+                    });
+                  }}
+                >
+                  Logout
+                </a>
+              </Link>
+            ) : (
+              <Link href="/profile">
                 <a className="button is-primary" onClick={handleClose}>
-                  <strong>Join</strong>
+                  My Profile
                 </a>
               </Link>
-              <Link href="/login">
-                <a className="button is-light" onClick={handleClose}>
-                  Log in
-                </a>
-              </Link>
-            </>
-          ) : router.pathname.startsWith("/profile") ? (
-            <Link href="/">
-              <a
-                className="button is-primary is-outlined"
-                onClick={() => {
-                  dispatch(actions.user.logOut());
-                  localStorage.removeItem("accessToken");
-                  getToast().fire({
-                    icon: "success",
-                    title: "Successfully Logged Out",
-                  });
-                }}
-              >
-                Logout
-              </a>
-            </Link>
-          ) : (
-            <Link href="/profile">
-              <a className="button is-primary" onClick={handleClose}>
-                My Profile
-              </a>
-            </Link>
-          )}
-        </div>
+            )}
+          </div>
+        )}
       </motion.div>
     </nav>
   );

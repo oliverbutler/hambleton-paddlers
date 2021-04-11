@@ -8,8 +8,8 @@ import { getInstance } from "utils/axios";
 
 const events = ({ pastEvents }) => {
   const currentUser = useSelector((s) => s.currentUser);
-
   const events = useSelector((s) => s.events.events);
+  const settings = useSelector((s) => s.settings);
 
   return (
     <main className="container my-5" style={{ minHeight: "75vh" }}>
@@ -23,11 +23,13 @@ const events = ({ pastEvents }) => {
                 Activity Centre, we offer a range of events throughout the year.
                 Some of our recent events are shown below.
               </p>
-              <div className="notification is-info is-light mt-4">
-                To see upcomming events and more information, please{" "}
-                <Link href="/login">login</Link> to your Hambleton Paddlers
-                account.
-              </div>
+              {settings.membership && (
+                <div className="notification is-info is-light mt-4">
+                  To see upcomming events and more information, please{" "}
+                  <Link href="/login">login</Link> to your Hambleton Paddlers
+                  account.
+                </div>
+              )}
             </>
           )}
           {currentUser.loggedIn && (
