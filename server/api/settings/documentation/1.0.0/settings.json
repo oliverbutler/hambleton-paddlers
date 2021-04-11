@@ -320,12 +320,18 @@
           },
           "live_chat": {
             "type": "boolean"
+          },
+          "membership": {
+            "type": "boolean"
           }
         }
       },
       "NewSettings": {
         "properties": {
           "live_chat": {
+            "type": "boolean"
+          },
+          "membership": {
             "type": "boolean"
           },
           "created_by": {

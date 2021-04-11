@@ -13,6 +13,9 @@
   "attributes": {
     "live_chat": {
       "type": "boolean"
+    },
+    "membership": {
+      "type": "boolean"
     }
   }
 }
